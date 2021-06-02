@@ -81,12 +81,12 @@
                             <nav class="primary-menu not-dark col-lg-auto order-lg-1">
 
                                 <ul class="menu-container">
-                                    <li class="menu-item"><a class="menu-link" href="demo-writer.html"><div>Home</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="demo-writer-about-me.html"><div>About</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="demo-writer-about-me.html"><div>Books</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="demo-writer-about-me.html"><div>Apps</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="demo-writer-about-me.html"><div>Invite</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="demo-writer-about-me.html"><div>Contact Us</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href=""><div>Home</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href=""><div>About</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href=""><div>Books</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href=""><div>Apps</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href=""><div>Invite</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href=""><div>Contact Us</div></a></li>
 
                                 </ul>
 
@@ -95,9 +95,9 @@
                             <nav class="primary-menu not-dark col-lg-auto order-lg-3">
 
                                 <ul class="menu-container justify-content-lg-end">
-                                    <li class="menu-item"><a class="menu-link" href="demo-writer-testimonials.html"><div>Pillar of Fire </div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="demo-writer-contact.html"><div>Pillar of Cloud </div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="demo-writer-login.html"><div>Love Offering </div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href=""><div>Pillar of Fire </div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href=""><div>Pillar of Cloud </div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href=""><div>Love Offering </div></a></li>
 
                                 </ul>
 
