@@ -1,88 +1,188 @@
-<!-- footer start-->
-<footer class="page-footer footer_2"><img class="section--bg b0 r0" src="<?php echo base_url(); ?>assets/img/footer-bg.png" alt="bg"/>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-lg-4">
-                <div class="page-footer__details ">
-                    <strong>Head Office:</strong><br/>
-                    <p class="top-20"> <span>89 Ta Chuen ping Street Kwai Wu Ind.Bldg., <br/>Unit 402 Kwai Chung, N.T.Hong Kong</span></p>
-                    <p><strong>Phone:</strong> <a href="tel:+ 852 2736 6552">+(852) 2736 6552</a></p>
-                    <p><strong>Fax:</strong> <a href="tel:+ 852 2736 6770">+(852) 2736 6770</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:smarttech8@biznetvigator.com">smarttech8@biznetvigator.com</a></p>
-                    <p><strong>Openning hours:</strong> <span>9:00 AM - 9:00 PM</span></p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="page-footer__details">
-                    <strong>Karachi (Pakistan) Office:</strong><br/>
-                    <p class="top-20"> <span>Quality Freight Systems 163/A, Adam-Jee-Nagar,<br/> Near Makkah Masjid, off Tipu Sultan Road <br/>Karachi-Pakistan</span></p>
-                    <p><strong>Phone:</strong> <a href="tel:+92 21 3454 7966">+92 21 3454 7966</a></p>
-                    <p><strong>Fax:</strong> <a href="tel:+92 21 3453 3770">+92 21 3453 3770</a></p>
-                    <p><strong>Mobile:</strong> <a href="tel:+92 321 243 0430">+92 321 243 0430</a></p>
-                </div>
-            </div>
+<!-- Footer
+		============================================= -->
+		<footer id="footer" style="background: url('<?php echo base_url(); ?>assets/writer/images/section/bg1.jpg') center center no-repeat; background-size: cover;" class="dark border-0">
 
-            <div class="col-lg-4 top-30 top-lg-0">
-                <div class="page-footer__details">
-                    <strong>Lahore (Pakistan) Office:</strong><br/>
-                    <p class="top-20"> <span>Mr.Muhammad Bashir</span></p>
-                    <p><strong>Phone:</strong> <a href="tel:+92 321 243 0430">+92 321 243 0430</a></p>
-                  
-                </div>
-                <h6 class="page-footer__title title--white top-30">Newslatter</h6>
-                <form class="form newslatter-form" action="javascript:void(0);">
-                    <div class="fieldset">
-                        <input class="form__field" type="email" name="email" placeholder="Email address"/>
-                        <button class="form__submit" type="submit">
-                            <svg class="icon">
-                            <use xlink:href="#mail"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <p class="color--gray">Stay tuned for our latest news</p>
-                </form>
-            </div>
-        </div>
-        <div class="row top-50 flex-column-reverse flex-sm-row">
-            <div class="col-sm-6 col-lg-4 top-20 top-sm-0 text-center text-sm-left">
-                <div class="page-footer__copyright">© <?php echo date("Y") ?> smarttechlogisticshk.com. All rights reserved</div>
-            </div>
-            <div class="col-sm-6 col-lg-8 d-flex justify-content-center justify-content-sm-end justify-content-lg-between">
-                <div class="page-footer__privacy d-none d-lg-block"><a href="#">Terms and conditions</a><a href="#">Privacy policy</a><a href="#">Cookies</a></div>
-                <ul class="socials list--reset">
-                    <li class="socials__item"><a class="socials__link" href="#">
-                            <svg class="icon">
-                            <use xlink:href="#youtube"></use>
-                            </svg></a></li>
-                    <li class="socials__item"><a class="socials__link" href="#">
-                            <svg class="icon">
-                            <use xlink:href="#facebook"></use>
-                            </svg></a></li>
-                    <li class="socials__item"><a class="socials__link" href="#">
-                            <svg class="icon">
-                            <use xlink:href="#twitter"></use>
-                            </svg></a></li>
-                    <li class="socials__item"><a class="socials__link" href="#">
-                            <svg class="icon">
-                            <use xlink:href="#linkedin"></use>
-                            </svg></a></li>
-                    <li class="socials__item"><a class="socials__link" href="#">
-                            <svg class="icon">
-                            <use xlink:href="#inst"></use>
-                            </svg></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- footer end-->
-</div>
-<!-- libs-->
-<script src="<?php echo base_url(); ?>assets/js/2.2.4/jquery.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/libs.min.js"></script>
-<!-- scripts-->
-<script src="<?php echo base_url(); ?>assets/js/common.min.js"></script>
+			<div class="container">
 
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap clearfix" style="z-index: 2">
+					<div class="row clearfix">
+
+						<div class="col-lg-5">
+
+							<div class="widget clearfix">
+								<div class="row clearfix">
+									<div class="col-lg-8 clearfix" style="color: #888;">
+										<img src="<?php echo base_url(); ?>assets/writer/images/logo.png" alt="Evans Logo" style="display: block;" class="bottommargin-sm">
+										<p>An evangelist, author, teacher and lyricist with uncompromising faithfulness to the Holy Scriptures.</p>
+
+										<a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-facebook">
+											<i class="icon-facebook"></i>
+											<i class="icon-facebook"></i>
+										</a>
+
+										<a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-twitter">
+											<i class="icon-twitter"></i>
+											<i class="icon-twitter"></i>
+										</a>
+
+										<a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-gplus">
+											<i class="icon-gplus"></i>
+											<i class="icon-gplus"></i>
+										</a>
+
+										<a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-pinterest">
+											<i class="icon-pinterest"></i>
+											<i class="icon-pinterest"></i>
+										</a>
+
+										<a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-vimeo">
+											<i class="icon-vimeo"></i>
+											<i class="icon-vimeo"></i>
+										</a>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-lg-7">
+							<div class="row clearfix">
+
+								<div class="col-lg-4">
+									<div class="widget widget_links app_landing_widget_link clearfix">
+										<h4>In News</h4>
+
+										<ul>
+											<li><a href="https://codex.wordpress.org/">Documentation</a></li>
+											<li><a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+											<li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
+											<li><a href="https://wordpress.org/support/">Support Forums</a></li>
+											<li><a href="https://wordpress.org/extend/themes/">Themes</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="widget widget_links app_landing_widget_link clearfix">
+										<h4>About Us</h4>
+
+										<ul>
+											<li><a href="https://codex.wordpress.org/">Documentation</a></li>
+											<li><a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+											<li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
+											<li><a href="https://wordpress.org/support/">Support Forums</a></li>
+											<li><a href="https://wordpress.org/extend/themes/">Themes</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="widget widget_links app_landing_widget_link clearfix">
+										<h4>Support</h4>
+
+										<ul>
+											<li><a href="https://codex.wordpress.org/">Documentation</a></li>
+											<li><a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+											<li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
+											<li><a href="https://wordpress.org/support/">Support Forums</a></li>
+											<li><a href="https://wordpress.org/extend/themes/">Themes</a></li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+				<div class="container">
+
+					<div class="w-100" style="z-index: 3">
+						Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
+						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+					</div>
+
+				</div>
+			</div><!-- #copyrights end -->
+
+			<div class="video-wrap" style="height: 100%;position: absolute; left: 0; top: 0; z-index: 1;">
+				<div class="video-overlay" style="background: -moz-linear-gradient(top,  rgba(30,35,42,1) 21%,, rgba(30,35,42,0) 100%); background: -webkit-linear-gradient(top,  rgba(30,35,42,1) 21%,rgba(30,35,42,0) 100%); background: linear-gradient(to bottom,  rgba(30,35,42,1) 21%,rgba(30,35,42,0) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e232a', endColorstr='#1e232a',GradientType=0 );">
+				</div>
+			</div>
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/plugins.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/writer/js/hover3d.js" ></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="<?php echo base_url(); ?>assets/js/functions.js"></script>
+
+	<script>
+
+		jQuery(document).ready( function(){
+
+			if( !jQuery('body').hasClass('device-touch') ) {
+
+				var lFollowX = 0,
+					lFollowY = 0,
+					x = 0,
+					y = 0,
+					friction = 1 / 30;
+
+				function moveBackground() {
+					x += (lFollowX - x) * friction;
+					y += (lFollowY - y) * friction;
+
+					translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+					jQuery('.move-bg').css({
+						'-webit-transform': translate,
+						'-moz-transform': translate,
+						'transform': translate
+					});
+
+					window.requestAnimationFrame(moveBackground);
+				}
+
+				jQuery(window).on('mousemove click', function(e) {
+
+					var lMouseX = Math.max(-100, Math.min(100, jQuery(window).width() / 2 - e.clientX));
+					var lMouseY = Math.max(-100, Math.min(100, jQuery(window).height() / 2 - e.clientY));
+					lFollowX = (10 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+					lFollowY = (10 * lMouseY) / 100;
+
+				});
+
+				moveBackground();
+
+				jQuery(".book-wrap").hover3d({
+					selector: ".book-card",
+					shine: false,
+				});
+
+			}
+
+		});
+
+	</script>
 
 </body>
 

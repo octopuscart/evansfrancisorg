@@ -2,373 +2,147 @@
 $this->load->view('layout/header');
 ?>
 
-<!-- header end-->
-<main class="main">
-    <!-- promo start-->
-    <div class="front-promo">
-        <div class="front-promo__layout"></div>
-        <picture>
-            <source srcset="<?php echo base_url(); ?>assets/img/promo_2.jpg" media="(min-width: 992px)"/><img class="img--bg" src="<?php echo base_url(); ?>assets/img/promo_2.jpg" alt="img"/>
-        </picture>
-        <div class="align-container">
-            <div class="align-container__item">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-7 col-xl-6">
-                            <h2 class="front-promo__title">Worldwide Shipping<span class="front-promo__overlay">Smart Tech</span></h2>
-                            <p class="front-promo__subtitle">We have been shipping cargo for our clients all over <br/>the world since more than <?php echo date("y"); ?> years</p><a class="button button--promo" href="#"><span>Explore more</span> 
-                                <svg class="icon">
-                                <use xlink:href="#arrow"></use>
-                                </svg></a>
-                        </div>
-                        <div class="col-md-7 col-lg-5 col-xl-4 offset-xl-2 top-50 top-lg-0">
-                            <form class="form promo-form" action="javascript:void(0);" autocomplete="off">
-                                <div class="fieldset">
-                                    <h6 class="promo-form__title">Request a Quote</h6>
-                                    <p class="promo-form__subtitle">Feel free to contact us</p>
-                                    <label>
-                                        <i class="icon fas fa-user"></i>
+<!-- Slider
+		============================================= -->
+		<section id="slider" class="slider-element include-header" style="background:#1E232A; height: 800px;">
+			<div class="move-bg position-absolute w-100 h-100" style="top: 0; left: 0;background: url('<?php echo base_url(); ?>assets/writer/images/hero/hero.jpg') center center no-repeat; background-size: cover;"></div>
+			<div class="vertical-middle ignore-header">
+				<div class="container dark py-5">
+					<div class="row">
+						<div class="col-lg-6 offset-lg-1 col-md-8" data-lightbox="gallery">
+							<a href="<?php echo base_url(); ?>assets/writer/images/hero/slider-book-lg.jpg" data-lightbox="gallery-item" class="slider-book-img" data-animate="fadeInUp"><img src="<?php echo base_url(); ?>assets/writer/images/hero/slider-book.png" alt="Image"></a>
+							<a href="<?php echo base_url(); ?>assets/writer/images/hero/slider-book2-lg.jpg" data-lightbox="gallery-item" class="slider-book-img" data-animate="fadeInUp" data-delay="300"><img src="<?php echo base_url(); ?>assets/writer/images/hero/slider-book2.png" alt="Image"></a>
+							<div class="emphasis-title bottommargin-sm">
+								<h1 class="400" data-animate="fadeInUp" data-delay="600">An evangelist, author, teacher and lyricist <br><span><em>Evans Francis</em></span>.</h1>
+							</div>
+							
+                                                </div>
+					</div>
+				</div>
+			</div>
 
+			<!-- Slider Video Overlay -->
+			<div class="video-wrap" style="height: 800px; position: absolute; left: 0; bottom: 0;">
+				<div class="video-overlay" style="background: -moz-linear-gradient(top,  rgba(30,35,42,0) 21%, rgba(30,35,42,0) 66%, rgba(30,35,42,1) 100%); background: -webkit-linear-gradient(top,  rgba(30,35,42,0) 21%,rgba(30,35,42,0) 66%,rgba(30,35,42,1) 100%); background: linear-gradient(to bottom,  rgba(30,35,42,0) 21%,rgba(30,35,42,0) 66%,rgba(30,35,42,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e232a', endColorstr='#1e232a',GradientType=0 );">
+				</div>
+			</div>
+		</section>
 
-                                        <input class="form__field" type="text" name="name" placeholder="Name"/>
-                                    </label>
-                                    <label>
-                                        <i class="icon fas fa-envelope"></i>
+		<!-- Content
+		============================================= -->
+		<section id="content">
 
-                                        <input class="form__field" type="text" name="from" placeholder="Email"/>
-                                    </label>
-                                    <label>
-                                        <svg class="icon">
-                                        <use xlink:href="#pin"></use>
-                                        </svg>
-                                        <input class="form__field" type="text" name="from" placeholder="From"/>
-                                    </label>
-                                    <label>
-                                        <svg class="icon">
-                                        <use xlink:href="#pin"></use>
-                                        </svg>
-                                        <input class="form__field" type="text" name="To" placeholder="To"/>
-                                    </label>
-                                    <label>
-                                        <svg class="icon">
-                                        <use xlink:href="#calendar_2"></use>
-                                        </svg>
-                                        <input class="form__field" data-toggle="datepicker" type="text" name="date" placeholder="Date"/>
-                                    </label>
-                                    <select class="form__select" name="transport">
-                                        <option data-display="Choose transport">Choose transport</option>
-                                        <option value="value">Shipping</option>
+			<div class="content-wrap pb-0" style="background-color: #1E232A;">
 
-                                    </select>
-                                </div>
-                                <input class="form__submit" type="submit" value="Send Request"/>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- promo end-->
-    <!-- section start-->
-    <section class="section">
-        <div class="container">
-            <div class="row flex-column-reverse flex-xl-row">
-                <div class="col-md-8 col-lg-7 col-xl-5 top-50 top-xl-0">
-                    <div class="counters-holder text-center text-sm-left"><img class="img--bg" src="<?php echo base_url(); ?>assets/img/map_back.png" alt="img"/>
-                        <div class="row offset-50">
-                            <div class="col-12">
-                                <div class="counter counter--white">
-                                    <div class="counter__top"><span class="js-counter counter__count color--green"><?php echo date("y"); ?></span><span class="counter__subject color--green">yrs</span></div>
-                                    <div class="counter__lower"><span class="counter__details color--lgray">Experience in transportation</span></div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="counter counter--white">
-                                    <div class="counter__top"><span class="js-counter counter__count color--green">500</span><span class="counter__subject color--green">+</span></div>
-                                    <div class="counter__lower"><span class="counter__details color--lgray">Skilled drivers in our fleet</span></div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="counter counter--white">
-                                    <div class="counter__top"><span class="js-counter counter__count color--green">2</span><span class="counter__subject color--green">billion</span></div>
-                                    <div class="counter__lower"><span class="counter__details color--lgray">Milles driven per year</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 offset-xl-1">
-                    <div class="heading bottom-20"><span class="heading__pre-title">About Smart Tech</span>
-                        <h3 class="heading__title">The Best Transportation Company in Hong Kong</h3><span class="heading__layout">About</span>
-                    </div>
-                    <p>In 1995 we started our business from Pak-Afghan Forwarders International Company as a forwarders company. The fast growing market took us one step further in business. Later on, in 2000 we establish Smart Tech  Logistics (HK) Ltd and made the Pak-Afghan Forwarders International a sub-company of Smart Tech  Logistics (HK) Ltd.</p>
-                    <p>At the beginning, its business was mainly shipping from Hong Kong to all over the world, but afterward, we expanded our business and now we have a number of agents in different countries, so that we can keep up with the rapid expansion of our business and provide excellent service to our clients.</p>
-                    <p class="bottom-40"><strong>Smart Tech  has more than <?php echo date("y"); ?> years of experience in Shipping, Transportation and Logistics. We guarantee our customer reliable service and support.</strong></p><a class="button button--green" href="#"><span>More about</span> 
-                        <svg class="icon">
-                        <use xlink:href="#arrow"></use>
-                        </svg></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- section end-->
-    <!-- section start-->
-    <section class="section pb-0 services_2 bg--lgray">
-        <div class="container bottom-70">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="heading"><span class="heading__pre-title">Services</span>
-                        <h3 class="heading__title">Transporterium Services</h3><span class="heading__layout layout--lgray">Services</span>
-                    </div>
-                </div>
-                <div class="col-lg-8 top-20 top-lg-0">
-                    <p class="bottom-0">
-                        <strong>Smart Tech  has more than <?php echo date("y"); ?> years of experience in Shipping</strong>, Transportation and Logistics. We guarantee our customer reliable service and support.
-                    </p><a class="button button--green d-none d-lg-inline-block top-30 top-lg-none" href="#"><span>All services</span> 
-                        <svg class="icon">
-                        <use xlink:href="#arrow"></use>
-                        </svg></a>
-                </div>
-            </div>
-        </div>
-        <div class="container container--wide">
-            <div class="row offset-50">
+				<!-- Latest All Books
+				============================================= -->
+				<div class="section p-0 m-0" style="background: url('<?php echo base_url(); ?>assets/writer/images/section/bg1.jpg') center center no-repeat; background-size: cover;">
 
-                <div class="col-md-6 col-xl-3">
-                    <div class="img-box">
-                        <div class="img-box__overlay"></div>
-                        <div class="img-box__text-layout">Transporterium Services</div><img class="img--bg" src="<?php echo base_url(); ?>assets/img/box_4.jpg" alt="img"/>
-                        <div class="img-box__details">
-                            <h5 class="img-box__title"><a href="#">Shipping</a></h5>
-                            <div class="img-box__count">01</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3">
-                    <div class="img-box">
-                        <div class="img-box__overlay"></div>
-                        <div class="img-box__text-layout">Transporterium Services</div><img class="img--bg" src="<?php echo base_url(); ?>assets/img/box_3.jpg" alt="img"/>
-                        <div class="img-box__details">
-                            <h5 class="img-box__title"><a href="#">Forwarders</a></h5>
-                            <div class="img-box__count">02</div>
-                        </div>
-                    </div>
-                </div>
+					<div class="container clearfix">
 
-                <div class="col-md-6 col-xl-3">
-                    <div class="img-box">
-                        <div class="img-box__overlay"></div>
-                        <div class="img-box__text-layout">Transporterium Services</div><img class="img--bg" src="<?php echo base_url(); ?>assets/img/box_1.jpg" alt="img"/>
-                        <div class="img-box__details">
-                            <h5 class="img-box__title"><a href="#">Transportation</a></h5>
-                            <div class="img-box__count">03</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3">
-                    <div class="img-box">
-                        <div class="img-box__overlay"></div>
-                        <div class="img-box__text-layout">Transporterium Services</div><img class="img--bg" src="<?php echo base_url(); ?>assets/img/box_2.jpg" alt="img"/>
-                        <div class="img-box__details">
-                            <h5 class="img-box__title"><a href="#">Selling Cranes</a></h5>
-                            <div class="img-box__count">04</div>
-                        </div>
-                    </div>
-                </div>
+						<div class="row clearfix">
+							<div class="col-lg-5 offset-lg-1">
+								<img src="<?php echo base_url(); ?>assets/writer/images/section/2.png" alt="Book Mockup" style="margin-top: 10px;">
+							</div>
+							<div class="col-lg-5 offset-lg-1">
+								<h3 class="color fw-normal" style="font-size: 36px;">About  Evans</h3>
+								<p class="dark lead">
+									An evangelist, author, teacher and lyricist with uncompromising faithfulness to the Holy Scriptures, Evans brings clarity to the message needed for the Body of Christ to uncover the unseen riches in God's word.
+								</p>
+								<a href="#" class="button button-large button-white button-light text-capitalize button-rounded">Read More</a>
+							</div>
+						</div>
 
+						<div class="clear topmargin-sm bottommargin-lg"></div>
 
-            </div>
-        </div>
-        <div class="container top-50 d-block d-lg-none">
-            <div class="row">
-                <div class="col-12 text-center"><a class="button button--green" href="#"><span>All services</span> 
-                        <svg class="icon">
-                        <use xlink:href="#arrow"></use>
-                        </svg></a></div>
-            </div>
-        </div>
-    </section>
-    <!-- section end-->
+				
 
+					</div>
 
-    <!-- section start-->
-    <section class="section front-gallery">
-        <div class="container">
-            <div class="row align-items-end bottom-70">
-                <div class="col-lg-8">
-                    <div class="heading"><span class="heading__pre-title">Gallery</span>
-                        <h3 class="heading__title">Our stunning gallery</h3>
-                        <p class="heading__text">A collection of a number of pictures of Smart-Tech Logistics in action. </p><span class="heading__layout">Gallery</span>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-right d-none d-lg-block"><a class="button button--green" href="#"><span>View all gallery</span> 
-                        <svg class="icon">
-                        <use xlink:href="#arrow"></use>
-                        </svg></a>
-                </div>
-            </div>
-        </div>
-        <div class="gallery">
-            <div class="row no-gutters">
-                <?php
-                $galleryimage = [
-                    "stl-gallery1.jpg",
-                    "stl-gallery2.jpg",
-                    "stl-gallery3.jpg",
-                    "stl-gallery4.jpg",
-                    "stl-gallery5.jpg",
-                    "stl-gallery6.jpg",
-                    "stl-gallery7.jpg",
-                    "stl-gallery8.jpg",
-                ];
-                foreach ($galleryimage as $key => $value) {
-                    ?>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <a class="gallery__item" href="<?php echo base_url(); ?>assets/gallery/<?php echo $value; ?>" data-fancybox="gallery">
-                            <span class="overlay"></span>
-                            <img class="img--bg" src="<?php echo base_url(); ?>assets/gallery/<?php echo $value; ?>" alt="img"/>
-                        </a>
-                    </div>
-                    <?php
-                }
-                ?>
-            </div>
-            <div class="row top-50 d-block d-lg-none">
-                <div class="col-12 text-center"><a class="button button--green" href="#"><span>View all gallery</span> 
-                        <svg class="icon">
-                        <use xlink:href="#arrow"></use>
-                        </svg></a>
-                </div>
-            </div>
-        </div>
-    </section>
+					<div class="dark subscribe-widget center topmargin-sm" style="background-color: rgba(0,0,0,.25); padding: 80px 0;">
+						<div class="container clearfix">
+							<div class="mx-auto" style="max-width: 600px;">
+								<div class="heading-block center border-bottom-0">
+									<h3 class="fw-normal nott" style="font-size: 40px;">Stay Tuned for Updates</h3>
+									<span class="font-primary" style="font-size: 17px; color: #666;">I send thoughtful and caring emails</span>
+								</div>
+								<div class="widget-subscribe-form-result"></div>
+								<form id="widget-subscribe-form" action="http://themes.semicolonweb.com/html/canvas/include/subscribe.php" method="post" class="mb-0">
+									<div class="input-group mx-auto">
+										<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control form-control-lg not-dark required email" placeholder="Enter your Email" style="border-top-left-radius: 23px; border-bottom-left-radius: 23px;">
+										<button class="btn btn-lg bg-color" type="submit" style="border-top-right-radius: 23px; border-bottom-right-radius: 23px;">Subscribe</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
 
-    <!-- section start-->
-    <section class="section bg--lgray">
-        <div class="container">
-            <div class="row align-items-end bottom-60">
-                <div class="col-lg-12 col-xl-12">
-                    <div class="heading"><span class="heading__pre-title">Features</span>
-                        <h3 class="heading__title">Powerfull Features of <span class="color--green">Smart Tech  </span> Logistics</h3><span class="heading__layout layout--lgray">Features</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row offset-50">
+					<div class="video-wrap" style=" height: auto; position: absolute; left: 0; bottom: 0; z-index:1;">
+						<div class="video-overlay" style="background: -moz-linear-gradient(top,  rgba(30,35,42,1) 21%,, rgba(30,35,42,0) 100%); background: -webkit-linear-gradient(top,  rgba(30,35,42,1) 21%,rgba(30,35,42,0) 100%); background: linear-gradient(to bottom,  rgba(30,35,42,1) 21%,rgba(30,35,42,0) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e232a', endColorstr='#1e232a',GradientType=0 );">
+						</div>
+					</div>
 
-                <div class="col-sm-4 col-lg-4">
-                    <div class="icon-item">
-                        <div class="icon-item__img">
-                            <svg class="icon">
-                            <use xlink:href="#support"></use>
-                            </svg>
-                        </div>
-                        <h6 class="icon-item__title">Support 24/7</h6>
-                        <p class="icon-item__text"> We always maintain close and effective 24/7 communication with clients </p>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-lg-4">
-                    <div class="icon-item">
-                        <div class="icon-item__img">
-                            <svg class="icon">
-                            <use xlink:href="#location"></use>
-                            </svg>
-                        </div>
-                        <h6 class="icon-item__title">Online Tracking</h6>
-                        <p class="icon-item__text">Fast delivery and real-time parcel tracking capabilities. </p>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-lg-4">
-                    <div class="icon-item">
-                        <div class="icon-item__img">
-                            <svg class="icon">
-                            <use xlink:href="#insurance"></use>
-                            </svg>
-                        </div>
-                        <h6 class="icon-item__title">Logistics Guarantee</h6>
-                        <p class="icon-item__text">
-                            We guarantee our customer reliable service and support.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- section end-->
+				</div>
 
-    <!-- section start-->
-    <section class="section testimonials y">
-        <div class="testimonials__bg"><img class="section--bg t50 r0" src="<?php echo base_url(); ?>assets/img/testimonials-bg.png" alt="img"/></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="heading heading--white"><span class="heading__pre-title">Leading Logistics Company</span>
-                        <h3 class="heading__title">Director's  <span class="color--green">Message</span> </h3><span class="heading__layout layout--dgray"></span>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
+				<!-- Testimonials
+				============================================= -->
+				<div id="section-testimonial" class="section m-0 center" style="background: url('<?php echo base_url(); ?>assets/writer/images/section/bg2.jpg') center center no-repeat; background-size: cover; padding: 100px 0;">
+					<div class="container clearfix">
 
-                    <div class="testimonials__nav"></div><img class="testimonials__img" src="<?php echo base_url(); ?>assets/images/director.jpeg" alt="img"/>
-                </div>
-                <div class="col-lg-6 ">
-                    <div class="testimonials-slider" style="    margin-top: 100px;">
-                        <div class="testimonials-slider__item">
-                            <p>We started very small but due to the hardwork of my team, we have reached an international status.</p>
-                            <p>We have always provided quality services to our clients and have never looked at the companies we do business with just as our clients rather as our partners and it has benefitted us a lot. </p>
-                            <p>   Now our goal is to become one of the leading logistics company in the world.</p>
-                            <div class="testimonials-slider__author"><img src="<?php echo base_url(); ?>assets/img/quotes.png" alt="img"/>
-                                <h6>Director</h6><span>Smart Tech Logistics (HK) Ltd</span>
-                            </div>
-                        </div>
+						<div class="heading-block border-bottom-0">
+							<i class="icon-book3 i-plain i-large mx-auto center"></i>
+							<h3 class="nott fw-normal ls0" style="font-size: 36px;">Reader's Feedback</h3>
+						</div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- section end-->
+					</div>
 
-    <!-- section start-->
-    <section class="section">
-        <div class="container">
-            <div class="row flex-column-reverse flex-xl-row align-items-end2">
-                <div class="col-xl-5 top-20 top-xl-0">
-                    <div class="heading bottom-20"><span class="heading__pre-title">Our World Wide</span>
-                        <h3 class="heading__title">Clients</h3>
-                    </div>
-                    <p class="bottom-0">
-                        Other than Hong Kong we have a number of clients in the following countries
-                    </p>
-                    <div class="row top-20">
-                        <div class="col-sm-6 col-lg-6 col-xl-6">
+					<div class="fslider testimonial testimonial-full writer-feedback bg-transparent border-0 shadow-none" data-animation="fade" data-arrows="false" style="max-width: none;">
+						<div class="flexslider">
+							<div class="slider-wrap mx-auto" style="max-width: 650px;">
+								<div class="slide">
+									<div class="testi-image">
+										<a href="#"><img src="images/testimonials/3.jpg" alt="Customer Testimonails"></a>
+									</div>
+									<div class="testi-content">
+										<p>Similique fugit repellendus expedita excepturi iure provident quia eaque. Repellendus, vero numquam?</p>
+										<div class="testi-meta">
+											Steve Jobs
+											<span>Apple Inc.</span>
+										</div>
+									</div>
+								</div>
+								<div class="slide">
+									<div class="testi-image">
+										<a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
+									</div>
+									<div class="testi-content">
+										<p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
+										<div class="testi-meta">
+											Collis Ta'eed
+											<span>Envato Inc.</span>
+										</div>
+									</div>
+								</div>
+								<div class="slide">
+									<div class="testi-image">
+										<a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
+									</div>
+									<div class="testi-content">
+										<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
+										<div class="testi-meta">
+											John Doe
+											<span>XYZ Inc.</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                            <ul class="list list--check list--reset">
-                                <li class="list__item">Pakistan</li>
-                                <li class="list__item">Dubai</li>
-                                <li class="list__item">India</li>
-                                <li class="list__item">Philippines</li>
+					</div>
 
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 col-lg-6 col-xl-6">
-
-                            <ul class="list list--check list--reset">
-
-                                <li class="list__item">Thailand</li>
-                                <li class="list__item">Afghanistan</li>
-                                <li class="list__item">Iran</li>
-                                <li class="list__item">Cambodia</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-xl-7 text-center text-xl-left"><img class="truck-img" src="<?php echo base_url(); ?>assets/img/sea.png" style="width:100%" alt="img"/></div>
-            </div>
-        </div>
-    </section>
-    <!-- section end-->
-</main>
+				</div>
+			</div>
+		</section><!-- #content end -->
 
 <?php
 $this->load->view('layout/footer');
