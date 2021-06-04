@@ -95,8 +95,8 @@
                             <nav class="primary-menu not-dark col-lg-auto order-lg-3">
 
                                 <ul class="menu-container justify-content-lg-end">
-                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("piller-of-fire"); ?>"><div>Pillar of Fire </div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("piller-of-cloud"); ?>"><div>Pillar of Cloud </div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("pillar-of-fire"); ?>"><div>Pillar of Fire </div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("pillar-of-cloud"); ?>"><div>Pillar of Cloud </div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="<?php echo site_url("love-offering"); ?>"><div>Love Offering </div></a></li>
 
                                 </ul>
