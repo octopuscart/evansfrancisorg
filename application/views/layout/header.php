@@ -81,12 +81,12 @@
                             <nav class="primary-menu not-dark col-lg-auto order-lg-1">
 
                                 <ul class="menu-container">
-                                    <li class="menu-item"><a class="menu-link" href=""><div>Home</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href=""><div>About</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href=""><div>Books</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href=""><div>Apps</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href=""><div>Invite</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href=""><div>Contact Us</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("/")?>"><div>Home</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("about-us"); ?>"><div>About</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" target="_blank" href="https://www.evansfrancisbooks.com/"><div>Books</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" target="_blank" href="https://christianappdevelopers.com/"><div>Apps</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("invite"); ?>"><div>Invite</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("contact-us"); ?>"><div>Contact Us</div></a></li>
 
                                 </ul>
 
@@ -95,9 +95,9 @@
                             <nav class="primary-menu not-dark col-lg-auto order-lg-3">
 
                                 <ul class="menu-container justify-content-lg-end">
-                                    <li class="menu-item"><a class="menu-link" href=""><div>Pillar of Fire </div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href=""><div>Pillar of Cloud </div></a></li>
-                                    <li class="menu-item"><a class="menu-link" href=""><div>Love Offering </div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("piller-of-fire"); ?>"><div>Pillar of Fire </div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("piller-of-cloud"); ?>"><div>Pillar of Cloud </div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("love-offering"); ?>"><div>Love Offering </div></a></li>
 
                                 </ul>
 

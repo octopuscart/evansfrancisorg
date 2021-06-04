@@ -1,83 +1,102 @@
 <?php
 $this->load->view('layout/header');
-?>
-<!-- Slider -->
-<section class="sub-bnr" data-stellar-background-ratio="0.5">
-    <div class="position-center-center">
-        <div class="container">
-            <h4>About us</h4>
+?><!-- Slider
+============================================= -->
+<section id="slider" class="slider-element include-header" style="background:#1E232A; height: 450px;">
+    <div class="move-bg position-absolute w-100 h-100" style="top: 0; left: 0; background: url('<?php echo base_url(); ?>assets/writer/images/quick-view/1.jpg') center 30% no-repeat; background-size: cover;"></div>
+    <div class="vertical-middle center">
+        <div class="container dark clearfix">
+            <div class="entry-title">
+                <h2 style="font-size: 44px;" class="mb-1 nott">About Evans</h2>
+            </div>
+            
+        </div>
+    </div>
 
-            <!-- Breadcrumb -->
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">About</li>
-            </ol>
+    <!-- Slider Video Overlay -->
+    <div class="video-wrap" style="height: 450px; position: absolute; left: 0; bottom: 0;">
+        <div class="video-overlay" style="background: -moz-linear-gradient(top,  rgba(30,35,42,0) 21%, rgba(30,35,42,0) 66%, rgba(30,35,42,1) 66%); background: -webkit-linear-gradient(top,  rgba(30,35,42,0) 21%,rgba(30,35,42,0) 66%,rgba(30,35,42,1) 66%); background: linear-gradient(to bottom,  rgba(30,35,42,0) 21%,rgba(30,35,42,0) 66%,rgba(30,35,42,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e232a', endColorstr='#1e232a',GradientType=0 );">
         </div>
     </div>
 </section>
 
-<!-- Content -->
-<div id="content"> 
+<!-- Content
+============================================= -->
+<section id="content">
+    <div class="content-wrap pt-0" style="background-color: #1E232A;">
 
-    <!-- About Sec -->
-    <section class="about-ser pad-t-b-130" style='padding-bottom: 10px;'>
-        <div class="container"> 
+        <!-- Latest All Books
+        ============================================= -->
+        <div class="section dark pb-0 m-0 bg-transparent">
+            <div class="container clearfix">
 
-            <!-- Heading -->
-           <div class="heading-block margin-bottom-20">
-                <h4>- Costco International integration with Costco International Connections - </h4>
-                <h2>MULTI SOLUTION COMPANY</h2>
+                <div class="row gutter-40 col-mb-80">
+                    <!-- Post Content
+                    ============================================= -->
+                    <div class="postcontent col-lg-5">
+                          <div class="single-post mb-0">
+
+                            <!-- Single Post
+                            ============================================= -->
+                            <div class="entry clearfix">
+
+                                <!-- Entry Content
+                                ============================================= -->
+                                <div class="entry-content clearfix">
+
+                                    <img src="<?php echo base_url(); ?>assets/writer/images/section/2.png" alt="Evans Neha" class="alignleft" width="350">
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="postcontent col-lg-7">
+
+                        <div class="single-post mb-0">
+
+                            <!-- Single Post
+                            ============================================= -->
+                            <div class="entry clearfix">
+
+                                <!-- Entry Content
+                                ============================================= -->
+                                <div class="entry-content clearfix">
+
+
+                                    <p>
+                                        An evangelist, author, teacher and lyricist with uncompromising faithfulness to the Holy Scriptures, Evans brings clarity to the message needed for the Body of Christ to uncover the unseen riches in God's word.
+                                    </p>
+                                    <p>
+                                        Born in a village called Mukerian, Punjab, India, in 1988, Evans began his evangelistic career at a very tender age of nineteen. Despite many hurdles, challenges, and obstacles, Evans did not deviate from his work but continued to follow the path God gave him through vision and calling.
+                                    </p>
+                                    
+                                    <p>
+                                        On 18th July 2017, Evans got married to Neha, who was born and brought up in Bhilai, Chattisgarh, and together they are fulfilling the call they have upon their lives travelling around the globe.
+                                    </p>
+                                    <p>
+                                        Evans has established churches, teach and preach the Word of God and is busy bringing many to the Kingdom of God. Evans has written and composed a number of biblical books and songs. Evans shares the Word of God through his YouTube channel name "Evans Francis", and millions have viewed his videos till date. Without any fear, he shares the dreams, visions and messages that God gives him for the body of Christ.
+                                    </p>
+                                    
+                                    <p>
+                                        Evans uncompromisingly stresses on correct interpretation, understanding and application of the Word of God as it should be by each individual being a New Testament believer.
+                                    </p>
+                                    
+                                    
+                                </div>
+                            </div><!-- .entry end -->
+
+
+                        </div>
+
+                    </div><!-- .postcontent end -->
+
+        
+                </div>
+
             </div>
-            <div class="intro-small col-md-10 center-auto">
-<div class="entry-content">
-                    <p>Costco International means “Long Term Immortal Relationships”. It also defines a mathematical equation for algebraic parenthesis which denotes the technical excellence and the domain strength of our team.<br>
-                        The greatest strength of a company profile preparation is that it makes an emotional as well as a logical connection with our customers by communicating with them in a way that leads them to value and trust our brand. The result: loyal customers, great enhancement of each customer’s lifetime value and our long-term profitable core relationship.<br>
-                        We are an IT Products and Services company wherein all our business and technology decisions are driven by a long term view of our customers’ needs. Designed using open technologies, our products bring down the “Total Cost of Ownership” significantly. Our services focus on bringing predictability to outcomes in terms of business process improvements and timely project deliveries. With a strong focus on Retail, Consumer Goods and Logistics industries, we are creating strategic long term relationships with our customers, making a difference to them through our offices in over 15 countries across US, Europe and Asia.</p>
-                    <p>Costco International is an independent consulting and software development company that specializes in the systems analysis, design and implementation of technical software. Costco International has been established to service the needs of clients who need complex analytical expertise or software developed that requires detailed technical expertise, typically for optimization, scheduling and the analysis and visualization of data applications.<br>
-                        </p>
-                </div><!-- .entry-content -->            </div>
-          
+
         </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services serv-info">
-        <ul class="row no-margin">
-            <!-- Digital Art -->
-            <li class="col-md-4">
-                <div class="ser-inn">
-                    <h4>Our Philosopgy</h4>
-                    <p>We provides a broad, deep spectrum of technology<br/> services to help organizations translate their strategic business agendas into IT initiatives and solutions <br/>that measurably improve performance.</p>
-                    <a href="#." class="btn btn-dark btn-small">DISCOVER</a> </div>
-            </li>
-
-            <!-- Backend Solutions -->
-            <li class="col-md-4">
-                <div class="ser-inn">
-                    <h4>Our Value</h4>
-                    <p>The greatest strength of a company profile preparation is that it makes an emotional as well as a logical connection with our customers by communicating with them in a way that leads them to value and trust our brand.</p>
-                    <a href="#." class="btn btn-dark btn-small">DISCOVER</a> </div>
-            </li>
-
-            <!-- Industrial design -->
-            <li class="col-md-4">
-                <div class="ser-inn">
-                    <h4>Our Business</h4>
-                    <p>Costco International means “Long Term Immortal Relationships”. It also defines a mathematical equation for algebraic parenthesis which denotes the technical excellence and the domain strength of our team.</p>
-                               <a href="#." class="btn btn-dark btn-small">DISCOVER</a> </div>
-
-                        </li>
-
-           
-        </ul>
-    </section>
-
-
-
-
-
-
-</div>
+    </div>
+</section><!-- #content end -->
 
 <?php
 $this->load->view('layout/footer');
