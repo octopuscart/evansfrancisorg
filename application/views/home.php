@@ -49,7 +49,7 @@ $this->load->view('layout/header');
                         <p class="dark lead">
                             An evangelist, author, teacher and lyricist with uncompromising faithfulness to the Holy Scriptures, Evans brings clarity to the message needed for the Body of Christ to uncover the unseen riches in God's word.
                         </p>
-                        <a href="#" class="button button-large text-capitalize button-rounded">Read More</a>
+                        <a href="<?php echo site_url("about-us");?>" class="button button-large text-capitalize button-rounded">Read More</a>
                     </div>
                 </div>
 
