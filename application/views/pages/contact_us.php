@@ -79,19 +79,39 @@ $this->load->view('layout/header');
                                     <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
                                 </div>
 
-                                <div class="col-12 form-group">
-                                    <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
+                                <div class="col-sm-6 form-group">
+
+                                    <div class="captchaarea" >
+                                        <div class="input-group divcenter">
+                                            <div class="input-group-prepend">
+
+                                                <img src="<?php echo site_url("Pages/createCaptha/contact_us");?>" id="captchaimg" style="height: fit-content;"> 
+
+                                            </div>
+
+                                            <input type="text" id="widget-subscribe-form-email2" name="captcha" class="form-control required email" required="" placeholder="Type Here">
+
+                                        </div>
+
+                                        <small class="details">Can't read the image? <span  type="button" onclick="refreshCaptcha()" style="color:yellow;cursor:pointer;">click here</span> to refresh</small>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-sm-6 form-group">
+                                    <button class="button button-rounded button-large m-0 " style="float: right" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
                                 </div>
                             </div>
-
-                            <input type="hidden" name="prefix" value="template-contactform-">
-
-                        </form>
                     </div>
+
+                    <input type="hidden" name="prefix" value="template-contactform-">
+
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </section><!-- #content end -->
 
 

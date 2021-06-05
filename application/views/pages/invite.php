@@ -9,7 +9,9 @@ $this->load->view('layout/header');
     <div class="vertical-middle">
         <div class="container dark center">
             <h2 style="font-size: 44px;" class="mb-0 nott">Invite Evans Francis</h2>
-
+            <p>
+                If you like to invite Evans for a conference, kindly fill the below form, and we will get back to you shortly. Evans' mission is to minister the Word of Faith by teaching believers who they are in Christ Jesus, taking them from the milk of the Word to the meat and from religion to reality.
+            </p>
         </div>
     </div>
 
@@ -126,8 +128,27 @@ $this->load->view('layout/header');
                                 <div class="col-12 form-group d-none">
                                     <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
                                 </div>
+                                <hr/>
+                                <div class="col-sm-6 form-group">
 
-                                <div class="col-12 form-group">
+                                    <div class="captchaarea" >
+                                        <div class="input-group divcenter">
+                                            <div class="input-group-prepend">
+
+                                                <img src="<?php echo site_url("Pages/createCaptha/invite"); ?>" id="captchaimg" style="height: fit-content;"> 
+
+                                            </div>
+
+                                            <input type="text" id="widget-subscribe-form-email2" name="captcha" class="form-control required email" required="" placeholder="Type Here">
+
+                                        </div>
+
+                                        <small class="details">Can't read the image? <span  type="button" onclick="refreshCaptcha()" style="color:yellow;cursor:pointer;">click here</span> to refresh</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 form-group"></div>
+
+                                <div class="col-sm-12 form-group">
                                     <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Submit</button>
                                 </div>
                             </div>

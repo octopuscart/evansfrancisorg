@@ -69,7 +69,7 @@ $this->load->view('layout/header');
 
                                 <div class="row">
 
-                                    
+
                                     <div class="col-sm-6 form-group">
                                         <label class="nott" for="template-contactform-name">First Name<small>*</small></label>
                                         <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
@@ -78,8 +78,8 @@ $this->load->view('layout/header');
                                         <label class="nott" for="template-contactform-name">Last Name<small>*</small></label>
                                         <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
                                     </div>
-                                    
-                                    
+
+
                                     <div class="col-sm-12 form-group">
                                         <label class="nott" for="template-contactform-email">Email <small>*</small></label>
                                         <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
@@ -91,7 +91,7 @@ $this->load->view('layout/header');
                                         <label class="nott" for="template-contactform-phone">Contact No.</label>
                                         <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
                                     </div>
-                                 <div class="col-sm-6 form-group">
+                                    <div class="col-sm-6 form-group">
                                         <label class="nott" for="template-contactform-email">Amount<small>*</small></label>
                                         <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
                                     </div>
@@ -99,11 +99,29 @@ $this->load->view('layout/header');
                                         <label class="nott" for="template-contactform-name">Country<small>*</small></label>
                                         <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
                                     </div>
-                                    
+
                                     <div class="col-12 form-group d-none">
                                         <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
                                     </div>
+                                    <hr/>
+                                    <div class="col-sm-8 form-group">
 
+                                        <div class="captchaarea" >
+                                            <div class="input-group divcenter">
+                                                <div class="input-group-prepend">
+
+                                                    <img src="<?php echo site_url("Pages/createCaptha/pillar_of_fire"); ?>" id="captchaimg" style="height: fit-content;"> 
+
+                                                </div>
+
+                                                <input type="text" id="widget-subscribe-form-email2" name="captcha" class="form-control required email" required="" placeholder="Type Here">
+
+                                            </div>
+
+                                            <small class="details">Can't read the image? <span  type="button" onclick="refreshCaptcha()" style="color:yellow;cursor:pointer;">click here</span> to refresh</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 form-group"></div>
                                     <div class="col-12 form-group">
                                         <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Submit</button>
                                     </div>

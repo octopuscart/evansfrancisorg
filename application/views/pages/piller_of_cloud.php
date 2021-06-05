@@ -105,7 +105,25 @@ $this->load->view('layout/header');
                                     <div class="col-12 form-group d-none">
                                         <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
                                     </div>
+                                    <hr/>
+                                    <div class="col-sm-8 form-group">
 
+                                        <div class="captchaarea" >
+                                            <div class="input-group divcenter">
+                                                <div class="input-group-prepend">
+
+                                                    <img src="<?php echo site_url("Pages/createCaptha/pillar_of_cloud"); ?>" id="captchaimg" style="height: fit-content;"> 
+
+                                                </div>
+
+                                                <input type="text" id="widget-subscribe-form-email2" name="captcha" class="form-control required email" required="" placeholder="Type Here">
+
+                                            </div>
+
+                                            <small class="details">Can't read the image? <span  type="button" onclick="refreshCaptcha()" style="color:yellow;cursor:pointer;">click here</span> to refresh</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 form-group"></div>
                                     <div class="col-12 form-group">
                                         <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Submit</button>
                                     </div>

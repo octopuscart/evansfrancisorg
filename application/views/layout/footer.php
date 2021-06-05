@@ -22,7 +22,7 @@
                                     <i class="icon-facebook"></i>
                                 </a>
                                 &nbsp;
-                                <a href="ttps://www.instagram.com/evansfrancis831" target="_blank" class="social-icon si-small si-borderless si-colored si-rounded si-vimeo">
+                                <a href="https://www.instagram.com/evansfrancis831" target="_blank" class="social-icon si-small si-borderless si-colored si-rounded si-vimeo">
                                     <i class="icon-instagram"></i>
                                     <i class="icon-instagram"></i>
                                 </a>
@@ -101,7 +101,7 @@
     </div><!-- #copyrights end -->
 
     <div class="video-wrap" style="height: 100%;position: absolute; left: 0; top: 0; z-index: 1;">
-        <div class="video-overlay" style="background: -moz-linear-gradient(top,  rgba(30,35,42,1) 21%,, rgba(30,35,42,0) 100%); background: -webkit-linear-gradient(top,  rgba(30,35,42,1) 21%,rgba(30,35,42,0) 100%); background: linear-gradient(to bottom,  rgba(30,35,42,1) 21%,rgba(30,35,42,0) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e232a', endColorstr='#1e232a',GradientType=0 );">
+        <div class="video-overlay" style="background: -moz-linear-gradient(top,  rgba(30,35,42,1) 21%, rgba(30,35,42,0) 100%); background: -webkit-linear-gradient(top,  rgba(30,35,42,1) 21%,rgba(30,35,42,0) 100%); background: linear-gradient(to bottom,  rgba(30,35,42,1) 21%,rgba(30,35,42,0) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e232a', endColorstr='#1e232a',GradientType=0 );">
         </div>
     </div>
 
@@ -122,6 +122,22 @@
 <!-- Footer Scripts
 ============================================= -->
 <script src="<?php echo base_url(); ?>assets/js/functions.js"></script>
+
+<style>
+    #captchaimg{
+        height: fit-content;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+</style>
+
+<script>
+    function refreshCaptcha()
+    {
+        var img = document.images['captchaimg'];
+        img.src = img.src;
+    }
+</script>
 
 <script>
 
