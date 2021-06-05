@@ -13,7 +13,7 @@ $this->load->view('layout/header');
                     <a href="<?php echo base_url(); ?>assets/writer/images/hero/slider-book-lg.jpg" data-lightbox="gallery-item" class="slider-book-img" data-animate="fadeInUp"><img src="<?php echo base_url(); ?>assets/writer/images/hero/slider-book.png" alt="Image"></a>
                     <a href="<?php echo base_url(); ?>assets/writer/images/hero/slider-book2-lg.jpg" data-lightbox="gallery-item" class="slider-book-img" data-animate="fadeInUp" data-delay="300"><img src="<?php echo base_url(); ?>assets/writer/images/hero/slider-book2.png" alt="Image"></a>
                     <div class="emphasis-title bottommargin-sm">
-                        <h1 class="400" data-animate="fadeInUp" data-delay="600">An evangelist, author, teacher and lyricist <br><span></span></h1>
+                        <h1 class="400" data-animate="fadeInUp" data-delay="600">An evangelist, author, teacher and lyricist. <br><span></span></h1>
                     </div>
 
                 </div>
@@ -49,7 +49,7 @@ $this->load->view('layout/header');
                         <p class="dark lead">
                             An evangelist, author, teacher and lyricist with uncompromising faithfulness to the Holy Scriptures, Evans brings clarity to the message needed for the Body of Christ to uncover the unseen riches in God's word.
                         </p>
-                        <a href="#" class="button button-large button-white button-light text-capitalize button-rounded">Read More</a>
+                        <a href="#" class="button button-large text-capitalize button-rounded">Read More</a>
                     </div>
                 </div>
 
