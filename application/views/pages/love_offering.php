@@ -4,7 +4,40 @@ $this->load->view('layout/header');
 $paymentlinks = array(
 );
 ?>
+<style>
+    .swal2-image{
+        border-radius: 50%;
+    }
+    .font-12{
+        font-size: 12px;
+    }
 
+    .swal-subtitle{
+        margin-bottom: 5px;
+        float: left;
+        width: 100%;
+    }
+    .swal-table{
+        width: 100%;
+    }
+
+    .swal-table tr td:first{
+        text-align: right;
+    }
+    .swal-table td{
+        text-align: left;
+    }
+    
+    .loveofferingicon .card-header{
+        font-size: 15px;
+    }
+    .loveofferingicon .author-image{
+       width: 100%;
+    margin: 0;
+    float: inherit;
+    display: inline-block;
+    }
+</style>
 <!-- Slider
                 ============================================= -->
 <section id="slider" class="slider-element include-header" style="background:#1E232A; height: 450px;">
@@ -53,61 +86,43 @@ $paymentlinks = array(
                 <hr/>
                 <div class="row">
                     <div class="col-md-3"></div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header " style="font-size: 20px"><strong> <a href="#">PayPal</a></strong></div>
-                            <div class="card-body text-lg-start">
-                                <div class="author-image">
-                                    <img src="<?php echo base_url(); ?>assets/writer/images/paypal.jpg" alt="Image" class="rounded-circle">
-                                </div>
-                                <a href="https://www.paypal.me/evansfrancis" target="_blank" class="text-light">www.paypal.me/evansfrancis</a>
-                                <br/> alanalex138@gmail.com
+                    <div class="col-md-6 row">
+                        <div class="card loveofferingicon col-sm-3">
+                            <div class="card-header text-center" ><strong> <a href="#">PayPal</a></strong></div>
+                            <div class="author-image" onclick="paypal()">
+                                <img src="<?php echo base_url(); ?>assets/writer/images/paypal.jpg" alt="Image" class="rounded-circle">
                             </div>
-                        </div>
-                        <hr/>
-                        <div class="card">
-                            <div class="card-header " style="font-size: 20px"><strong> <a href="#">Google Pay</a></strong></div>
-                            <div class="card-body text-lg-start">
-                                <div class="author-image">
-                                    <img src="<?php echo base_url(); ?>assets/writer/images/gpay.jpg" alt="Image" class="rounded-circle">
-                                </div>
-                                <a href="#" target="_blank" class="text-light">evansfrancis333@oksbi
-                                </a>
-                                <br/> You can send your love offering via GPay
 
-                            </div>
-                        </div>
-                        <hr/>
-                        <div class="card">
-                            <div class="card-header " style="font-size: 20px"><strong> <a href="#">Bank Transfer</a></strong></div>
-                            <div class="card-body text-lg-start">
-                                <div class="author-image">
-                                    <img src="<?php echo base_url(); ?>assets/writer/images/sbi.jpg" alt="Image" class="rounded-circle">
-                                </div>
-                                <table>
-                                    <tr><td>   Account Holder's name</td><td>: Evans Francis Albert</td></tr>
-                                    <tr><td>       Account number</td><td>: 32783806272 </td></tr>
-                                    <tr><td>       Bank</td><td>: SBI</td></tr>
-                                    <tr><td>       District</td><td>: Nagpur</td></tr>
-                                    <tr><td>        Branch</td><td>: Jaripatka</td></tr>
-                                    <tr><td>        IFSC Code</td><td>: SBIN0014726</td></tr>
-                                    <tr><td>     Swift Code</td><td>: SBININBB239</td></tr>
-                                </table>
 
-                            </div>
                         </div>
-                        <hr/>
-                        <div class="card">
-                            <div class="card-header " style="font-size: 20px"><strong> <a href="#">PayTm</a></strong></div>
-                            <div class="card-body text-lg-start">
-                                <div class="author-image">
-                                    <img src="<?php echo base_url(); ?>assets/writer/images/paytm.jpg" alt="Image" class="rounded-circle">
-                                </div>
-                                <a href="#" target="_blank" class="text-light">9960877313
-                                </a>
-                                <br/> You can send your love offering via PayTm
 
+
+                        <div class="card loveofferingicon col-sm-3">
+                            <div class="card-header text-center" "><strong> <a href="#">Google Pay</a></strong></div>
+
+                            <div class="author-image" onclick="googlePay()">
+                                <img src="<?php echo base_url(); ?>assets/writer/images/gpay.jpg" alt="Image" class="rounded-circle">
                             </div>
+
+                        </div>
+
+                        <div class="card loveofferingicon col-md-3">
+                            <div class="card-header text-center " ><strong> <a href="#">Bank Transfer</a></strong></div>
+
+                            <div class="author-image" onclick="sbibank()">
+                                <img src="<?php echo base_url(); ?>assets/writer/images/sbi.jpg" alt="Image" class="rounded-circle">
+                            </div>
+
+                        </div>
+
+                        <div class="card loveofferingicon col-md-3">
+                            <div class="card-header text-center" ><strong> <a href="#">PayTm</a></strong></div>
+
+                            <div class="author-image" onclick="payTm()">
+                                <img src="<?php echo base_url(); ?>assets/writer/images/paytm.jpg" alt="Image" class="rounded-circle">
+                            </div>
+
+
                         </div>
                     </div>
                     <div class="col-md-3"></div>
@@ -116,8 +131,61 @@ $paymentlinks = array(
             </div>
 
 
+
         </div>
 </section><!-- #content end -->
+
+
+<script>
+
+    function paypal() {
+        swal({
+            html: '<span class="font-12 swal-subtitle">You can send your love offering via PayPal</span><br/><a href="https://www.paypal.me/evansfrancis" target="_blank" class="text-dark">www.paypal.me/evansfrancis</a>',
+            imageUrl: "<?php echo base_url(); ?>assets/writer/images/paypal.jpg",
+            imageWidth: 100,
+            imageAlt: 'Evans PayPal',
+
+        })
+    }
+
+    function googlePay() {
+        swal({
+            html: '<span class="font-12 swal-subtitle">You can send your love offering via Google Pay</span><br/><a href="#" target="_blank" class="text-dark">evansfrancis333@oksbi</a>',
+            imageUrl: "<?php echo base_url(); ?>assets/writer/images/gpay.jpg",
+            imageWidth: 100,
+            imageAlt: 'Evans Google Pay',
+
+        })
+    }
+
+    function payTm() {
+        swal({
+            html: '<span class="font-12 swal-subtitle">You can send your love offering via PayTm</span><br/><a href="#" target="_blank" class="text-dark">9960877313</a>',
+            imageUrl: "<?php echo base_url(); ?>assets/writer/images/paytm.jpg",
+            imageWidth: 100,
+            imageAlt: 'Evans PayTm',
+
+        })
+    }
+
+    function sbibank() {
+        swal({
+            html: `<span class="font-12 swal-subtitle">You can send your love offering via Bank Transfer</span><br/> <table class='swal-table'>
+          <tr><td>   Account Holder's name</td><td>: Evans Francis Albert</td></tr>
+          <tr><td>       Account number</td><td>: 32783806272 </td></tr>
+          <tr><td>       Bank</td><td>: SBI</td></tr>
+          <tr><td>       District</td><td>: Nagpur</td></tr>
+          <tr><td>        Branch</td><td>: Jaripatka</td></tr>
+          <tr><td>        IFSC Code</td><td>: SBIN0014726</td></tr>
+          <tr><td>     Swift Code</td><td>: SBININBB239</td></tr>
+         </table>`,
+            imageUrl: "<?php echo base_url(); ?>assets/writer/images/sbi.jpg",
+            imageWidth: 100,
+            imageAlt: 'Evans SBI',
+
+        })
+    }
+</script>
 
 <?php
 $this->load->view('layout/footer');
