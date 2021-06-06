@@ -40,6 +40,10 @@ class Pages extends CI_Controller {
         $data["message"] = $messagedata;
         $this->load->view('home', $data);
     }
+    
+    public function pillar_of_fire_email() {
+        $this->load->view('Email/pillar_of_fire');
+    }
 
     function pillar_of_fire() {
         $input_data = $this->input->post();

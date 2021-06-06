@@ -5,11 +5,24 @@
     <head>
         <meta name="viewport" content="width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>PROFESSIONAL MOVING SERVICES</title>
+        <title>Evans Francis</title>
         <style>
             td, th {
                 padding: 0;
                 vertical-align: baseline;
+            }
+              .socialicons{
+                height: 50px;
+                /* float: left; */
+                position: inherit;
+                width:35px;
+                display: inline-block;
+              margin-right: 10px;
+            }
+
+            .socialicons img {
+                width: 35px;
+
             }
         </style>
     </head>
@@ -17,12 +30,12 @@
     <body style="margin:0px; background: #f8f8f8; ">
         <div width="100%" style="background: #f8f8f8; padding: 0px 0px; font-family:arial; line-height:28px; height:100%;  width: 100%; color: #514d6a;">
             <div style="max-width: 700px; padding:50px 0;  margin: 0px auto; font-size: 14px">
-                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; background: #fff">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; background: #282c32">
                     <tbody>
                         <tr>
                             <td style="vertical-align: top; padding-bottom:30px;" align="center">
                                 <a href="<?php echo site_url("/"); ?>" target="_blank">
-                                    <img src="https://www.promovers.hk/assets/img/logo.png" alt="Professional Movers" style="border:none;height:50px;    margin-top: 20px;"/></a>
+                                    <img src="https://www.evansfrancis.org/assets/writer/images/logo.png" alt="Professional Movers" style="border:none;height:50px;    margin-top: 20px;"/></a>
                             </td>
                         </tr>
                     </tbody>
@@ -58,29 +71,7 @@
                                             <td style="    text-align: left;"><?php echo $appointment['contact_no']; ?></td>
                                         </tr>
 
-                                        <tr>
-                                            <th style="text-align: right;width:200px;padding-right: 10px;">From Location</th>
-                                            <td style="    text-align: left;"><?php echo $appointment['source']; ?></td>
-                                        </tr>
-
-                                        <tr>
-                                            <th style="text-align: right;width:200px;padding-right: 10px;">Destination Location</th>
-                                            <td style="    text-align: left;"><?php echo $appointment['destination']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th style="text-align: right;width:200px;padding-right: 10px;">Date</th>
-                                            <td style="    text-align: left;"><?php echo $appointment['select_date']; ?></td>
-                                        </tr>
-
-                                        <tr>
-                                            <th style="text-align: right;width:200px;padding-right: 10px;">Time</th>
-                                            <td style="    text-align: left;"><?php echo $appointment['select_time']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th style="text-align: right;width:200px;padding-right: 10px;">Note</th>
-                                            <td style="    text-align: left;white-space: pre-line;"><?php echo $appointment['note'] ? $appointment['note'] : '---'; ?></td>
-                                        </tr>
-
+                                      
 
 
                                     </table>
@@ -92,18 +83,47 @@
 
                         </tbody>
                     </table>
-                    <div style="    text-align: center;
-                         font-size: 12px;
-                         border:1px solid #000;
 
-                         padding: 10px;">
-                        <b>- Thanks -</b> 
-                        <br/>
-                        <p>Contact No./WhatsApp: +(852)6151-2644, Email: m.sirajbtc@gmail.com</p>
-                    </div>
                 </div>
+                <table style="width:100%;background: #282c32;color:white;">
+                    <tbody>
+
+                        <tr>
+                            <td style=" padding:10px 20px;">
+                                <div >
+                                                                                                        <img src="https://www.evansfrancis.org/assets/writer/images/logo.png" style="    height: 40px; margin: 5px 0px 20px;" />
+
+                                    <address><span style="float: left; font-size: 12px;">
+                                            <b>Address </b><br />
+                                            Nagpur, Maharashtra, India<br/>
+
+                                            <b>Mob.#</b>:&nbsp;+91-9960877313<br />
+                                            <b>Email</b>: contact@evansfrancis.org<br />
+                                            <b>Web</b>: www.evansfrancis.org</span></address>
+                                    <span style="float: left; font-size: 12px;"> </span></div>
+                            </td>
+                            <td style="width: 50%; padding:0px 20px;">
+
+                                <p>
+                                    An evangelist, author, teacher and lyricist with uncompromising faithfulness to the Holy Scriptures.
+                                </p>
+                                <p>
+                                            <a href="https://www.facebook.com/woodlandshk" target="_blank" class="socialicons">
+                                                <img src="https://www.woodlandshk.com/assets/icon/facebook.png"/>
+                                            </a>
+                                            <a href="https://www.instagram.com/woodlands.hk/" target="_blank" class="socialicons">
+                                                <img src="https://www.woodlandshk.com/assets/icon/instagram.png"/>
+                                            </a>
+
+                                        </p>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
 
             </div>
+
         </div>
     </body>
 
