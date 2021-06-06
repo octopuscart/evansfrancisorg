@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <meta name="theme-color" content="#c7ecff">
-        <meta name="author" content="Costco Development Team">
+        <meta name="author" content="Varbin Softwares Development Team">
         <!-- Document Title -->
         <?php
         meta_tags();
@@ -38,6 +38,12 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/customstyle.css" type="text/css" />
 
+
+        <!--sweet alert-->
+        <script src="<?php echo base_url(); ?>assets/sweetalert2/sweetalert2.min.js"></script>
+        <link rel="stylesheet" hreflang="en-us"  href="<?php echo base_url(); ?>assets/sweetalert2/sweetalert2.min.css">
+
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <?php
@@ -68,8 +74,8 @@
                             <!-- Logo
                             ============================================= -->
                             <div id="logo" class="col-auto me-lg-0 order-lg-2">
-                                <a href="demo-writer.html" class="standard-logo"><img src="<?php echo base_url(); ?>assets/writer/images/logo.png" alt="Evans Logo"></a>
-                                <a href="demo-writer.html" class="retina-logo"><img src="<?php echo base_url(); ?>assets/writer/images/logo%402x.png" alt="Evans Logo"></a>
+                                <a href="<?php echo site_url("/"); ?>" class="standard-logo"><img src="<?php echo base_url(); ?>assets/writer/images/logo.png" alt="Evans Logo"></a>
+                                <a href="<?php echo site_url("/"); ?>" class="retina-logo"><img src="<?php echo base_url(); ?>assets/writer/images/logo%402x.png" alt="Evans Logo"></a>
                             </div><!-- #logo end -->
 
                             <div id="primary-menu-trigger">
@@ -81,7 +87,7 @@
                             <nav class="primary-menu not-dark col-lg-auto order-lg-1">
 
                                 <ul class="menu-container">
-                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("/")?>"><div>Home</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("/") ?>"><div>Home</div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="<?php echo site_url("about-us"); ?>"><div>About</div></a></li>
                                     <li class="menu-item"><a class="menu-link" target="_blank" href="https://www.evansfrancisbooks.com/"><div>Books</div></a></li>
                                     <li class="menu-item"><a class="menu-link" target="_blank" href="https://christianappdevelopers.com/"><div>Apps</div></a></li>

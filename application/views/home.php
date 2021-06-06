@@ -59,7 +59,7 @@ $this->load->view('layout/header');
 
             </div>
 
-            <div class="dark subscribe-widget center topmargin-sm" style="background-color: rgba(0,0,0,.25); padding: 80px 0;">
+            <div class="dark subscribe-widget1 center topmargin-sm" style="background-color: rgba(0,0,0,.25); padding: 80px 0;">
                 <div class="container clearfix">
                     <div class="mx-auto" style="max-width: 600px;">
                         <div class="heading-block center border-bottom-0">
@@ -67,11 +67,29 @@ $this->load->view('layout/header');
                             <span class="font-primary" style="font-size: 17px; color: #666;">I send thoughtful and caring emails</span>
                         </div>
                         <div class="widget-subscribe-form-result"></div>
-                        <form id="widget-subscribe-form" action="http://themes.semicolonweb.com/html/canvas/include/subscribe.php" method="post" class="mb-0">
+                        <form id="widget-subscribe-form1" action="#" method="post" class="mb-0">
                             <div class="input-group mx-auto">
-                                <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control form-control-lg not-dark required email" placeholder="Enter your Email" style="border-top-left-radius: 23px; border-bottom-left-radius: 23px;">
-                                <button class="btn btn-lg bg-color" type="submit" style="border-top-right-radius: 23px; border-bottom-right-radius: 23px;">Subscribe</button>
+                                <input type="email" id="subscribe-email" name="email" class="form-control form-control-lg not-dark required email" placeholder="Enter your Email" style="border-top-left-radius: 23px; border-bottom-left-radius: 23px;">
+
+                                <button class="btn btn-lg bg-color" name="submit" type="submit" style="border-top-right-radius: 23px; border-bottom-right-radius: 23px;">Subscribe</button>
                             </div>
+                            <div class="captchaarea" style="    width: 300px;
+                                 display: inline-block;
+                                 margin-top: 20px;">
+                                <div class="input-group divcenter">
+                                    <div class="input-group-prepend">
+
+                                        <img src="<?php echo site_url("Pages/createCaptha/subscribe"); ?>" id="captchaimg" style="height: fit-content;"> 
+
+                                    </div>
+
+                                    <input type="text" id="widget-subscribe-form-email2" name="captcha" class="form-control required email" required="" placeholder="Type Here">
+
+                                </div>
+
+                                <small class="details">Can't read the image? <span  type="button" onclick="refreshCaptcha()" style="color:yellow;cursor:pointer;">click here</span> to refresh</small>
+                            </div>
+
                         </form>
                     </div>
                 </div>
@@ -127,7 +145,27 @@ $this->load->view('layout/header');
         </div>
     </div>
 </section><!-- #content end -->
-
+<?php
+if ($message["title"]) {
+    ?>
+    <script>
+        swal({
+            title: "<?php echo $message["title"]; ?>",
+            type: "<?php echo $message["type"]; ?>",
+            html: "<?php echo $message["message"]; ?>",
+            timer: 5000,
+        }).then(
+                function () {
+                    window.location = "<?php echo site_url("/"); ?>";
+                },
+                function (dismiss) {
+                    window.location = "<?php echo site_url("/"); ?>";
+                }
+        )
+    </script>
+    <?php
+}
+?>
 <?php
 $this->load->view('layout/footer');
 ?>

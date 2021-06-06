@@ -35,7 +35,7 @@ $this->load->view('layout/header');
 
                     <div class="clear"></div>
 
-                    <div class="form-widget mt-0">
+                    <div class="form-widget1 mt-0">
 
                         <div class="form-result"></div>
 
@@ -49,85 +49,83 @@ $this->load->view('layout/header');
 
                             <div class="row">
                                 <div class="col-sm-12 form-group">
-                                    <label class="nott" for="template-contactform-name">Name of Organization (Church/Ministry)<small>*</small></label>
-                                    <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+                                    <label class="nott" for="name_org">Name of Organization (Church/Ministry)<small>*</small></label>
+                                    <input type="text" id="name_org" name="name_org" value="" class="sm-form-control required" required="" />
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-name">Full Name<small>*</small></label>
-                                    <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+                                    <label class="nott" for="full_name">Full Name<small>*</small></label>
+                                    <input type="text" id="full_name" name="full_name" value="" class="sm-form-control required" required="" />
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-email">Email <small>*</small></label>
-                                    <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+                                    <label class="nott" for="email">Email <small>*</small></label>
+                                    <input type="email" id="email" name="email" value="" class="required email sm-form-control" required="" />
                                 </div>
 
                                 <div class="w-100"></div>
 
                                 <div class="col-12 form-group">
-                                    <label class="nott" for="template-contactform-phone">Contact No.</label>
-                                    <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
+                                    <label class="nott" for="contact_no">Contact No.</label>
+                                    <input type="text" id="tcontact_no" name="contact_no" value="" class="sm-form-control" required="" />
                                 </div>
                                 <hr/>
                                 <div class="col-12 form-group">
-                                    <label class="nott" for="template-contactform-phone">Address</label>
-                                    <input type="text" id="template-contactform-subject" name="template-contactform-phone" value="" class="sm-form-control" />
+                                    <label class="nott" for="address">Address</label>
+                                    <input type="text" id="address" name="address" value="" class="sm-form-control"  required="" />
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-name">Country<small>*</small></label>
-                                    <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+                                    <label class="nott" for="country">Country<small>*</small></label>
+                                    <input type="text" id="country" name="country" value="" class="sm-form-control required"  required="" />
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-email">State <small>*</small></label>
-                                    <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+                                    <label class="nott" for="state">State <small>*</small></label>
+                                    <input type="text" id="state" name="state" value="" class="required email sm-form-control" required="" />
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-name">City<small>*</small></label>
-                                    <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+                                    <label class="nott" for="city">City<small>*</small></label>
+                                    <input type="text" id="city" name="city" value="" class="sm-form-control required"  required="" />
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-email">Zip/Postal Code <small>*</small></label>
-                                    <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+                                    <label class="nott" for="zip">Zip/Postal Code <small>*</small></label>
+                                    <input type="text" id="zip" name="zip" value="" class="required email sm-form-control"  required="" />
                                 </div>
                                 <div class="col-12 form-group">
-                                    <label class="nott" for="template-contactform-phone">Website</label>
-                                    <input type="text" id="template-contactform-subject" name="template-contactform-phone" value="" class="sm-form-control" />
+                                    <label class="nott" for="website">Website</label>
+                                    <input type="text" id="website" name="website" value="" class="sm-form-control"  required="" />
                                 </div>
                                 <hr/>
 
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-name">Contact Person<small>*</small></label>
-                                    <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+                                    <label class="nott" for="contact_person">Contact Person<small>*</small></label>
+                                    <input type="text" id="contact_person" name="contact_person" value="" class="sm-form-control required"  required="" />
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-email">Contact Person Phone <small>*</small></label>
-                                    <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+                                    <label class="nott" for="contact_person_phone">Contact Person Phone <small>*</small></label>
+                                    <input type="tel" id="contact_person_phone" name="contact_person_phone" value="" class="required email sm-form-control"  required="" />
                                 </div>
 
                                 <div class="col-12 form-group">
-                                    <label class="nott" for="template-contactform-phone">Pastor/Overseer</label>
-                                    <input type="text" id="template-contactform-subject" name="template-contactform-phone" value="" class="sm-form-control" />
+                                    <label class="nott" for="pastor">Pastor/Overseer</label>
+                                    <input type="text" id="pastor" name="pastor" value="" class="sm-form-control"  required="" />
                                 </div>
                                 <hr/>
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-name">Event Title<small>*</small></label>
-                                    <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+                                    <label class="nott" for="event_title">Event Title<small>*</small></label>
+                                    <input type="text" id="event_title" name="event_title" value="" class="sm-form-control required"  required="" />
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-email">Event Theme <small>*</small></label>
-                                    <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+                                    <label class="nott" for="event_theme">Event Theme <small>*</small></label>
+                                    <input type="text" id="event_theme" name="event_theme" value="" class="required email sm-form-control"  required="" />
                                 </div>
 
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-phone">Event Date</label>
-                                    <input type="text" id="template-contactform-subject" name="template-contactform-phone" value="" class="sm-form-control" />
+                                    <label class="nott" for="event_date">Event Date</label>
+                                    <input type="date" id="event_date" name="event_date" value="" class="sm-form-control" required="" />
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <label class="nott" for="template-contactform-phone">Event Attendance</label>
-                                    <input type="text" id="template-contactform-subject" name="template-contactform-phone" value="" class="sm-form-control" />
+                                    <label class="nott" for="event_attendance">Event Attendance</label>
+                                    <input type="text" id="event_attendance" name="event_attendance" value="" class="sm-form-control"  required="" />
                                 </div>
-                                <div class="col-12 form-group d-none">
-                                    <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-                                </div>
+                               
                                 <hr/>
                                 <div class="col-sm-6 form-group">
 
@@ -153,7 +151,6 @@ $this->load->view('layout/header');
                                 </div>
                             </div>
 
-                            <input type="hidden" name="prefix" value="template-contactform-">
 
                         </form>
                     </div>
@@ -164,6 +161,27 @@ $this->load->view('layout/header');
 </section><!-- #content end -->
 
 
+<?php
+if ($message["title"]) {
+    ?>
+    <script>
+        swal({
+            title: "<?php echo $message["title"];?>",
+            type: "<?php echo $message["type"];?>",
+            html: "<?php echo $message["message"];?>",
+            timer: 5000,
+        }).then(
+                function () {
+                    window.location = "<?php echo site_url("invite"); ?>";
+                },
+                function (dismiss) {
+                    window.location = "<?php echo site_url("invite"); ?>";
+                }
+        )
+    </script>
+    <?php
+}
+?>
 <?php
 $this->load->view('layout/footer');
 ?>

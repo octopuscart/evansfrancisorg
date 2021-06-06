@@ -55,11 +55,11 @@ $this->load->view('layout/header');
                     </div>
                     <div class="col-lg-1"></div>
                     <div class="col-lg-5">
-                        <div class="form-widget mt-0">
+                        <div class="form-widget1 mt-0">
 
                             <div class="form-result"></div>
 
-                            <form class="mb-0" id="template-contactform" name="template-contactform" action="#" method="post">
+                            <form class="mb-0" id="template-contactform" action="#" method="post">
 
                                 <div class="form-process">
                                     <div class="css3-spinner">
@@ -68,41 +68,36 @@ $this->load->view('layout/header');
                                 </div>
 
                                 <div class="row">
-
-
                                     <div class="col-sm-6 form-group">
-                                        <label class="nott" for="template-contactform-name">First Name<small>*</small></label>
-                                        <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+                                        <label class="nott" for="first_name">First Name <small>*</small></label>
+                                        <input type="text" id="first_name" name="first_name" value="" class="sm-form-control required" required="" />
                                     </div>
                                     <div class="col-sm-6 form-group">
-                                        <label class="nott" for="template-contactform-name">Last Name<small>*</small></label>
-                                        <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+                                        <label class="nott" for="last_name">Last Name <small>*</small></label>
+                                        <input type="text" id="last_name" name="last_name" value="" class="sm-form-control required" required="" />
                                     </div>
-
 
                                     <div class="col-sm-12 form-group">
-                                        <label class="nott" for="template-contactform-email">Email <small>*</small></label>
-                                        <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+                                        <label class="nott" for="email">Email <small>*</small></label>
+                                        <input type="email" id="email" name="email" value="" class="required email sm-form-control" />
                                     </div>
 
                                     <div class="w-100"></div>
 
                                     <div class="col-12 form-group">
-                                        <label class="nott" for="template-contactform-phone">Contact No.</label>
-                                        <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
+                                        <label class="nott" for="contact_no">Contact No.</label>
+                                        <input type="text" id="contact_no" name="contact_no" value="" required="" class="sm-form-control" />
                                     </div>
                                     <div class="col-sm-6 form-group">
-                                        <label class="nott" for="template-contactform-email">Amount<small>*</small></label>
-                                        <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+                                        <label class="nott" for="amount">Amount<small>*</small></label>
+                                        <input type="number" id="amount" name="amount" value="" class="required email sm-form-control" />
                                     </div>
                                     <div class="col-sm-6 form-group">
-                                        <label class="nott" for="template-contactform-name">Country<small>*</small></label>
-                                        <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+                                        <label class="nott" for="country">Country<small>*</small></label>
+                                        <input type="text" id="country" name="country" value="" class="sm-form-control required" />
                                     </div>
 
-                                    <div class="col-12 form-group d-none">
-                                        <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-                                    </div>
+                                   
                                     <hr/>
                                     <div class="col-sm-8 form-group">
 
@@ -123,11 +118,10 @@ $this->load->view('layout/header');
                                     </div>
                                     <div class="col-sm-4 form-group"></div>
                                     <div class="col-12 form-group">
-                                        <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Submit</button>
+                                        <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="submit" value="submit">Submit</button>
                                     </div>
                                 </div>
 
-                                <input type="hidden" name="prefix" value="template-contactform-">
 
                             </form>
                         </div>
@@ -137,7 +131,27 @@ $this->load->view('layout/header');
         </div>
     </div>
 </section><!-- #content end -->
-
+<?php
+if ($message["title"]) {
+    ?>
+    <script>
+        swal({
+            title: "<?php echo $message["title"];?>",
+            type: "<?php echo $message["type"];?>",
+            html: "<?php echo $message["message"];?>",
+            timer: 5000,
+        }).then(
+                function () {
+                    window.location = "<?php echo site_url("pillar-of-fire"); ?>";
+                },
+                function (dismiss) {
+                    window.location = "<?php echo site_url("pillar-of-fire"); ?>";
+                }
+        )
+    </script>
+    <?php
+}
+?>
 
 <?php
 $this->load->view('layout/footer');

@@ -12,23 +12,113 @@ class Pages extends CI_Controller {
     }
 
     public function index() {
-        $data = array();
+        $input_data = $this->input->post();
+        $messagedata = array("title" => "", "message" => "", "type" => "");
+        $captchadata = $this->session->userdata("captchacode_subscribe");
+        if (isset($input_data["submit"])) {
+            if ($input_data["captcha"] == $captchadata) {
+                unset($input_data["submit"]);
+                unset($input_data["captcha"]);
+                $input_data["status"] = "active";
+                $input_data["request_date"] = date("Y-m-d");
+                $input_data["request_time"] = date("H:m:s A");
+
+                $email = $input_data["email"];
+                $this->db->where("email", $email);
+                $query = $this->db->get("website_subscribe");
+                $checkdata = $query->result();
+                if ($checkdata) {
+                    $messagedata = array("title" => "Already Subscribed", "message" => "You have already subscribed to our mailing list.", "type" => "info");
+                } else {
+                    $this->db->insert('website_subscribe', $input_data);
+                    $messagedata = array("title" => "Thanks You", "message" => "Thank you for subsbcrib our mailing list.", "type" => "success");
+                }
+            } else {
+                $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
+            }
+        }
+        $data["message"] = $messagedata;
         $this->load->view('home', $data);
     }
 
     function pillar_of_fire() {
-        $this->load->view('pages/piller_of_fire');
+        $input_data = $this->input->post();
+        $messagedata = array("title" => "", "message" => "", "type" => "");
+        $captchadata = $this->session->userdata("captchacode_pillar_of_fire");
+        if (isset($input_data["submit"])) {
+            if ($input_data["captcha"] == $captchadata) {
+                unset($input_data["submit"]);
+                unset($input_data["captcha"]);
+                $input_data["request_date"] = date("Y-m-d");
+                $input_data["request_time"] = date("H:m:s A");
+                $this->db->insert('website_pillar_of_fire', $input_data);
+                $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
+            } else {
+                $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
+            }
+        }
+        $data["message"] = $messagedata;
+        $this->load->view('pages/piller_of_fire', $data);
     }
 
     function pillar_of_cloud() {
-        $this->load->view('pages/piller_of_cloud');
+        $input_data = $this->input->post();
+        $messagedata = array("title" => "", "message" => "", "type" => "");
+        $captchadata = $this->session->userdata("captchacode_pillar_of_cloud");
+        if (isset($input_data["submit"])) {
+            if ($input_data["captcha"] == $captchadata) {
+                unset($input_data["submit"]);
+                unset($input_data["captcha"]);
+                $input_data["request_date"] = date("Y-m-d");
+                $input_data["request_time"] = date("H:m:s A");
+                $this->db->insert('website_pillar_of_cloud', $input_data);
+                $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
+            } else {
+                $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
+            }
+        }
+        $data["message"] = $messagedata;
+        $this->load->view('pages/piller_of_cloud', $data);
     }
 
     function contact_us() {
-        $this->load->view('pages/contact_us');
+        $contact_data = $this->input->post();
+        $messagedata = array("title" => "", "message" => "", "type" => "");
+        $captchadata = $this->session->userdata("captchacode_contact_us");
+        if (isset($contact_data["submit"])) {
+            if ($contact_data["captcha"] == $captchadata) {
+                unset($contact_data["submit"]);
+                unset($contact_data["captcha"]);
+                $contact_data["request_date"] = date("Y-m-d");
+                $contact_data["request_time"] = date("H:m:s A");
+                $this->db->insert('website_contact_us', $contact_data);
+                $messagedata = array("title" => "Thanks You", "message" => "Thank you for contact us.", "type" => "success");
+            } else {
+                $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
+            }
+        }
+        $data["message"] = $messagedata;
+        $this->load->view('pages/contact_us', $data);
     }
 
     function invite() {
+        $input_data = $this->input->post();
+        $messagedata = array("title" => "", "message" => "", "type" => "");
+
+        $captchadata = $this->session->userdata("captchacode_invite");
+        if (isset($input_data["submit"])) {
+            if ($input_data["captcha"] == $captchadata) {
+                unset($input_data["template-contactform-submit"]);
+                unset($input_data["captcha"]);
+                $input_data["request_date"] = date("Y-m-d");
+                $input_data["request_time"] = date("H:m:s A");
+                $this->db->insert('website_invite', $input_data);
+                $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
+            } else {
+                $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
+            }
+        }
+        $data["message"] = $messagedata;
         $this->load->view('pages/invite');
     }
 
@@ -44,14 +134,14 @@ class Pages extends CI_Controller {
         $this->load->view('pages/error404');
     }
 
-    
-     function hexrgb($hexstr) {
+    function hexrgb($hexstr) {
         $int = hexdec($hexstr);
 
         return array("red" => 0xFF & ($int >> 0x10),
             "green" => 0xFF & ($int >> 0x8),
             "blue" => 0xFF & $int);
     }
+
     function createCaptha($ctype) {
         //Settings: You can customize the captcha here
         $image_width = 120;
