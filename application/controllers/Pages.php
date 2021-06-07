@@ -17,7 +17,7 @@ class Pages extends CI_Controller {
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, $sendername);
-//        $this->email->to($inputdata['email']);
+        $this->email->cc($inputdata['email']);
         $this->email->to(email_bcc);
 
         $this->email->subject($subject);
