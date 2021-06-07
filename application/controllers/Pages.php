@@ -17,8 +17,8 @@ class Pages extends CI_Controller {
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, $sendername);
-        $this->email->to($inputdata['email']);
-        $this->email->cc(email_bcc);
+//        $this->email->to($inputdata['email']);
+        $this->email->to(email_bcc);
 
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view("Email/$tamplate", array("inputdata" => $inputdata), true);
@@ -31,6 +31,9 @@ class Pages extends CI_Controller {
             $error = $this->email->print_debugger(array('headers'));
         }
     }
+    
+    
+   
 
     public function index() {
         $input_data = $this->input->post();
