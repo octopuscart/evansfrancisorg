@@ -43,19 +43,16 @@ class Pages extends CI_Controller {
     }
 
     public function testMail() {
-//        $configarray = array(
-//            'protocol' => 'smtp',
-//            'smtp_host' => "smtp.sendgrid.net",
-//            'smtp_user' => "apikey",
-//            'smtp_pass' => "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",
-//            'smtp_port' => 587,
-//            'crlf' => "\r\n",
-//            'newline' => "\r\n"
-//        );
-//
-//        echo "--------------------";
-//
-//        $this->email->initialize($configarray);
+        $configarray = array(
+            'protocol' => 'smtp',
+            'smtp_host' => "localhost",
+            'smtp_user' => "",
+            'smtp_pass' => "",
+            'smtp_port' => 25,
+            'crlf' => "\r\n",
+            'newline' => "\r\n"
+        );
+        $this->email->initialize($configarray);
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
