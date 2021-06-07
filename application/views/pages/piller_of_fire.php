@@ -90,7 +90,7 @@ $this->load->view('layout/header');
                                     </div>
                                     <div class="col-sm-6 form-group">
                                         <label class="nott" for="amount">Amount<small>*</small></label>
-                                        <input type="number" id="amount" name="amount" value="" class="required email sm-form-control" />
+                                        <input type="text" id="amount" name="amount" value="" class="required email sm-form-control" />
                                     </div>
                                     <div class="col-sm-6 form-group">
                                         <label class="nott" for="country">Country<small>*</small></label>

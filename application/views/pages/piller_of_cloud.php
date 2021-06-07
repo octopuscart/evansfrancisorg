@@ -98,7 +98,7 @@ $this->load->view('layout/header');
                                     </div>
                                     <div class="col-sm-6 form-group">
                                         <label class="nott" for="prayer_time">Prayer Time<small>*</small></label>
-                                        <input type="number" id="prayer_time" name="prayer_time" value="" class="required email sm-form-control" />
+                                        <input type="number" id="prayer_time" name="prayer_time" value="" max="24" class="required email sm-form-control" />
                                     </div>
                                   
                                     <hr/>
