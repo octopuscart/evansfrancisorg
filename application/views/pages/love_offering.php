@@ -77,9 +77,9 @@ $paymentlinks = array(
                                 <a href="#"><img src="<?php echo base_url(); ?>assets/writer/images/loveoffer.jpg" alt="Lover Offerings Evans" style="border-radius: 20px;"></a>
                             </div>
                             <div class="testi-content">
-                                <p style="">"God will richly bless the people who take care of his servants (Luke 6:38). Put God first, and he will add to your life daily what you need.</p>
+                                <p style="">"God will richly bless the people who take care of his servants (Luke 6:38). <br/>Put God first, and he will add to your life daily what you need. (Matthew 6:35)</p>
                                 <div class="testi-meta">
-                                    (Matthew 6:35)
+                                    
                                 </div>
                             </div>
                         </div>
