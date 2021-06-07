@@ -5,7 +5,7 @@ $configuration = $globleConnectDB;
 
 $config['useragent'] = 'CodeIgniter';
 $config['protocol'] = 'smtp';
-$config['mailpath'] = '/usr/sbin/sendmail';
+//$config['mailpath'] = '/usr/sbin/sendmail';
 $config['smtp_host'] =$configuration['email_host'];
 $config['smtp_user'] = $configuration['email_sender'];
 $config['smtp_pass'] = $configuration['email_password'];

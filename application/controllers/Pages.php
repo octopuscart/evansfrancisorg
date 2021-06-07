@@ -12,23 +12,22 @@ class Pages extends CI_Controller {
     }
 
     public function sendEmail($inputdata, $tamplate, $subject) {
-        $configarray = array(
-            'protocol' => 'smtp',
-            'smtp_host' => "localhost",
-            'smtp_user' => "",
-            'smtp_pass' => "",
-            'smtp_port' => 25,
-            'crlf' => "\r\n",
-            'newline' => "\r\n"
-        );
-        $this->email->initialize($configarray);
+//        $configarray = array(
+//            'protocol' => 'smtp',
+//            'smtp_host' => "localhost",
+//            'smtp_user' => "",
+//            'smtp_pass' => "",
+//            'smtp_port' => 25,
+//            'crlf' => "\r\n",
+//            'newline' => "\r\n"
+//        );
+//        $this->email->initialize($configarray);
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
         $this->email->from("contact@evansfrancis.org", $sendername);
-        $this->email->to($inputdata['email']);
-        $this->email->cc(email_bcc);
+        $this->email->to("nehaevans831@gmail.com");
 
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view("Email/$tamplate", array("inputdata" => $inputdata), true);
@@ -43,23 +42,15 @@ class Pages extends CI_Controller {
     }
 
     public function testMail() {
-        $configarray = array(
-            'protocol' => 'smtp',
-            'smtp_host' => "localhost",
-            'smtp_user' => "",
-            'smtp_pass' => "",
-            'smtp_port' => 25,
-            'crlf' => "\r\n",
-            'newline' => "\r\n"
-        );
-        $this->email->initialize($configarray);
+
+//        $this->email->initialize($configarray);
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, $sendername);
-        $this->email->to("pankaj21pathak@gmail.com");
-        $this->email->cc(email_bcc);
+        $this->email->to("contact@evansfrancis.org");
+//        $this->email->cc(email_bcc);
         $this->email->subject("test mail");
         $htmlsmessage = "This is test mail";
         $this->email->message($htmlsmessage);
@@ -190,7 +181,7 @@ class Pages extends CI_Controller {
             }
         }
         $data["message"] = $messagedata;
-        $this->load->view('pages/invite');
+        $this->load->view('pages/invite', $data);
     }
 
     public function aboutus() {
