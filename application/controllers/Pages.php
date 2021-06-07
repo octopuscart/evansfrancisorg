@@ -12,11 +12,20 @@ class Pages extends CI_Controller {
     }
 
     public function sendEmail($inputdata, $tamplate, $subject) {
+        $configarray = array(
+            'protocol' => 'smtp',
+            'smtp_host' => "smtp.sendgrid.net",
+            'smtp_user' => "apikey",
+            'smtp_pass' => "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",
+            'smtp_port' => 587,
+            'crlf' => "\r\n",
+            'newline' => "\r\n"
+        );
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
-        $this->email->from(email_bcc, $sendername);
+        $this->email->from("contact@evansfrancis.org", $sendername);
         $this->email->to($inputdata['email']);
         $this->email->cc(email_bcc);
 
@@ -31,9 +40,21 @@ class Pages extends CI_Controller {
             $error = $this->email->print_debugger(array('headers'));
         }
     }
-    
-    
-    public function testMail(){
+
+    public function testMail() {
+        $configarray = array(
+            'protocol' => 'smtp',
+            'smtp_host' => "smtp.sendgrid.net",
+            'smtp_user' => "apikey",
+            'smtp_pass' => "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",
+            'smtp_port' => 587,
+            'crlf' => "\r\n",
+            'newline' => "\r\n"
+        );
+        
+        echo "--------------------";
+
+        $this->email->initialize($configarray);
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
@@ -44,8 +65,9 @@ class Pages extends CI_Controller {
         $this->email->subject("test mail");
         $htmlsmessage = "This is test mail";
         $this->email->message($htmlsmessage);
-        $this->email->print_debugger();
-        $send = $this->email->send();
+      
+        echo $send = $this->email->send();
+        var_dump(  $this->email->print_debugger());
         if ($send) {
             
         } else {
