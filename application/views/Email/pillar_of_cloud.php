@@ -10,7 +10,7 @@ $this->load->view('Email/header');
 
 
                     <b>Dear <?php echo $inputdata['first_name']; ?>,</b>
-                    <p>Thanks you for filling form of Pillar of Fire, <br/>after praying we will get back to you.</p>
+                    <p>Thanks you for filling form of Pillar of Cloud, <br/>after praying we will get back to you.</p>
                     <br/>
                     Your details are as below.
                     <table style="font-size: 12px;    font-size: 12px;
@@ -37,8 +37,8 @@ $this->load->view('Email/header');
                             <td style="    text-align: left;"><?php echo $inputdata['contact_no']; ?></td>
                         </tr>
                         <tr>
-                            <th style="text-align: right;width:200px;padding-right: 10px;">Amount.</th>
-                            <td style="    text-align: left;"><?php echo $inputdata['amount']; ?></td>
+                            <th style="text-align: right;width:200px;padding-right: 10px;">Payer Time</th>
+                            <td style="    text-align: left;"><?php echo $inputdata['prayer_time']; ?></td>
                         </tr>
                         <tr>
                             <th style="text-align: right;width:200px;padding-right: 10px;">Country</th>

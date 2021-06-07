@@ -147,7 +147,7 @@ $this->load->view('layout/header');
                                 <div class="col-sm-6 form-group"></div>
 
                                 <div class="col-sm-12 form-group">
-                                    <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Submit</button>
+                                    <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="submit" value="submit">Submit</button>
                                 </div>
                             </div>
 

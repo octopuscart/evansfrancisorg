@@ -121,12 +121,12 @@ if ($message["title"]) {
             html: "<?php echo $message["message"];?>",
             timer: 5000,
         }).then(
-                function () {
-                    window.location = "<?php echo site_url("contact-us"); ?>";
-                },
-                function (dismiss) {
-                    window.location = "<?php echo site_url("contact-us"); ?>";
-                }
+                    function () {
+                        window.location = "<?php echo site_url("contact-us"); ?>";
+                    },
+                    function (dismiss) {
+                        window.location = "<?php echo site_url("contact-us"); ?>";
+                    }
         )
     </script>
     <?php

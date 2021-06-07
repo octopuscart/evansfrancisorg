@@ -11,11 +11,33 @@ class Pages extends CI_Controller {
         $this->user_id = $this->session->userdata('logged_in')['login_id'];
     }
 
+    public function sendEmail($inputdata, $tamplate, $subject) {
+        $emailsender = email_sender;
+        $sendername = email_sender_name;
+        $email_bcc = email_bcc;
+        $this->email->set_newline("\r\n");
+        $this->email->from(email_bcc, $sendername);
+        $this->email->to($inputdata['email']);
+        $this->email->bcc(email_bcc);
+
+        $this->email->subject($subject);
+        $htmlsmessage = $this->load->view("Email/$tamplate", array("inputdata" => $inputdata), true);
+        $this->email->message($htmlsmessage);
+        $this->email->print_debugger();
+        $send = $this->email->send();
+        if ($send) {
+            
+        } else {
+            $error = $this->email->print_debugger(array('headers'));
+        }
+    }
+
     public function index() {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_subscribe");
         if (isset($input_data["submit"])) {
+
             if ($input_data["captcha"] == $captchadata) {
                 unset($input_data["submit"]);
                 unset($input_data["captcha"]);
@@ -30,6 +52,7 @@ class Pages extends CI_Controller {
                 if ($checkdata) {
                     $messagedata = array("title" => "Already Subscribed", "message" => "You have already subscribed to our mailing list.", "type" => "info");
                 } else {
+                    $this->sendEmail($input_data, "subscribe", "Thank you for subsbcrib our mailing list.");
                     $this->db->insert('website_subscribe', $input_data);
                     $messagedata = array("title" => "Thanks You", "message" => "Thank you for subsbcrib our mailing list.", "type" => "success");
                 }
@@ -40,15 +63,12 @@ class Pages extends CI_Controller {
         $data["message"] = $messagedata;
         $this->load->view('home', $data);
     }
-    
-    public function pillar_of_fire_email() {
-        $this->load->view('Email/pillar_of_fire');
-    }
 
     function pillar_of_fire() {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_pillar_of_fire");
+
         if (isset($input_data["submit"])) {
             if ($input_data["captcha"] == $captchadata) {
                 unset($input_data["submit"]);
@@ -56,6 +76,7 @@ class Pages extends CI_Controller {
                 $input_data["request_date"] = date("Y-m-d");
                 $input_data["request_time"] = date("H:m:s A");
                 $this->db->insert('website_pillar_of_fire', $input_data);
+                $this->sendEmail($input_data, "pillar_of_fire", "Pillar of Fire - Your request has been submitted.");
                 $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
             } else {
                 $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
@@ -69,6 +90,7 @@ class Pages extends CI_Controller {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_pillar_of_cloud");
+
         if (isset($input_data["submit"])) {
             if ($input_data["captcha"] == $captchadata) {
                 unset($input_data["submit"]);
@@ -76,6 +98,7 @@ class Pages extends CI_Controller {
                 $input_data["request_date"] = date("Y-m-d");
                 $input_data["request_time"] = date("H:m:s A");
                 $this->db->insert('website_pillar_of_cloud', $input_data);
+                $this->sendEmail($input_data, "pillar_of_cloud", "Pillar of Cloud - Your request has been submitted.");
                 $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
             } else {
                 $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
@@ -89,6 +112,7 @@ class Pages extends CI_Controller {
         $contact_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_contact_us");
+
         if (isset($contact_data["submit"])) {
             if ($contact_data["captcha"] == $captchadata) {
                 unset($contact_data["submit"]);
@@ -96,6 +120,7 @@ class Pages extends CI_Controller {
                 $contact_data["request_date"] = date("Y-m-d");
                 $contact_data["request_time"] = date("H:m:s A");
                 $this->db->insert('website_contact_us', $contact_data);
+                $this->sendEmail($contact_data, "contact_us", "Thank you for contact us.");
                 $messagedata = array("title" => "Thanks You", "message" => "Thank you for contact us.", "type" => "success");
             } else {
                 $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
@@ -112,11 +137,12 @@ class Pages extends CI_Controller {
         $captchadata = $this->session->userdata("captchacode_invite");
         if (isset($input_data["submit"])) {
             if ($input_data["captcha"] == $captchadata) {
-                unset($input_data["template-contactform-submit"]);
+                unset($input_data["submit"]);
                 unset($input_data["captcha"]);
                 $input_data["request_date"] = date("Y-m-d");
                 $input_data["request_time"] = date("H:m:s A");
                 $this->db->insert('website_invite', $input_data);
+                $this->sendEmail($input_data, "invite", "Invite Evans - Your request has been submitted.");
                 $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
             } else {
                 $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");

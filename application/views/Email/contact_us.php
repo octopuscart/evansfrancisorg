@@ -9,10 +9,9 @@ $this->load->view('Email/header');
                 <td style="    text-align: center;font-size: 18px;">
 
 
-                    <b>Dear <?php echo $inputdata['first_name']; ?>,</b>
-                    <p>Thanks you for filling form of Pillar of Fire, <br/>after praying we will get back to you.</p>
-                    <br/>
-                    Your details are as below.
+                    <b>Dear <?php echo $inputdata['name']; ?>,</b>
+                    <p>Thank you for contact us.</p>
+
                     <table style="font-size: 12px;    font-size: 12px;
                            text-align: center;
                            /* width: 300px; */
@@ -21,12 +20,8 @@ $this->load->view('Email/header');
                            color: black;
                            border-radius: 39px;">
                         <tr>
-                            <th style="text-align: right;width:45%;padding-right: 10px;">First Name</th>
-                            <td style="    text-align: left;"><?php echo $inputdata['first_name']; ?></td>
-                        </tr>
-                        <tr>
-                            <th style="text-align: right;width:45%;padding-right: 10px;">Last Name</th>
-                            <td style="    text-align: left;"><?php echo $inputdata['last_name']; ?></td>
+                            <th style="text-align: right;width:45%;padding-right: 10px;">Name</th>
+                            <td style="    text-align: left;"><?php echo $inputdata['name']; ?></td>
                         </tr>
                         <tr>
                             <th style="text-align: right;width:200px;padding-right: 10px;">Email</th>
@@ -36,17 +31,15 @@ $this->load->view('Email/header');
                             <th style="text-align: right;width:200px;padding-right: 10px;">Contact No.</th>
                             <td style="    text-align: left;"><?php echo $inputdata['contact_no']; ?></td>
                         </tr>
+
                         <tr>
-                            <th style="text-align: right;width:200px;padding-right: 10px;">Amount.</th>
-                            <td style="    text-align: left;"><?php echo $inputdata['amount']; ?></td>
+                            <th style="text-align: right;width:200px;padding-right: 10px;">Subject</th>
+                            <td style="    text-align: left;"><?php echo $inputdata['subject']; ?></td>
                         </tr>
                         <tr>
-                            <th style="text-align: right;width:200px;padding-right: 10px;">Country</th>
-                            <td style="    text-align: left;"><?php echo $inputdata['country']; ?></td>
+                            <th style="text-align: right;width:200px;padding-right: 10px;">Message</th>
+                            <td style="    text-align: left;"><?php echo $inputdata['message']; ?></td>
                         </tr>
-
-
-
 
                     </table>
 
