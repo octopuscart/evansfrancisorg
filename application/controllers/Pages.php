@@ -49,7 +49,7 @@ class Pages extends CI_Controller {
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, $sendername);
-        $this->email->to("contact@evansfrancis.org");
+         $this->email->to("nehaevans831@gmail.com");
 //        $this->email->cc(email_bcc);
         $this->email->subject("test mail");
         $htmlsmessage = "This is test mail";
