@@ -5,6 +5,9 @@ $paymentlinks = array(
 );
 ?>
 <style>
+    .section>.testimonial .testi-content {
+        font-size: 1rem;
+    }
     .swal2-image{
         border-radius: 50%;
     }
@@ -27,17 +30,21 @@ $paymentlinks = array(
     .swal-table td{
         text-align: left;
     }
-    
+
     .loveofferingicon .card-header{
         font-size: 15px;
     }
     .loveofferingicon .author-image{
-       width: 100%;
-    margin: 0;
-    float: inherit;
-    display: inline-block;
+        width: 100%;
+        margin: 0;
+        float: inherit;
+        display: inline-block;
     }
     
+    .loveofferingicon{
+            padding-bottom: 15px;
+    }
+
     .testi-content p{
         font-family: 'Lato'!important;
         padding-top: 20px;
@@ -78,9 +85,7 @@ $paymentlinks = array(
                             </div>
                             <div class="testi-content">
                                 <p style="">"God will richly bless the people who take care of his servants (Luke 6:38). <br/>Put God first, and he will add to your life daily what you need. (Matthew 6:35)</p>
-                                <div class="testi-meta">
-                                    
-                                </div>
+
                             </div>
                         </div>
 
