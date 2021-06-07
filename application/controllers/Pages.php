@@ -21,6 +21,7 @@ class Pages extends CI_Controller {
             'crlf' => "\r\n",
             'newline' => "\r\n"
         );
+        $this->email->initialize($configarray);
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
@@ -51,7 +52,7 @@ class Pages extends CI_Controller {
             'crlf' => "\r\n",
             'newline' => "\r\n"
         );
-        
+
         echo "--------------------";
 
         $this->email->initialize($configarray);
@@ -65,9 +66,9 @@ class Pages extends CI_Controller {
         $this->email->subject("test mail");
         $htmlsmessage = "This is test mail";
         $this->email->message($htmlsmessage);
-      
+
         echo $send = $this->email->send();
-        var_dump(  $this->email->print_debugger());
+        var_dump($this->email->print_debugger());
         if ($send) {
             
         } else {
