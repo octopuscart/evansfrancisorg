@@ -38,7 +38,7 @@ class Report extends CI_Controller {
     function invite() {
         //echo "--------------";
         $result['headings'] = ['Index', 'ORG Name', 'Full Name', 'Email', 'Contact No.', 'Address', 'Country', 'State', 'City', 'Zip', 'Website', 'Contact Person', 'Contact', 'Pastor', 'Event Title', 'Theme'
-            . 'Date', 'Attendance', 'Status', 'Date', 'Time'];
+            , 'Date', 'Attendance', 'Status', 'Date', 'Time'];
         $result['data'] = $this->get_org_data("website_invite");
         $result["title"] = "Invite - Report Data";
         $this->load->view('report/reportdata', $result);
