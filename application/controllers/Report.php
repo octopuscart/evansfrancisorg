@@ -28,7 +28,7 @@ class Report extends CI_Controller {
 
     function contact_us() {
         //echo "--------------";
-        $result['headings'] = ['Index', 'Name', 'Email', 'Contact No.', 'Subject', 'Message', 'Request Date', 'Request Time'];
+        $result['headings'] = [ 'Name', 'Email', 'Contact No.', 'Subject', 'Message', 'Request Date', 'Request Time'];
         $result['data'] = $this->get_org_data("website_contact_us");
         $result["title"] = "Contact us - Report Data";
         //print_r($data);
@@ -37,7 +37,7 @@ class Report extends CI_Controller {
 
     function invite() {
         //echo "--------------";
-        $result['headings'] = ['Index', 'ORG Name', 'Full Name', 'Email', 'Contact No.', 'Address', 'Country', 'State', 'City', 'Zip', 'Website', 'Contact Person', 'Contact', 'Pastor', 'Event Title', 'Theme'
+        $result['headings'] = [ 'ORG Name', 'Full Name', 'Email', 'Contact No.', 'Address', 'Country', 'State', 'City', 'Zip', 'Website', 'Contact Person', 'Contact', 'Pastor', 'Event Title', 'Theme'
             , 'Date', 'Attendance', 'Status', 'Date', 'Time'];
         $result['data'] = $this->get_org_data("website_invite");
         $result["title"] = "Invite - Report Data";
@@ -46,7 +46,7 @@ class Report extends CI_Controller {
 
     function pillar_of_cloud() {
         //echo "--------------";
-        $result['headings'] = ['Index', 'First Name', 'Last Name', 'Email', 'Contact No.', 'Prayer Time', 'Country', 'Request Date', 'Request Time'];
+        $result['headings'] = [ 'First Name', 'Last Name', 'Email', 'Contact No.', 'Prayer Time', 'Country', 'Request Date', 'Request Time'];
         $result['data'] = $this->get_org_data("website_pillar_of_cloud");
         //print_r($data);
         $result["title"] = "Pillar Of Cloud - Report Data";
@@ -55,7 +55,7 @@ class Report extends CI_Controller {
 
     function pillar_of_fire() {
         //echo "--------------";
-        $result['headings'] = ['Index', 'First Name', 'Last Name', 'Email', 'Contact No.', 'Amount', 'Country', 'Request Date', 'Request Time'];
+        $result['headings'] = [ 'First Name', 'Last Name', 'Email', 'Contact No.', 'Amount', 'Country', 'Request Date', 'Request Time'];
         $result['data'] = $this->get_org_data("website_pillar_of_fire");
         //print_r($data);
         $result["title"] = "Pillar Of Fire - Report Data";
@@ -64,7 +64,7 @@ class Report extends CI_Controller {
 
     function website_subscribe() {
         $result["title"] = "Subscription - Report Data";
-        $result['headings'] = ['Index', 'Email', 'Status', 'Request Date', 'Request Time'];
+        $result['headings'] = [ 'Email', 'Status', 'Request Date', 'Request Time'];
         $result['data'] = $this->get_org_data("website_subscribe");
         //print_r($data);
         $this->load->view('report/reportdata', $result);

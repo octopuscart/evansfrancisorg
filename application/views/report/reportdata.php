@@ -73,7 +73,7 @@ foreach ($jsarray as $key => $value) {
 
                     <thead>
                         <tr>
-
+                            <th>S. No.</th>
                             <?php
                             foreach ($headings as $values) {
                                 ?>
@@ -83,17 +83,29 @@ foreach ($jsarray as $key => $value) {
                         </tr>
                     </thead>
                     <?php
+                    $index = 1;
                     foreach ($data as $rows) {
                         ?>
                         <tr>
+                            <td><?php echo $index; ?></td>
                             <?php
-                            foreach ($rows as $value) {
-                                ?>
-                                <td><?php echo $value ?></td>
-                            <?php } ?>
+                            $index2 = 0;
+                            foreach ($rows as $key => $value) {
+
+                                if ($index2 > 0) {
+                                    ?>
+                                    <td><?php echo $value ?></td>
+                                <?php
+                                }
+                                $index2++;
+                            }
+                            ?>
 
                         </tr>
-                    <?php } ?>
+                        <?php
+                        $index++;
+                    }
+                    ?>
                 </table>
 
             </div>
