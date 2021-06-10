@@ -80,6 +80,7 @@ foreach ($jsarray as $key => $value) {
                                 <th><?php echo $values ?></th>
 
                             <?php } ?>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <?php
@@ -95,11 +96,13 @@ foreach ($jsarray as $key => $value) {
                                 if ($index2 > 0) {
                                     ?>
                                     <td><?php echo $value ?></td>
-                                <?php
+                                    <?php
                                 }
                                 $index2++;
                             }
+                            $tableid = $rows["id"];
                             ?>
+                            <td><a href="<?php echo site_url("Report/deleteData/$tablename/$tableid/$page"); ?>" class="btn btn-danger">Delete</a></td>
 
                         </tr>
                         <?php
