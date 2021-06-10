@@ -25,6 +25,9 @@ class Report extends CI_Controller {
             return array();
         }
     }
+    function index(){
+        redirect("Report/contact_us");
+    }
 
     function deleteData($tablename, $id, $pagename){
         $this->db->where("id", $id);
