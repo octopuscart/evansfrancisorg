@@ -16,7 +16,7 @@ class Report extends CI_Controller {
     }
 
     function get_org_data($tablename) {
-       $this->db->order_by("id");
+       $this->db->order_by("id desc");
         $query = $this->db->get($tablename);
         if ($query->num_rows() > 0) {
             $attrs = $query->result_array();
