@@ -27,6 +27,19 @@ class Product_model extends CI_Model {
         }
     }
 
+    function get_org_data($tablename) {
+        //$this->db->get("crud");
+       // $this->db->where('attribute_id', $id);
+       // $this->db->group_by('attribute_value');
+        $query = $this->db->get($tablename);
+        if ($query->num_rows() > 0) {
+            $attrs = $query->result_array();
+            return $attrs;
+        } else {
+            return array();
+        }
+    }
+
     function delete_table_information($tableName, $columnName, $id) {
         $this->db->where($columnName, $id);
         $this->db->delete($tableName);
@@ -150,12 +163,12 @@ where pa.product_id = $product_id group by attribute_value_id";
         $this->db->where('variant_product_of', $product_id);
         $query = $this->db->get('products');
         $product_veriant = $query->result_array();
-        
+
         $returnArray = array();
-        if($product_veriant){
+        if ($product_veriant) {
             $returnArray[$product_main['id']] = $product_main;
             foreach ($product_veriant as $key => $value) {
-                $returnArray[$value['id']] =  $value;
+                $returnArray[$value['id']] = $value;
             }
         }
         return $returnArray;
