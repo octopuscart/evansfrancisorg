@@ -49,7 +49,7 @@ class Pages extends CI_Controller {
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, $sendername);
-         $this->email->to("nehaevans831@gmail.com");
+        $this->email->to("nehaevans831@gmail.com");
 //        $this->email->cc(email_bcc);
         $this->email->subject("test mail");
         $htmlsmessage = "This is test mail";
@@ -116,6 +116,99 @@ class Pages extends CI_Controller {
         }
         $data["message"] = $messagedata;
         $this->load->view('pages/piller_of_fire', $data);
+    }
+
+    public function church() {
+        $input_data = $this->input->post();
+        $messagedata = array("title" => "", "message" => "", "type" => "");
+        $captchadata = $this->session->userdata("captchacode_church");
+
+        if (isset($input_data["submit"])) {
+
+            if ($input_data["captcha"] == $captchadata) {
+                unset($input_data["submit"]);
+                unset($input_data["captcha"]);
+                $input_data["request_date"] = date("Y-m-d");
+                $input_data["request_time"] = date("H:m:s A");
+                $this->db->insert('website_church_rent', $input_data);
+                $this->sendEmail($input_data, "church_rent", "SPONSOR OUR CHURCH RENT - Your request has been submitted.");
+                $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
+            } else {
+                $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
+            }
+        }
+        $data["message"] = $messagedata;
+        $this->load->view('pages/church', $data);
+    }
+
+    public function pastor() {
+        $input_data = $this->input->post();
+        $messagedata = array("title" => "", "message" => "", "type" => "");
+        $captchadata = $this->session->userdata("captchacode_pastor");
+
+        if (isset($input_data["submit"])) {
+
+            if ($input_data["captcha"] == $captchadata) {
+                unset($input_data["submit"]);
+                unset($input_data["captcha"]);
+                $input_data["request_date"] = date("Y-m-d");
+                $input_data["request_time"] = date("H:m:s A");
+                $this->db->insert('website_pastor', $input_data);
+                $this->sendEmail($input_data, "pastor", "SPONSOR A PASTOR - Your request has been submitted.");
+                $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
+            } else {
+                $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
+            }
+        }
+        $data["message"] = $messagedata;
+        $this->load->view('pages/pastor', $data);
+    }
+
+    public function family() {
+        $input_data = $this->input->post();
+        $messagedata = array("title" => "", "message" => "", "type" => "");
+        $captchadata = $this->session->userdata("captchacode_family");
+
+        if (isset($input_data["submit"])) {
+
+            if ($input_data["captcha"] == $captchadata) {
+                unset($input_data["submit"]);
+                unset($input_data["captcha"]);
+                $input_data["request_date"] = date("Y-m-d");
+                $input_data["request_time"] = date("H:m:s A");
+                $this->db->insert('website_family_groceries', $input_data);
+                $this->sendEmail($input_data, "family_groceries", "SPONSOR A FAMILY'S GROCERIES - Your request has been submitted.");
+                $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
+            } else {
+                $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
+            }
+        }
+        $data["message"] = $messagedata;
+        $this->load->view('pages/family', $data);
+    }
+
+    public function child() {
+        $input_data = $this->input->post();
+        $messagedata = array("title" => "", "message" => "", "type" => "");
+        $captchadata = $this->session->userdata("captchacode_child");
+
+        if (isset($input_data["submit"])) {
+
+            if ($input_data["captcha"] == $captchadata) {
+                unset($input_data["submit"]);
+                unset($input_data["captcha"]);
+                $input_data["request_date"] = date("Y-m-d");
+                $input_data["request_time"] = date("H:m:s A");
+                $this->db->insert('website_child_fee', $input_data);
+                $this->sendEmail($input_data, "child_fee", "CHILD'S SCHOOL FEE - Your request has been submitted.");
+                $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
+            } else {
+                $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
+            }
+        }
+        $data["message"] = $messagedata;
+
+        $this->load->view('pages/child', $data);
     }
 
     function pillar_of_cloud() {
