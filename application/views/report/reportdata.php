@@ -47,7 +47,19 @@ foreach ($jsarray as $key => $value) {
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo site_url("Report/website_subscribe"); ?>">Subscribe Report</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url("Report/child_fee"); ?>">Child Fee Report</a>
+                </li>
+                     <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url("Report/church_rent"); ?>">Church Rent Report</a>
+                </li>
+                     <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url("Report/family_grocery"); ?>">Family Grocery Report</a>
+                </li>
+                     <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url("Report/website_pastor"); ?>">Pastor Report</a>
+                </li>
+                
             </ul>
         </div>
     </div>
