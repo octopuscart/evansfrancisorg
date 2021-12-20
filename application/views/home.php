@@ -42,7 +42,7 @@ $this->load->view('layout/header');
 
                 <div class="row clearfix">
                     <div class="col-lg-5 offset-lg-1">
-                        <img src="<?php echo base_url(); ?>assets/writer/images/section/2.png" alt="Evans Neha" style="margin-top: 10px;">
+                        <img src="<?php echo base_url(); ?>assets/writer/images/section/2v2.png" alt="Evans Neha" style="margin-top: 10px;">
                     </div>
                     <div class="col-lg-5 offset-lg-1">
                         <h3 class="color fw-normal" style="font-size: 36px;">About  Evans</h3>
