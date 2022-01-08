@@ -330,4 +330,59 @@ class Pages extends CI_Controller {
         imagejpeg($image); //showing the image
     }
 
+    public function blog_api() {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "http://dds.christianappdevelopers.com:3000/v1/blogs/archive-dates/");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 0);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $data = json_decode($response, 1);
+        return $data;
+    }
+
+    function blogApi($selectmonth) {
+        $dat = str_replace(" ", "%20", $selectmonth);
+        $link1 = "http://dds.christianappdevelopers.com:3000/v1/blogs/blogs-by-month/$dat";
+      
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $link1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 0);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return json_decode($response, 1);
+    }
+
+    function blog_report() {
+        $input_data = $this->input->get();
+
+
+        $res = $this->blog_api();
+        $tempselectsdates = array();
+        $datearrayt = $res[0];
+        $datearray = array_reverse($datearrayt);
+        $selectedblogindex = 0;
+        foreach ($datearray as $key => $value) {
+            $tempselectsdates[$value['substr_date']] = $value['substr_date'];
+        }
+        $data['data'] = $tempselectsdates;
+        $selectmonth = $datearray[0]['substr_date'];
+
+        if (isset($input_data["submit"])) {
+            $selectmonth = $input_data['blogs-by-month'];
+        }
+        if (isset($input_data["blog_index"])) {
+            $selectedblogindex = $input_data["blog_index"];
+        }
+        ////////////////
+        $blogdata = $this->blogApi($selectmonth);
+      
+        $data['selected_blog'] = $blogdata[$selectedblogindex];
+        unset($blogdata[$selectedblogindex]);
+        $data['blog_data'] = $blogdata;
+        $data['select_month'] = $selectmonth;
+        $this->load->view('pages/blog_report', $data);
+    }
+
 }
