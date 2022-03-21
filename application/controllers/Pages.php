@@ -233,6 +233,29 @@ class Pages extends CI_Controller {
         $this->load->view('pages/piller_of_cloud', $data);
     }
 
+    function youthretreatregistration() {
+        $input_data = $this->input->post();
+        $messagedata = array("title" => "", "message" => "", "type" => "");
+        $captchadata = $this->session->userdata("captchacode_youthretreatregistration");
+        
+        if (isset($input_data["submit"])) {
+            if ($input_data["captcha"] == $captchadata) {
+                unset($input_data["submit"]);
+                unset($input_data["captcha"]);
+                $input_data["request_date"] = date("Y-m-d");
+                $input_data["request_time"] = date("H:m:s A");
+                $this->db->insert('website_youthretreat', $input_data);
+                $this->sendEmail($input_data, "youthretreatregistration", "Youth Retreat - Your request has been submitted.");
+                $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
+            } else {
+                $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
+            }
+        }
+        $data["message"] = $messagedata;
+        $data["captchadata"] = $captchadata;
+        $this->load->view('pages/youthretreatregistration', $data);
+    }
+
     function contact_us() {
         $contact_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
@@ -344,7 +367,7 @@ class Pages extends CI_Controller {
     function blogApi($selectmonth) {
         $dat = str_replace(" ", "%20", $selectmonth);
         $link1 = "http://dds.christianappdevelopers.com:3000/v1/blogs/blogs-by-month/$dat";
-      
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $link1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -377,7 +400,7 @@ class Pages extends CI_Controller {
         }
         ////////////////
         $blogdata = $this->blogApi($selectmonth);
-      
+
         $data['selected_blog'] = $blogdata[$selectedblogindex];
         unset($blogdata[$selectedblogindex]);
         $data['blog_data'] = $blogdata;
