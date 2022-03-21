@@ -37,7 +37,7 @@ $this->load->view('Email/header');
                             <td style="    text-align: left;"><?php echo $inputdata['church_name']; ?></td>
                         </tr>
                         <tr>
-                            <th style="text-align: right;width:200px;padding-right: 10px;">Age.</th>
+                            <th style="text-align: right;width:200px;padding-right: 10px;">Age</th>
                             <td style="    text-align: left;"><?php echo $inputdata['age']; ?></td>
                         </tr>
                         <tr>

@@ -18,7 +18,8 @@ class Report extends CI_Controller {
     function get_org_data($tablename) {
         $this->db->order_by("id desc");
         $query = $this->db->get($tablename);
-        if ($query->num_rows() > 0) {
+ 
+        if ($query) {
             $attrs = $query->result_array();
             return $attrs;
         } else {
@@ -80,6 +81,17 @@ class Report extends CI_Controller {
         $this->load->view('report/reportdata', $result);
     }
 
+    function youthretreat_report() {
+        //echo "--------------";
+        $result['headings'] = ['Full Name', 'Contact No.', 'Email', 'Church Name', 'Age', 'Gender', 'Food Preference', 'Request Date', 'Request Time'];
+        $result['data'] = $this->get_org_data("website_youthretreat");
+   
+        $result["title"] = "Youth Retreat - Report Data";
+        $result["tablename"] = "website_youthretreat";
+        $result["page"] = "website_youthretreat";
+        $this->load->view('report/youthretreat', $result);
+    }
+
     function website_subscribe() {
         $result["title"] = "Subscription - Report Data";
         $result['headings'] = ['Email', 'Status', 'Request Date', 'Request Time'];
@@ -110,6 +122,7 @@ class Report extends CI_Controller {
         $result["page"] = "website_church_rent";
         $this->load->view('report/reportdata', $result);
     }
+
     function family_grocery() {
         //echo "--------------";
         $result['headings'] = ['First Name', 'Last Name', 'Email', 'Contact No.', 'Amount', 'Donation Period', 'Country', 'Request Date', 'Request Time'];
@@ -120,7 +133,8 @@ class Report extends CI_Controller {
         $result["page"] = "website_family_groceries";
         $this->load->view('report/reportdata', $result);
     }
-        function website_pastor() {
+
+    function website_pastor() {
         //echo "--------------";
         $result['headings'] = ['First Name', 'Last Name', 'Email', 'Contact No.', 'Amount', 'Donation Period', 'Country', 'Request Date', 'Request Time'];
         $result['data'] = $this->get_org_data("website_pastor");
