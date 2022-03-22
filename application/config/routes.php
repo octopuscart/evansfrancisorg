@@ -58,6 +58,6 @@ $route['pillar-of-fire'] = 'Pages/pillar_of_fire';
 $route['pillar-of-cloud'] = 'Pages/pillar_of_cloud';
 $route['invite'] = 'Pages/invite';
 $route['love-offering'] = 'Pages/love_offering';
-$route["youthretreatregistration"] = "Pages/youthretreatregistration";
+$route["youthretreatregistration"] = "Pages/youthretreatregistrationform";
 $route['blog'] = 'Pages/blog_report/$1';
 $route['translate_uri_dashes'] = FALSE;
