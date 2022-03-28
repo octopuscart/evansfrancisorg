@@ -5,10 +5,10 @@ $this->load->view('layout/header');
 <!-- Slider
                 ============================================= -->
 <section id="slider" class="slider-element include-header" style="background:#1E232A; height: 450px;">
-    <div class="move-bg position-absolute w-100 h-100" style="top: 0; left: 0; background: url('<?php echo base_url(); ?>assets/writer/images/youthretreatregistration.jpg') center 40% no-repeat; background-size: cover;"></div>
+    <div class="move-bg position-absolute w-100 h-100" style="top: 0; left: 0; background: url('<?php echo base_url(); ?>assets/writer/images/youthretreatregistration2.jpg') center 40% no-repeat; background-size: cover;"></div>
     <div class="vertical-middle">
         <div class="container dark center">
-            <h2 style="font-size: 44px;color:#333" class="mb-0 nott">Youth Retreat</h2>
+            <h2 style="font-size: 44px;color:#333" class="mb-0 nott"></h2>
         </div>
     </div>
 
