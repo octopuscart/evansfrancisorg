@@ -93,6 +93,44 @@ class Report extends CI_Controller {
         $this->load->view('report/youthretreat', $result);
     }
 
+    function eyr_pass($codepass) {
+        $this->db->where('access_code', $codepass); //set column_name and value in which row need to update
+        $query = $this->db->get('website_youthretreat');
+        $access_data = $query->row_array();
+        $columns = ["full_name", "contact_no", "gender",];
+        $headings = ['Full Name', 'Contact No.', 'Gender',];
+
+//        print_r($access_data);
+
+        $font_size = 10;
+        if ($access_data) {
+            header('Content-type: image/jpeg');
+            $font_path1 = APPPATH . "../assets/card/fonts/ABeeZee-Regular.otf";
+            $jpg_image = imagecreatefromjpeg(APPPATH . "../assets/images/passtemplate.jpg");
+            $black = imagecolorallocate($jpg_image, 0, 0, 0);
+            $white = imagecolorallocate($jpg_image, 255, 255, 255);
+            $black12 = imagecolorallocate($jpg_image, 239, 54, 59);
+            $image_width = imagesx($jpg_image);
+            $image_height = imagesy($jpg_image);
+            $x = 650;
+            $y = 18;
+            foreach ($columns as $key => $cvalue) {
+                imagettftext($jpg_image, $font_size, 0, $x - 80, $y + ($key * 20), $black12, $font_path1, $headings[$key]);
+
+                imagettftext($jpg_image, $font_size, 0, $x, $y + ($key * 20), $black, $font_path1, $access_data[$cvalue]);
+            }
+            imagettftext($jpg_image, 15, 0, 330, 300, $black, $font_path1, $codepass);
+            imagettftext($jpg_image, 15, 90, 100, 240, $white, $font_path1, $codepass);
+
+// Output the image
+            imagejpeg($jpg_image);
+            imagedestroy($jpg_image);
+        } else {
+            echo "No Data Found";
+        }
+// Free up memory
+    }
+
     function website_subscribe() {
         $result["title"] = "Subscription - Report Data";
         $result['headings'] = ['Email', 'Status', 'Request Date', 'Request Time'];

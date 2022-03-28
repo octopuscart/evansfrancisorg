@@ -78,8 +78,9 @@ foreach ($jsarray as $key => $value) {
                                 $index2++;
                             }
                             $tableid = $rows["id"];
+                            $access_code = $rows["access_code"];
                             ?>
-                            <td><a href="<?php echo site_url("Report/deleteData/$tablename/$tableid/$page"); ?>" class="btn btn-success">Pass</a></td>
+                            <td><a href="<?php echo site_url("eyr-pass/$access_code"); ?>" class="btn btn-success">Pass</a></td>
 
                             <td><a href="<?php echo site_url("Report/deleteData/$tablename/$tableid/$page"); ?>" class="btn btn-danger">Delete</a></td>
 
