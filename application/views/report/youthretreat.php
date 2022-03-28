@@ -68,11 +68,11 @@ foreach ($jsarray as $key => $value) {
                             <td><?php echo $index; ?></td>
                             <?php
                             $index2 = 0;
-                            foreach ($rows as $key => $value) {
+                            foreach ($columns as $key => $value) {
 
                                 if ($index2 > 0) {
                                     ?>
-                                    <td><?php echo $value ?></td>
+                                    <td><?php echo $rows[$value]; ?></td>
                                     <?php
                                 }
                                 $index2++;

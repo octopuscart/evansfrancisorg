@@ -237,13 +237,24 @@ class Pages extends CI_Controller {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_youthretreatregistration");
-        
+
         if (isset($input_data["submit"])) {
             if ($input_data["captcha"] == $captchadata) {
                 unset($input_data["submit"]);
                 unset($input_data["captcha"]);
                 $input_data["request_date"] = date("Y-m-d");
                 $input_data["request_time"] = date("H:m:s A");
+
+                $possible_letters = '123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $code = '';
+                $i = 0;
+                while ($i < 6) {
+                    $code .= substr($possible_letters, mt_rand(0, strlen($possible_letters) - 1), 1);
+                    $i++;
+                }
+                $code = $code ."". rand(1000,9999);
+                $input_data['access_code'] = $code;
+
                 $this->db->insert('website_youthretreat', $input_data);
                 $this->sendEmail($input_data, "youthretreatregistration", "Youth Retreat - Your request has been submitted.");
                 $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");

@@ -18,7 +18,7 @@ class Report extends CI_Controller {
     function get_org_data($tablename) {
         $this->db->order_by("id desc");
         $query = $this->db->get($tablename);
- 
+
         if ($query) {
             $attrs = $query->result_array();
             return $attrs;
@@ -83,9 +83,10 @@ class Report extends CI_Controller {
 
     function youthretreat_report() {
         //echo "--------------";
-        $result['headings'] = ['Full Name', 'Contact No.', 'Email', 'Church Name','Age', 'Gender',  'City',  'Food Preference', 'Request Date', 'Request Time'];
+        $result["columns"] = ["id", "full_name", "contact_no", "email", "church_name", "age", "gender", "city", "food_preference", "request_date", "request_time"];
+        $result['headings'] = ['Full Name', 'Contact No.', 'Email', 'Church Name', 'Age', 'Gender', 'City', 'Food Preference', 'Request Date', 'Request Time'];
         $result['data'] = $this->get_org_data("website_youthretreat");
-   
+
         $result["title"] = "Youth Retreat - Report Data";
         $result["tablename"] = "website_youthretreat";
         $result["page"] = "website_youthretreat";
