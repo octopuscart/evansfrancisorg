@@ -44,7 +44,7 @@ foreach ($jsarray as $key => $value) {
             <div class="container">
                 <h2><?php echo $title; ?></h2>
 
-                <table id="example" class="table table-bordered" style="width:100%">
+                <table id="example" class="table table-bordered" style="width:100%;    font-size: 11px;">
 
 
                     <thead>
