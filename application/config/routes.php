@@ -60,5 +60,5 @@ $route['invite'] = 'Pages/invite';
 $route['love-offering'] = 'Pages/love_offering';
 $route["eyr"] = "Pages/youthretreatregistration";
 $route['blog'] = 'Pages/blog_report/$1';
-$route['eyr-pass/(:any)'] = 'Report/youthretreat_report/$1';
+$route['eyr-pass/(:any)'] = 'Report/eyr_pass/$1';
 $route['translate_uri_dashes'] = FALSE;
