@@ -47,11 +47,11 @@ $this->load->view('layout/header');
                                 <div class="row">
 
                                     <div class="col-sm-6 form-group">
-                                        <label class="nott" for="first_name">Full Name <small>*</small></label>
+                                        <label class="nott" for="first_name">Full Name<small>*</small></label>
                                         <input type="text" id="first_name" name="full_name" value="" class="sm-form-control required" required="" />
                                     </div>
                                     <div class="col-sm-6 form-group">
-                                        <label class="nott" for="contact_name">Contact No.<small>*</small></label>
+                                        <label class="nott" for="contact_name">WhatsApp No.<small>*</small></label>
                                         <input type="text" id="last_name" name="contact_no" value="" class="sm-form-control required" required="" />
                                     </div>
 
@@ -62,24 +62,37 @@ $this->load->view('layout/header');
 
                                     <div class="w-100"></div>
 
-                                    <div class="col-12 form-group">
-                                        <label class="nott" for="contact_no">Church Name</label>
+                                    <div class="col-8 form-group">
+                                        <label class="nott" for="contact_no">Church Name<small>*</small></label>
                                         <input type="text" id="contact_no" name="church_name" value="" required="" class="sm-form-control" />
+                                    </div>
+                                    <div class="col-4 form-group">
+                                        <label class="nott" for="contact_no">City Name<small>*</small></label>
+                                        <input type="text" id="contact_no" name="city" value="" required="" class="sm-form-control" />
                                     </div>
 
                                     <div class="col-sm-4 form-group">
-                                        <label class="nott" for="age">Age</label>
-                                        <input type="text" id="country" name="age" value="" class="sm-form-control required" />
+                                        <label class="nott" for="age">Age<small>*</small></label>
+                                        <select  name="age" class="required email sm-form-control" >
+
+                                            <option selected="">Select Age</option>
+                                            <?php
+                                            for ($i = 15; $i <= 35; $i++) {
+                                                echo "<option>$i</option>";
+                                            }
+                                            ?>
+
+                                        </select>
                                     </div>
                                     <div class="col-sm-4 form-group">
-                                        <label class="nott" for="prayer_time">Gender</label>
+                                        <label class="nott" for="prayer_time">Gender<small>*</small></label>
                                         <select  name="gender" class="required email sm-form-control" >
                                             <option selected="">Male</option>
                                             <option>Female</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-4 form-group">
-                                        <label class="nott" for="food_preference">Food Preference</label>
+                                        <label class="nott" for="food_preference">Food Preference<small>*</small></label>
                                         <select  name="food_preference" class="required email sm-form-control" >
                                             <option selected="">Veg</option>
                                             <option>Non-Veg</option>

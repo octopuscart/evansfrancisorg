@@ -83,7 +83,7 @@ class Report extends CI_Controller {
 
     function youthretreat_report() {
         //echo "--------------";
-        $result['headings'] = ['Full Name', 'Contact No.', 'Email', 'Church Name', 'Age', 'Gender', 'Food Preference', 'Request Date', 'Request Time'];
+        $result['headings'] = ['Full Name', 'Contact No.', 'Email', 'Church Name','Age', 'Gender',  'City',  'Food Preference', 'Request Date', 'Request Time'];
         $result['data'] = $this->get_org_data("website_youthretreat");
    
         $result["title"] = "Youth Retreat - Report Data";

@@ -36,7 +36,7 @@ foreach ($jsarray as $key => $value) {
 
 <!-- Content
 ============================================= -->
-<section id="content">
+<section id="content-fluid">
 
     <div class="content-wrap pb-2" >
 
@@ -56,6 +56,7 @@ foreach ($jsarray as $key => $value) {
                                 <th><?php echo $values ?></th>
 
                             <?php } ?>
+                            <th>Pass</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -78,6 +79,8 @@ foreach ($jsarray as $key => $value) {
                             }
                             $tableid = $rows["id"];
                             ?>
+                            <td><a href="<?php echo site_url("Report/deleteData/$tablename/$tableid/$page"); ?>" class="btn btn-success">Pass</a></td>
+
                             <td><a href="<?php echo site_url("Report/deleteData/$tablename/$tableid/$page"); ?>" class="btn btn-danger">Delete</a></td>
 
                         </tr>
