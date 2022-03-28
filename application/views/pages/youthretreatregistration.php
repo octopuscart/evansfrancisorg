@@ -4,8 +4,8 @@ $this->load->view('layout/header');
 
 <!-- Slider
                 ============================================= -->
-<section id="slider" class="slider-element include-header" style="background:#1E232A; height: 450px;">
-    <div class="move-bg position-absolute w-100 h-100" style="top: 0; left: 0; background: url('<?php echo base_url(); ?>assets/writer/images/youthretreatregistration2.jpg') center 40% no-repeat; background-size: cover;"></div>
+<section id="slider" class="slider-element include-header" style="background:#1E232A; height: 0px;">
+    <div class="move-bg position-absolute w-100 h-25" style="top: 0; left: 0; background: url('') center 40% no-repeat; background-size: cover;"></div>
     <div class="vertical-middle">
         <div class="container dark center">
             <h2 style="font-size: 44px;color:#333" class="mb-0 nott"></h2>
@@ -33,10 +33,11 @@ $this->load->view('layout/header');
                         <div class="form-result"></div>
 
                         <div class="form-widget1 mt-0">
+                            <img src="<?php echo base_url(); ?>assets/writer/images/youthretreatregistration3.jpg"/>
 
                             <div class="form-result"></div>
 
-                            <form class="mb-0" id="template-contactform" name="template-contactform" action="#" method="post">
+                            <form class="mb-0 mt-5" id="template-contactform" name="template-contactform" action="#" method="post">
 
                                 <div class="form-process">
                                     <div class="css3-spinner">
