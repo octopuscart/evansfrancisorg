@@ -31,6 +31,8 @@ foreach ($jsarray as $key => $value) {
 
 <link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" type="text/css" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-icons.css" type="text/css" />
+   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/writer/css/fonts.css" type="text/css" />
 <!-- Slider
                 ============================================= -->
 
@@ -80,9 +82,13 @@ foreach ($jsarray as $key => $value) {
                             $tableid = $rows["id"];
                             $access_code = $rows["access_code"];
                             ?>
-                            <td><a href="<?php echo site_url("eyr-pass/$access_code"); ?>" class="btn btn-success">Pass</a></td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="<?php echo site_url("eyr-pass/$access_code"); ?>" class="btn btn-success btn-sm">Download</a>
+                                </div>
+                            </td>
 
-                            <td><a href="<?php echo site_url("Report/deleteData/$tablename/$tableid/$page"); ?>" class="btn btn-danger">Delete</a></td>
+                            <td><a href="<?php echo site_url("Report/deleteData/$tablename/$tableid/$page"); ?>" class="btn btn-danger btn-sm">Delete</a></td>
 
                         </tr>
                         <?php

@@ -105,6 +105,9 @@ class Report extends CI_Controller {
         $font_size = 10;
         if ($access_data) {
             header('Content-type: image/jpeg');
+
+            header("Content-Disposition: attachment; filename=$codepass.jpg");
+
             $font_path1 = APPPATH . "../assets/card/fonts/ABeeZee-Regular.otf";
             $jpg_image = imagecreatefromjpeg(APPPATH . "../assets/images/passtemplate.jpg");
             $black = imagecolorallocate($jpg_image, 0, 0, 0);
@@ -129,6 +132,12 @@ class Report extends CI_Controller {
             echo "No Data Found";
         }
 // Free up memory
+    }
+
+    function downloadPass($passcode) {
+        $url = site_url("Report/eyr_pass/$passcode");
+        $this->load->helper('download');
+        force_download($passcode . ".jpg", $url);
     }
 
     function website_subscribe() {
