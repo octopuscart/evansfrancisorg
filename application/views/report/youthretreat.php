@@ -29,10 +29,12 @@ foreach ($jsarray as $key => $value) {
 <title><?php echo $title; ?></title>
 
 
-<link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" type="text/css" />
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css" type="text/css" />
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" type="text/css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" type="text/css" />
+
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-icons.css" type="text/css" />
-   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/writer/css/fonts.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/writer/css/fonts.css" type="text/css" />
 <!-- Slider
                 ============================================= -->
 
@@ -84,7 +86,7 @@ foreach ($jsarray as $key => $value) {
                             ?>
                             <td>
                                 <div class="btn-group">
-                                    <a href="<?php echo site_url("eyr-pass/$access_code"); ?>" class="btn btn-success btn-sm">Download</a>
+                                    <a href="<?php echo site_url("eyr-pass/$access_code"); ?>" target="_blank" class="btn btn-success btn-sm">Download</a>
                                 </div>
                             </td>
 
@@ -109,9 +111,9 @@ foreach ($jsarray as $key => $value) {
 
 
         $('#example').DataTable({
-            dom: 'Bfrtip',
+            dom: 'Blfrtip',
             buttons: [
-                'excel', 'pdf'
+                'excel', 'pdf', 'csv', 'print'
             ]
         });
 

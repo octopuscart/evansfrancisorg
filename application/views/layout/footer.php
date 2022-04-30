@@ -61,7 +61,7 @@
                                     <li class="menu-item"><a class="menu-link" target="_blank" href="https://www.evansfrancisbooks.com/"><div>Books</div></a></li>
                                     <li class="menu-item"><a class="menu-link" target="_blank" href="https://christianappdevelopers.com/"><div>Apps</div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="<?php echo site_url("blog"); ?>"><div>Blog</div></a></li>
-
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("eyr"); ?>"><div>Encounter Youth Retreat</div></a></li>
 
                                 </ul>
                             </div>

@@ -78,7 +78,7 @@ $this->load->view('layout/header');
 
                                             <option selected="">Select Age</option>
                                             <?php
-                                            for ($i = 15; $i <= 35; $i++) {
+                                            for ($i = 13; $i <= 35; $i++) {
                                                 echo "<option>$i</option>";
                                             }
                                             ?>
