@@ -75,13 +75,6 @@ $this->load->view('layout/header');
 
                                         <div class="w-100"></div>
 
-                                            <option selected="">Select Age</option>
-                                            <?php
-                                            for ($i = 13; $i <= 35; $i++) {
-                                                echo "<option>$i</option>";
-                                            }
-                                            ?>
-
                                         <div class="col-8 form-group">
                                             <label class="nott" for="contact_no">Church Name<small>*</small></label>
                                             <input type="text" id="contact_no" name="church_name" value="" required="" class="sm-form-control" />
