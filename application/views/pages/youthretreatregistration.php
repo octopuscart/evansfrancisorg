@@ -29,15 +29,25 @@ $this->load->view('layout/header');
                     <div class="clear"></div>
 
                     <div class="form-widget2 mt-5">
-                        <img src="<?php echo base_url(); ?>assets/writer/images/youthretreatregistration3.jpg"/>
 
                         <div class="form-result"></div>
 
                         <div class="form-widget1 mt-0">
 
 
+                            <img src="<?php echo base_url(); ?>assets/writer/images/youthretreatregistration3.jpg"/>
 
-                            <img src="<?php echo base_url(); ?>assets/images/registration_closed.png">
+                            <div class="form-result"></div>
+
+                            <form class="mb-0 mt-5" id="template-contactform" name="template-contactform" action="#" method="post">
+
+                                <img src="<?php echo base_url(); ?>assets/images/registration_closed.png">
+
+
+
+                            </form>
+
+
                         </div>
                     </div>
                 </div>
