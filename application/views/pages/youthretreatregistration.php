@@ -29,6 +29,7 @@ $this->load->view('layout/header');
                     <div class="clear"></div>
 
                     <div class="form-widget2 mt-5">
+                        <img src="<?php echo base_url(); ?>assets/writer/images/youthretreatregistration3.jpg"/>
 
                         <div class="form-result"></div>
 
