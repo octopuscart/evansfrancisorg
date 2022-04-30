@@ -4,7 +4,7 @@ $this->load->view('layout/header');
 
 <!-- Slider
                 ============================================= -->
-<section id="slider" class="slider-element include-header" style="background:#1E232A; height: 0px;">
+<section id="slider" class="slider-element include-header" style="background:#1E232A; height: 100px;">
     <div class="move-bg position-absolute w-100 h-25" style="top: 0; left: 0; background: url('') center 40% no-repeat; background-size: cover;"></div>
     <div class="vertical-middle">
         <div class="container dark center">
