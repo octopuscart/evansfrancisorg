@@ -75,14 +75,13 @@ $this->load->view('layout/header');
 
                                         <div class="w-100"></div>
 
-<<<<<<< HEAD
                                             <option selected="">Select Age</option>
                                             <?php
                                             for ($i = 13; $i <= 35; $i++) {
                                                 echo "<option>$i</option>";
                                             }
                                             ?>
-=======
+
                                         <div class="col-8 form-group">
                                             <label class="nott" for="contact_no">Church Name<small>*</small></label>
                                             <input type="text" id="contact_no" name="church_name" value="" required="" class="sm-form-control" />
@@ -91,7 +90,6 @@ $this->load->view('layout/header');
                                             <label class="nott" for="contact_no">City Name<small>*</small></label>
                                             <input type="text" id="contact_no" name="city" value="" required="" class="sm-form-control" />
                                         </div>
->>>>>>> 5e13b8b28d71281f888406d5db459065818ca0cb
 
                                         <div class="col-sm-4 form-group">
                                             <label class="nott" for="age">Age<small>*</small></label>
