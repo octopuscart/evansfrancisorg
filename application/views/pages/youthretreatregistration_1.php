@@ -34,17 +34,7 @@ $this->load->view('layout/header');
 
                         <div class="form-widget1 mt-0">
 
-                            <?php
-                            $checkdate = date("Y-m-d");
-                            $date1 = new DateTime($checkdate);
-                            $date2 = new DateTime("2022-04-30"); // Can use date/string just like strtotime.
-                            if ($date1 > $date2) {
-                                ?>
-
-                                <img src="<?php echo base_url(); ?>assets/images/registration_closed.png">
-                                <?php
-                            } else {
-                                ?>
+                           
                                 <img src="<?php echo base_url(); ?>assets/writer/images/youthretreatregistration3.jpg"/>
 
                                 <div class="form-result"></div>
@@ -140,9 +130,7 @@ $this->load->view('layout/header');
 
                                 </form>
 
-                                <?php
-                            }
-                            ?>
+                        
                         </div>
                     </div>
                 </div>

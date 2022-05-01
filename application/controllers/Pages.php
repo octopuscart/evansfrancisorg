@@ -252,7 +252,7 @@ class Pages extends CI_Controller {
                     $code .= substr($possible_letters, mt_rand(0, strlen($possible_letters) - 1), 1);
                     $i++;
                 }
-                $code = $code ."". rand(1000,9999);
+                $code = $code . "" . rand(1000, 9999);
                 $input_data['access_code'] = $code;
 
                 $this->db->insert('website_youthretreat', $input_data);
@@ -265,6 +265,11 @@ class Pages extends CI_Controller {
         $data["message"] = $messagedata;
         $data["captchadata"] = $captchadata;
         $this->load->view('pages/youthretreatregistration', $data);
+    }
+
+    function youthretreatregistration_1() {
+        $data = array();
+        $this->load->view('pages/youthretreatregistration_1', $data);
     }
 
     function contact_us() {
@@ -390,7 +395,6 @@ class Pages extends CI_Controller {
 
     function blog_report() {
         $input_data = $this->input->get();
-
 
         $res = $this->blog_api();
         $tempselectsdates = array();

@@ -90,7 +90,65 @@ class Report extends CI_Controller {
         $result["title"] = "Youth Retreat - Report Data";
         $result["tablename"] = "website_youthretreat";
         $result["page"] = "website_youthretreat";
+
         $this->load->view('report/youthretreat', $result);
+    }
+
+    public function sendEmail($inputdata, $tamplate, $subject) {
+//        $configarray = array(
+//            'protocol' => 'smtp',
+//            'smtp_host' => "localhost",
+//            'smtp_user' => "",
+//            'smtp_pass' => "",
+//            'smtp_port' => 25,
+//            'crlf' => "\r\n",
+//            'newline' => "\r\n"
+//        );
+//        $this->email->initialize($configarray);
+        $emailsender = email_sender;
+        $sendername = email_sender_name;
+        $email_bcc = email_bcc;
+        $this->email->set_newline("\r\n");
+        $this->email->from("contact@evansfrancis.org", $sendername);
+        $this->email->to("nehaevans831@gmail.com");
+
+        $this->email->subject($subject);
+        $htmlsmessage = $this->load->view("Email/$tamplate", array("inputdata" => $inputdata), true);
+        $this->email->message($htmlsmessage);
+        $this->email->print_debugger();
+        $send = $this->email->send();
+        if ($send) {
+            
+        } else {
+            $error = $this->email->print_debugger(array('headers'));
+        }
+    }
+
+    function registation() {
+        $input_data = $this->input->post();
+        $messagedata = array("title" => "", "message" => "", "type" => "");
+        if (isset($input_data["submit"])) {
+            unset($input_data["submit"]);
+
+            $input_data["request_date"] = date("Y-m-d");
+            $input_data["request_time"] = date("H:m:s A");
+            $possible_letters = '123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $code = '';
+            $i = 0;
+            while ($i < 6) {
+                $code .= substr($possible_letters, mt_rand(0, strlen($possible_letters) - 1), 1);
+                $i++;
+            }
+            $code = $code . "" . rand(1000, 9999);
+            $input_data['access_code'] = $code;
+
+            $this->db->insert('website_youthretreat', $input_data);
+            $this->sendEmail($input_data, "youthretreatregistration", "Youth Retreat - Your request has been submitted.");
+            $messagedata = array("title" => "Thanks You", "message" => "Your request has been submitted.", "type" => "success");
+            redirect(site_url("Report/youthretreat_report"));
+        }
+        $result["message"] = $messagedata;
+        $this->load->view('report/registation', $result);
     }
 
     function eyr_pass($codepass) {

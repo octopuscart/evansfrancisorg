@@ -47,6 +47,7 @@ foreach ($jsarray as $key => $value) {
         <div class="section dark m-0 bg-transparent" style="padding: 0;">
             <div class="container">
                 <h2><?php echo $title; ?></h2>
+                <p><a style="border:1px solid #000;background:blue;color:white;padding:5px;" href="<?php echo site_url("Report/registation")?>">New Registration</a></p>
 
                 <table id="example" class="table table-bordered" style="width:100%;    font-size: 11px;">
 
