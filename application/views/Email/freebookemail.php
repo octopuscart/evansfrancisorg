@@ -6,7 +6,7 @@ $this->load->view('Email/header');
         <tbody>
 
             <tr>
-                <td style="    text-align: left;font-size: 18px;">
+                <td style="    text-align: left;font-size: 15px;">
 
 
                     <b>Dear <?php echo $inputdata['first_name']; ?>,</b>

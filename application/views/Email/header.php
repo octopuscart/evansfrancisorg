@@ -19,6 +19,19 @@
                 display: inline-block;
                 margin-right: 10px;
             }
+            .appstore{
+                height: auto;
+                /* float: left; */
+                position: inherit;
+                width:140px;
+                display: inline-block;
+                margin-right: 10px;
+            }
+             .appstore img {
+                width: 140px;
+
+            }
+
 
             .socialicons img {
                 width: 35px;

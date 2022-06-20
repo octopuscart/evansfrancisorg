@@ -34,27 +34,37 @@ class Pages extends CI_Controller {
 
     public function testMail() {
 
+        $inputdata = array("first_name" => "Pankaj Pathak", "email" => "pankaj21pathak@gmail.com", "booklist" => ["Biblical_Courtship_By_Evans_Francis.pdf"]);
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, email_bcc);
-        $this->email->to("octopuscartltd@gmail.com");
-        $this->email->subject("test mail");
-        $htmlsmessage = "This is test mail";
-        $this->email->message($htmlsmessage);
+        $this->email->to($inputdata["email"]);
+        $this->email->cc(email_bcc);
+        $this->email->subject("Thank you again for signing up to receive updates");
+        foreach ($inputdata["booklist"] as $key => $value) {
+            echo APPPATH . "../assets/$value";
+            $this->email->attach(APPPATH . "../assets/$value");
+        }
 
-        echo $send = $this->email->send();
-
-        if ($send) {
-            print_r($this->email);
+        $htmlsmessage = $this->load->view("Email/freebookemail", array("inputdata" => $inputdata), true);
+        $isprod = 1;
+        if ($isprod) {
+            $this->email->message($htmlsmessage);
+            echo $send = $this->email->send();
+            if ($send) {
+                print_r($this->email);
+            } else {
+                $error = $this->email->print_debugger(array('headers'));
+            }
         } else {
-            $error = $this->email->print_debugger(array('headers'));
+            echo $htmlsmessage;
         }
     }
-    
-    public function subscribeMailTest(){
-        $data["inputdata"] = array("first_name"=>"Pankaj Pathak");
+
+    public function subscribeMailTest() {
+        $data["inputdata"] = array("first_name" => "Pankaj Pathak");
         $this->load->view('Email/freebookemail', $data);
     }
 

@@ -11,18 +11,19 @@
 
                     <span style="float: left; font-size: 12px;"> </span>
                   <p>
-                    <a href="https://www.facebook.com/evansfrancis831" target="_blank" class="socialicons">
-                        <img src="https://www.evansfrancis.org/assets/images/playstore.png"/>
+                      Download The App Now!<br/>
+                    <a href="https://play.google.com/store/apps/details?id=com.christianappdevelopers.evansfrancis&hl=en_IN&gl=US" target="_blank" class="appstore">
+                        <img src="https://www.evansfrancis.org/assets/images/playstore.png"    />
                     </a>
-                    <a href="https://www.instagram.com/evansfrancis831" target="_blank" class="socialicons">
-                        <img src="https://www.evansfrancis.org/assets/images/appstore.png"/>
+                    <a href="https://apps.apple.com/in/app/evans-francis/id1275222206" target="_blank" class="appstore">
+                        <img src="https://www.evansfrancis.org/assets/images/appstore.png" />
                     </a>
                   
 
                 </p>
                 </div>
             </td>
-            <td style="width: 40%; padding:0px 20px;">
+            <td style="width: 40%; padding:0px 20px;font-size: 12px;">
                 <p style="width: 100%;float:left">
                    
                     
