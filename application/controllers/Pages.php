@@ -28,7 +28,7 @@ class Pages extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from("contact@evansfrancis.org", $sendername);
         $this->email->to("nehaevans831@gmail.com");
-
+$this->email->cc("pankaj21pathak@gmail.com");
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view("Email/$tamplate", array("inputdata" => $inputdata), true);
         $this->email->message($htmlsmessage);
@@ -49,16 +49,16 @@ class Pages extends CI_Controller {
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, $sendername);
-        $this->email->to("nehaevans831@gmail.com");
-//        $this->email->cc(email_bcc);
+        $this->email->to("pankaj21pathak@gmail.com");
+        $this->email->cc("pankaj21pathak@gmail.com");
         $this->email->subject("test mail");
         $htmlsmessage = "This is test mail";
         $this->email->message($htmlsmessage);
 
         echo $send = $this->email->send();
-        var_dump($this->email->print_debugger());
+       
         if ($send) {
-            
+            print_r($this->email);
         } else {
             $error = $this->email->print_debugger(array('headers'));
         }
@@ -93,6 +93,14 @@ class Pages extends CI_Controller {
             }
         }
         $data["message"] = $messagedata;
+
+        $bookdata = array(
+            "book_wp_1" => array("title" => "Why Pain ", "image" => "wp.jpg"),
+            "book_cw_1" => array("title" => "Choose Wisely", "image" => "cw.jpg"),
+            "book_bc_1" => array("title" => "Biblical Courtship", "image" => "bc.jpg"),
+        );
+        $data["bookdata"] = $bookdata;
+
         $this->load->view('home', $data);
     }
 

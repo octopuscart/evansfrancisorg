@@ -6,3 +6,131 @@
     text-transform: capitalize;
     letter-spacing: 1px;
 }
+
+.modal-newsletter {
+    color: #000;
+
+    font-size: 15px;
+}
+.modal-newsletter .modal-content {
+    padding: 10px 20px;
+    border-radius: 19px;
+    border: none;
+
+}
+.modal-newsletter .modal-header {
+    border-bottom: none;
+    position: relative;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    height: 82px;
+}
+.modal-newsletter h4 {
+    color: #000;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    margin: 0 0 25px;
+}
+.modal-newsletter .close {
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    color: #c0c3c8;
+    text-shadow: none;
+    opacity: 0.5;
+    width: 32px;
+    height: 32px;
+    border-radius: 20px;
+    font-size: 18px;
+    border: 2px solid;
+    padding: 0;
+}
+.modal-newsletter .close:hover {
+    opacity: 0.8;
+}
+.modal-newsletter .icon-box {
+    color: #49c5c1;
+    display: inline-block;
+    z-index: 9;
+    text-align: center;
+    position: relative;
+}
+.modal-newsletter .icon-box i {
+    font-size: 110px;
+}
+.modal-newsletter .form-control, .modal-newsletter .btn {
+    min-height: 46px;
+    text-align: center;
+    border-radius: 1px;
+}
+.modal-newsletter .form-control {
+    box-shadow: none;
+    border-color: #dbdbdb;
+}
+.modal-newsletter .form-control:focus {
+    border-color: #49c5c1;
+    box-shadow: 0 0 8px rgba(73, 197, 193, 0.5);
+}
+.modal-newsletter .btn, .modal-newsletter .btn:active {
+    color: #fff;
+    background: #49c5c1 !important;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    padding: 6px 20px;
+    min-width: 180px;
+    border: none;
+    margin-top: 20px;
+    font-family: 'Airal', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.modal-newsletter .btn:hover, .modal-newsletter .btn:focus {
+    background: #39b3af !important;
+    outline: none;
+}
+.modal-newsletter .form-group {
+
+}
+
+.modal-newsletter .warning-message-ns{
+    font-size: 12px;
+}
+.hint-text {
+    margin: 100px auto;
+    text-align: center;
+}
+
+.modal-newsletter .nott {
+    text-align: left;
+    width: -webkit-fill-available;
+}
+
+
+.ns-bookcoverblock img{
+    height:100px;
+}
+.modal-newsletter label{
+    text-transform: none;
+}
+
+.modal-newsletter .modal-body {
+  
+    padding-bottom: 0px;
+}
+.modal-newsletter{
+  
+    padding-bottom: 0px;
+}
+
+@media (max-width: 480px) {
+    .modal-newsletter .modal-content {
+
+    }
+    .hideonmobile{
+        display: none;
+    }
+}

@@ -78,7 +78,7 @@ $this->load->view('layout/header');
                             <div class="entry-title title-xs nott">
                                 <h3><a href="<?php echo site_url("Pages/church"); ?>" class="text-white">Sponsor Our Church Rent</a></h3>
                             </div>
-                         
+
                             <div class="entry-content">It is our responsibility as the Disciples of Christ to ensure that we remain faithful to the Church</div></br>
                             <a href="<?php echo site_url("Pages/church"); ?>" type="button" class="button button-3d m-0">Know More</a>
 
@@ -230,6 +230,101 @@ $this->load->view('layout/header');
     </div>
 </div>
 </section><!-- #content end -->
+<!-- Modal -->
+<div id="newsletterModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"  >
+    <div class="modal-dialog modal-lg modal-newsletter">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h4>Free eBooks</h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true"><span>&times;</span></button>
+            </div>
+            <div class="modal-body row">
+                <div class="col-md-6">
+
+                    <p>To receive Neha & Evans Francis' book in your email for FREE, kindly select the books you would like to receive.</p>
+
+                    <div class="col-md-12 row">
+                        <?php
+                        foreach ($bookdata as $key => $value) {
+                            ?>
+                            <div class="col col-md">
+                                <div class="ns-bookcoverblock">
+                                    <img src="<?php echo base_url(); ?>assets/bookcover/<?php echo $value["image"]; ?>">
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="<?php echo $key; ?>" value="" id="<?php echo $key; ?>" checked>
+                                    <label class="form-check-label" for="<?php echo $key; ?>">
+                                        &nbsp;<?php echo $value["title"]; ?>
+                                    </label>
+                                </div>
+
+                            </div>
+                            <?php
+                        }
+                        ?>
+
+                    </div>
+                    <img src="<?php echo base_url(); ?>assets/bookcover/nehaevans2.jpg" class="hideonmobile">
+                </div>
+                <div class="col-md-6">
+                    <div class="form-widget1 mt-0">
+
+                        <div class="form-result"></div>
+
+                        <form class="mb-0" id="template-contactform" name="template-contactform" action="#" method="post">
+
+                            <div class="form-process">
+                                <div class="css3-spinner">
+                                    <div class="css3-spinner-scaler"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+
+                                <div class="col-sm-6 form-group">
+                                    <label class="nott" for="first_name">First Name <small>*</small></label>
+                                    <input type="text" id="first_name" name="first_name" value="" class="sm-form-control required" required="" />
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label class="nott" for="last_name">Last Name <small>*</small></label>
+                                    <input type="text" id="last_name" name="last_name" value="" class="sm-form-control required" required="" />
+                                </div>
+
+                                <div class="col-sm-12 form-group">
+                                    <label class="nott" for="email">Email <small>*</small></label>
+                                    <input type="email" id="email" name="email" value="" class="required email sm-form-control" />
+                                </div>
+
+
+                                <hr/>
+                                <div class="form-group">
+                                    To receive dreams, visions and prophecies that God gives to Evans for the body of Christ in your email, kindly subscribe to our mailing list.
+                                    <div class="form-check" style="     margin-bottom: 10px;
+    margin-top: 10px;">
+                                        <input class="form-check-input" type="checkbox" name="ns-subscribe" value="" id="ns-subscribe" checked>
+                                        <label class="form-check-label" for="ns-subscribe" style="">
+                                            I want to receive above updates.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 form-group">
+                                    <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="submit" value="submit">Submit</button>
+                                </div>
+                                <p class="warning-message-ns mt-5 mb-0">Please check your spam or trash folder if you don't receive your copies in 10 minutes.</p>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
 <?php
 if ($message["title"]) {
     ?>
@@ -254,3 +349,8 @@ if ($message["title"]) {
 <?php
 $this->load->view('layout/footer');
 ?>
+<script>
+    $(function () {
+        $("#newsletterModal").modal("show");
+    })
+</script>
