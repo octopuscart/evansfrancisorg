@@ -239,39 +239,40 @@ $this->load->view('layout/header');
                 <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true"><span>&times;</span></button>
             </div>
             <div class="modal-body row">
-                <div class="col-md-6">
+                <form class="row" id="template-contactform" name="template-contactform" action="#" method="post">
 
-                    <p>To receive Neha & Evans Francis' book in your email for FREE, kindly select the books you would like to receive.</p>
+                    <div class="col-md-6">
 
-                    <div class="col-md-12 row">
-                        <?php
-                        foreach ($bookdata as $key => $value) {
-                            ?>
-                            <div class="col col-md">
-                                <div class="ns-bookcoverblock">
-                                    <img src="<?php echo base_url(); ?>assets/bookcover/<?php echo $value["image"]; ?>">
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="<?php echo $key; ?>" value="" id="<?php echo $key; ?>" checked>
-                                    <label class="form-check-label" for="<?php echo $key; ?>">
-                                        &nbsp;<?php echo $value["title"]; ?>
-                                    </label>
-                                </div>
+                        <p>To receive Neha & Evans Francis' book in your email for FREE, kindly select the books you would like to receive.</p>
 
-                            </div>
+                        <div class="col-md-12 row">
                             <?php
-                        }
-                        ?>
+                            foreach ($bookdata as $key => $value) {
+                                ?>
+                                <div class="col col-md">
+                                    <div class="ns-bookcoverblock">
+                                        <img src="<?php echo base_url(); ?>assets/bookcover/<?php echo $value["image"]; ?>">
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="book_id[]" value="<?php echo $key; ?>" id="<?php echo $key; ?>" >
+                                        <label class="form-check-label" for="<?php echo $key; ?>">
+                                            &nbsp;<?php echo $value["title"]; ?>
+                                        </label>
+                                    </div>
 
+                                </div>
+                                <?php
+                            }
+                            ?>
+
+                        </div>
+                        <img src="<?php echo base_url(); ?>assets/bookcover/nehaevans2.jpg" class="hideonmobile">
                     </div>
-                    <img src="<?php echo base_url(); ?>assets/bookcover/nehaevans2.jpg" class="hideonmobile">
-                </div>
-                <div class="col-md-6">
-                    <div class="form-widget1 mt-0">
+                    <div class="col-md-6">
+                        <div class="form-widget1 mt-0">
 
-                        <div class="form-result"></div>
+                            <div class="form-result"></div>
 
-                        <form class="mb-0" id="template-contactform" name="template-contactform" action="#" method="post">
 
                             <div class="form-process">
                                 <div class="css3-spinner">
@@ -293,7 +294,7 @@ $this->load->view('layout/header');
 
                                 <div class="col-sm-12 form-group">
                                     <label class="nott" for="email">Email <small>*</small></label>
-                                    <input type="email" id="email" name="email" value="" class="required email sm-form-control" />
+                                    <input type="email" id="email" name="email" value="" class="required email sm-form-control" required="" />
                                 </div>
 
 
@@ -301,8 +302,8 @@ $this->load->view('layout/header');
                                 <div class="form-group">
                                     To receive dreams, visions and prophecies that God gives to Evans for the body of Christ in your email, kindly subscribe to our mailing list.
                                     <div class="form-check" style="     margin-bottom: 10px;
-    margin-top: 10px;">
-                                        <input class="form-check-input" type="checkbox" name="ns-subscribe" value="" id="ns-subscribe" checked>
+                                         margin-top: 10px;">
+                                        <input class="form-check-input" type="checkbox" name="ns-subscribe" value="yes" id="ns-subscribe" checked>
                                         <label class="form-check-label" for="ns-subscribe" style="">
                                             I want to receive above updates.
                                         </label>
@@ -310,21 +311,25 @@ $this->load->view('layout/header');
                                 </div>
 
                                 <div class="col-12 form-group">
-                                    <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="submit" value="submit">Submit</button>
+                                    <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="submitbooks" value="submit">Submit</button>
                                 </div>
                                 <p class="warning-message-ns mt-5 mb-0">Please check your spam or trash folder if you don't receive your copies in 10 minutes.</p>
                             </div>
 
 
-                        </form>
-                    </div>
-                </div>
 
+                        </div>
+                    </div>
+                </form>
             </div>
 
         </div>
     </div>
 </div>
+
+<?php
+$this->load->view('layout/footer');
+?>
 <?php
 if ($message["title"]) {
     ?>
@@ -344,13 +349,13 @@ if ($message["title"]) {
         )
     </script>
     <?php
+} else {
+    ?>
+    <script>
+        $(function () {
+            $("#newsletterModal").modal("show");
+        })
+    </script>
+    <?php
 }
 ?>
-<?php
-$this->load->view('layout/footer');
-?>
-<script>
-    $(function () {
-        $("#newsletterModal").modal("show");
-    })
-</script>

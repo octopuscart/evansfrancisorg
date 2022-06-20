@@ -9,6 +9,23 @@ class Pages extends CI_Controller {
         $this->load->model('Product_model');
         $this->load->library('session');
 //        $this->user_id = $this->session->userdata('logged_in')['login_id'];
+        $this->bookdata = array(
+            "book_wp_1" => array(
+                "title" => "Why Pain ",
+                "image" => "wp.jpg",
+                "bookfile" => "Why_Pain_By_Evans_Francis.pdf"
+            ),
+            "book_cw_1" => array(
+                "title" => "Choose Wisely",
+                "image" => "cw.jpg",
+                "bookfile" => "Choose_Wisely_By_Neha_Evans_Francis.pdf"
+            ),
+            "book_bc_1" => array(
+                "title" => "Biblical Courtship",
+                "image" => "bc.jpg",
+                "bookfile" => "Biblical_Courtship_By_Evans_Francis.pdf"
+            ),
+        );
     }
 
     public function sendEmail($inputdata, $tamplate, $subject) {
@@ -32,9 +49,9 @@ class Pages extends CI_Controller {
         }
     }
 
-    public function testMail() {
+    public function freeBookEmailMail($inputdata, $subject) {
 
-        $inputdata = array("first_name" => "Pankaj Pathak", "email" => "pankaj21pathak@gmail.com", "booklist" => ["Biblical_Courtship_By_Evans_Francis.pdf"]);
+        $inputdata = array("first_name" => $inputdata["first_name"], "email" => $inputdata["email"], "booklist" => $inputdata["book_id"]);
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
@@ -44,15 +61,15 @@ class Pages extends CI_Controller {
         $this->email->cc(email_bcc);
         $this->email->subject("Thank you again for signing up to receive updates");
         foreach ($inputdata["booklist"] as $key => $value) {
-            echo APPPATH . "../assets/$value";
-            $this->email->attach(APPPATH . "../assets/$value");
+            $bookobj =  $this->bookdata[$value];
+            $this->email->attach("https://www.evansfrancis.org/assets/books/".$bookobj["bookfile"]);
         }
 
         $htmlsmessage = $this->load->view("Email/freebookemail", array("inputdata" => $inputdata), true);
         $isprod = 1;
         if ($isprod) {
             $this->email->message($htmlsmessage);
-            echo $send = $this->email->send();
+             $send = $this->email->send();
             if ($send) {
                 print_r($this->email);
             } else {
@@ -95,15 +112,55 @@ class Pages extends CI_Controller {
             } else {
                 $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
             }
+            $data["message"] = $messagedata;
         }
-        $data["message"] = $messagedata;
 
-        $bookdata = array(
-            "book_wp_1" => array("title" => "Why Pain ", "image" => "wp.jpg"),
-            "book_cw_1" => array("title" => "Choose Wisely", "image" => "cw.jpg"),
-            "book_bc_1" => array("title" => "Biblical Courtship", "image" => "bc.jpg"),
-        );
-        $data["bookdata"] = $bookdata;
+
+
+        $data["bookdata"] = $this->bookdata;
+        if (isset($input_data["submitbooks"])) {
+            unset($input_data["submitbooks"]);
+
+            $booklist = [];
+            $booklist_name = [];
+            if (isset($input_data["book_id"])) {
+                $booklist = $input_data["book_id"];
+                foreach ($booklist as $key => $value) {
+                   $bookobj =  $this->bookdata[$value]["title"];
+                   array_push($booklist_name, $bookobj);
+                }
+            }
+            $ns_subscribe = "No";
+            if (isset($input_data["ns-subscribe"])) {
+                $booklist = $input_data["ns-subscribe"];
+                $ns_subscribe = "Yes";
+            }
+            $insertArray = array(
+                "first_name" => $input_data["first_name"],
+                "last_name" => $input_data["last_name"],
+                "email" => $input_data["email"],
+                "is_in_updates" =>$ns_subscribe,
+                "books_name" => implode(", ", $booklist_name),
+            );
+            $insertArray["status"] = "active";
+            $insertArray["request_date"] = date("Y-m-d");
+            $insertArray["request_time"] = date("H:m:s A");
+
+            $email = $input_data["email"];
+            $this->db->where("email", $email);
+            $query = $this->db->get("website_book_request");
+            $checkdata = $query->result();
+            if ($checkdata) {
+                $messagedata = array("title" => "Already Subscribed", "message" => "You have already subscribed to our mailing list.", "type" => "info");
+            } else {
+                $this->freeBookEmailMail($input_data,  "Thank you for subsbcrib our mailing list.");
+                $this->db->insert('website_book_request', $insertArray);
+                $messagedata = array("title" => "Thanks You", "message" => "Thank you for subsbcrib our mailing list.", "type" => "success");
+            }
+
+            $data["message"] = $messagedata;
+        }
+
 
         $this->load->view('home', $data);
     }
