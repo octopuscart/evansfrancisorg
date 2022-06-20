@@ -8,27 +8,18 @@ class Pages extends CI_Controller {
         parent::__construct();
         $this->load->model('Product_model');
         $this->load->library('session');
-        $this->user_id = $this->session->userdata('logged_in')['login_id'];
+//        $this->user_id = $this->session->userdata('logged_in')['login_id'];
     }
 
     public function sendEmail($inputdata, $tamplate, $subject) {
-//        $configarray = array(
-//            'protocol' => 'smtp',
-//            'smtp_host' => "localhost",
-//            'smtp_user' => "",
-//            'smtp_pass' => "",
-//            'smtp_port' => 25,
-//            'crlf' => "\r\n",
-//            'newline' => "\r\n"
-//        );
-//        $this->email->initialize($configarray);
+
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
         $this->email->from("contact@evansfrancis.org", $sendername);
         $this->email->to("nehaevans831@gmail.com");
-$this->email->cc("pankaj21pathak@gmail.com");
+        $this->email->cc(email_bcc);
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view("Email/$tamplate", array("inputdata" => $inputdata), true);
         $this->email->message($htmlsmessage);
@@ -43,25 +34,28 @@ $this->email->cc("pankaj21pathak@gmail.com");
 
     public function testMail() {
 
-//        $this->email->initialize($configarray);
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
-        $this->email->from(email_bcc, $sendername);
-        $this->email->to("pankaj21pathak@gmail.com");
-        $this->email->cc("pankaj21pathak@gmail.com");
+        $this->email->from(email_bcc, email_bcc);
+        $this->email->to("octopuscartltd@gmail.com");
         $this->email->subject("test mail");
         $htmlsmessage = "This is test mail";
         $this->email->message($htmlsmessage);
 
         echo $send = $this->email->send();
-       
+
         if ($send) {
             print_r($this->email);
         } else {
             $error = $this->email->print_debugger(array('headers'));
         }
+    }
+    
+    public function subscribeMailTest(){
+        $data["inputdata"] = array("first_name"=>"Pankaj Pathak");
+        $this->load->view('Email/freebookemail', $data);
     }
 
     public function index() {

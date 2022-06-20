@@ -9,17 +9,32 @@
                         An evangelist, author, teacher and lyricist with uncompromising faithfulness to the Holy Scriptures.
                     </p>
 
-                    <span style="float: left; font-size: 12px;"> </span></div>
+                    <span style="float: left; font-size: 12px;"> </span>
+                  <p>
+                    <a href="https://www.facebook.com/evansfrancis831" target="_blank" class="socialicons">
+                        <img src="https://www.evansfrancis.org/assets/images/playstore.png"/>
+                    </a>
+                    <a href="https://www.instagram.com/evansfrancis831" target="_blank" class="socialicons">
+                        <img src="https://www.evansfrancis.org/assets/images/appstore.png"/>
+                    </a>
+                  
+
+                </p>
+                </div>
             </td>
             <td style="width: 40%; padding:0px 20px;">
-                <p style="width: 100%;float:left"><span style="float: left; font-size: 12px;">
+                <p style="width: 100%;float:left">
+                   
+                    
 
-                        <b>Address </b><br />
-                        Nagpur, Maharashtra, India<br/>
+                        <b>  In His firm grip, </b><br />
+
+                        <b style="    font-size: 20px;">Neha & Evans Francis</b><br />
 
                         <b>Mob.#</b>:&nbsp;+91-9960877313<br />
                         <b>Email</b>: contact@evansfrancis.org<br />
-                        <b>Web</b>: www.evansfrancis.org</span>
+                        <b>Web</b>: www.evansfrancis.org<br />
+                        Feel free to get in touch via WhatsApp <a style="color:white" href="https://wa.me/919960877313">https://wa.me/919960877313</a>
                 </p>
 
                 <p>
