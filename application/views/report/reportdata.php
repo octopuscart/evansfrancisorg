@@ -27,10 +27,22 @@ foreach ($jsarray as $key => $value) {
 </style>
 
 <title><?php echo $title; ?></title>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+
+<link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css" type="text/css" />
+<!-- Slider
+                ============================================= -->
+
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <div class="content-wrap pb-2" >
+
+        <div class="section dark m-0 bg-transparent row" style="padding: 0;">
+            <div class="col-md-2">
+ 
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo site_url("Report/contact_us"); ?>">Contact Report</a>
@@ -56,27 +68,17 @@ foreach ($jsarray as $key => $value) {
                      <li class="nav-item">
                     <a class="nav-link" href="<?php echo site_url("Report/family_grocery"); ?>">Family Grocery Report</a>
                 </li>
-                     <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="<?php echo site_url("Report/website_pastor"); ?>">Pastor Report</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url("Report/feebook_subscribe"); ?>">Free Book &  Subscription</a>
                 </li>
                 
             </ul>
-        </div>
-    </div>
-</nav>
 
-<link rel="stylesheet" href="    https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" type="text/css" />
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css" type="text/css" />
-<!-- Slider
-                ============================================= -->
-
-<!-- Content
-============================================= -->
-<section id="content">
-
-    <div class="content-wrap pb-2" >
-
-        <div class="section dark m-0 bg-transparent" style="padding: 0;">
+            </div>
+            <div class="col-md-10">
             <div class="container">
                 <h2><?php echo $title; ?></h2>
 
@@ -124,7 +126,7 @@ foreach ($jsarray as $key => $value) {
                 </table>
 
             </div>
-
+            </div>
         </div>
     </div>
 </section>

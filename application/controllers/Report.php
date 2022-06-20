@@ -207,6 +207,15 @@ class Report extends CI_Controller {
         $this->load->view('report/reportdata', $result);
     }
 
+    function feebook_subscribe() {
+        $result["title"] = "Free Book & Subscription - Report Data";
+        $result['headings'] = ['Email', 'First Name', 'Last Name', 'Want Updates', 'Books Sent', 'Status', 'Request Date', 'Request Time'];
+        $result['data'] = $this->get_org_data("website_book_request");
+        $result["tablename"] = "website_subscribe";
+        $result["page"] = "website_subscribe";
+        $this->load->view('report/reportdata', $result);
+    }
+
     function child_fee() {
         //echo "--------------";
         $result['headings'] = ['First Name', 'Last Name', 'Email', 'Contact No.', 'Amount', 'Donation Period', 'Country', 'Request Date', 'Request Time'];
