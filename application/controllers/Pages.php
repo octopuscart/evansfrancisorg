@@ -71,7 +71,7 @@ class Pages extends CI_Controller {
             $this->email->message($htmlsmessage);
              $send = $this->email->send();
             if ($send) {
-                print_r($this->email);
+             
             } else {
                 $error = $this->email->print_debugger(array('headers'));
             }
