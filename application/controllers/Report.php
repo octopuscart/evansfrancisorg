@@ -211,8 +211,8 @@ class Report extends CI_Controller {
         $result["title"] = "Free Book & Subscription - Report Data";
         $result['headings'] = ['Email', 'First Name', 'Last Name', 'Want Updates', 'Books Sent', 'Status', 'Request Date', 'Request Time'];
         $result['data'] = $this->get_org_data("website_book_request");
-        $result["tablename"] = "website_subscribe";
-        $result["page"] = "website_subscribe";
+        $result["tablename"] = "website_book_request";
+        $result["page"] = "feebook_subscribe";
         $this->load->view('report/reportdata', $result);
     }
 
