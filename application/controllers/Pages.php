@@ -50,7 +50,7 @@ class Pages extends CI_Controller {
     }
 
     public function freeBookEmailMail($inputdata, $subject) {
-        $isprod = 0;
+        $isprod = 1;
         if ($isprod) {
             $inputdata = array("first_name" => $inputdata["first_name"], "email" => $inputdata["email"], "booklist" => $inputdata["book_id"]);
         } else {
