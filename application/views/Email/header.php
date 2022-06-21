@@ -49,6 +49,7 @@
                             <td style="vertical-align: top; padding-bottom:30px;" align="center">
                                 <a href="<?php echo site_url("/"); ?>" target="_blank">
                                     <img src="https://www.evansfrancis.org/assets/writer/images/logo.png" alt="Professional Movers" style="border:none;height:50px;    margin-top: 20px;"/></a>
+                            
                             </td>
                         </tr>
                     </tbody>
