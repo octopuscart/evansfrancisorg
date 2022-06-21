@@ -36,7 +36,7 @@ class Pages extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from("contact@evansfrancis.org", $sendername);
         $this->email->to("nehaevans831@gmail.com");
-        $this->email->cc(email_bcc);
+//        $this->email->cc(email_bcc);
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view("Email/$tamplate", array("inputdata" => $inputdata), true);
         $this->email->message($htmlsmessage);
@@ -62,7 +62,7 @@ class Pages extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->from(email_bcc, email_bcc);
         $this->email->to($inputdata["email"]);
-        $this->email->cc(email_bcc);
+//        $this->email->cc(email_bcc);
         $this->email->subject("Thank you again for signing up to receive updates");
         foreach ($inputdata["booklist"] as $key => $value) {
             $bookobj = $this->bookdata[$value];
