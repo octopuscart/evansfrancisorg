@@ -105,9 +105,9 @@ class Pages extends CI_Controller {
                 if ($checkdata) {
                     $messagedata = array("title" => "Already Subscribed", "message" => "You have already subscribed to our mailing list.", "type" => "info");
                 } else {
-                    $this->sendEmail($input_data, "subscribe", "Thank you for subsbcrib our mailing list.");
+                    $this->sendEmail($input_data, "subscribe", "Thank you for subscribing our mailing list.");
                     $this->db->insert('website_subscribe', $input_data);
-                    $messagedata = array("title" => "Thanks You", "message" => "Thank you for subsbcrib our mailing list.", "type" => "success");
+                    $messagedata = array("title" => "Thanks You", "message" => "Thank you for subscribing our mailing list.", "type" => "success");
                 }
             } else {
                 $messagedata = array("title" => "Invalid Captcha", "message" => "Please enter correct cpatcha", "type" => "error");
@@ -153,9 +153,9 @@ class Pages extends CI_Controller {
             if ($checkdata) {
                 $messagedata = array("title" => "Already Subscribed", "message" => "You have already subscribed to our mailing list.", "type" => "info");
             } else {
-                $this->freeBookEmailMail($input_data,  "Thank you for subsbcrib our mailing list.");
+                $this->freeBookEmailMail($input_data,  "Thank you for subscribing our mailing list.");
                 $this->db->insert('website_book_request', $insertArray);
-                $messagedata = array("title" => "Thanks You", "message" => "Thank you for subsbcrib our mailing list.", "type" => "success");
+                $messagedata = array("title" => "Thanks You", "message" => "Thank you for subscribing our mailing list.", "type" => "success");
             }
 
             $data["message"] = $messagedata;
