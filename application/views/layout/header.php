@@ -80,6 +80,10 @@
             <!-- Header
             ============================================= -->
             <header id="header" class="transparent-header dark header-size-custom" data-sticky-shrink="false" data-sticky-class="semi-transparent">
+                <div class="ad_banner text-center">
+                    <img src="<?php echo base_url(); ?>assets/ad/ad_desktop.jpg"/>
+                </div>
+
                 <div id="header-wrap">
                     <div class="container" style="max-width: 100%;">
                         <div class="header-row justify-content-lg-between">

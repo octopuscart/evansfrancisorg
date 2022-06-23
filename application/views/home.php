@@ -67,77 +67,87 @@ $this->load->view('layout/header');
 
         <div class="container single-post  related-posts  posts-md ">
             <div class="row">
-                <div class="entry col-12 col-md-3">
-                    <div class="grid-inner row align-items-center gutter-20">
-                        <div class="col-4" style="width:100% !important">
-                            <div class="entry-image">
-                                <a href="<?php echo site_url("Pages/church"); ?>"><img src="<?php echo base_url(); ?>assets/images/church.jpg" alt="Blog Single" style="height: 161px;"></a>
+
+                <div class="col-md-8 row">
+
+                    <div class="entry col-12 col-md-6 mb-5">
+                        <div class="grid-inner row align-items-center gutter-20">
+                            <div class="col-4" style="width:100% !important">
+                                <div class="entry-image">
+                                    <a href="<?php echo site_url("Pages/church"); ?>"><img src="<?php echo base_url(); ?>assets/images/church.jpg" alt="Blog Single" style="width:100%"></a>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="entry-title title-xs nott">
+                                    <h3><a href="<?php echo site_url("Pages/church"); ?>" class="text-white">Sponsor Our Church Rent</a></h3>
+                                </div>
+
+                                <div class="entry-content">It is our responsibility as the Disciples of Christ to ensure that we remain faithful to the Church</div></br>
+                                <a href="<?php echo site_url("Pages/church"); ?>" type="button" class="button button-3d m-0">Know More</a>
+
                             </div>
                         </div>
-                        <div class="col-8">
-                            <div class="entry-title title-xs nott">
-                                <h3><a href="<?php echo site_url("Pages/church"); ?>" class="text-white">Sponsor Our Church Rent</a></h3>
+                    </div>
+                    <div class="entry col-12 col-md-6">
+                        <div class="grid-inner row align-items-center gutter-20">
+                            <div class="col-4"  style="width:100% !important">
+                                <div class="entry-image">
+                                    <a href="<?php echo site_url("Pages/family"); ?>"><img src="<?php echo base_url(); ?>assets/images/grocery.jpeg" alt="Blog Single" style="width:100%"></a>
+                                </div>
                             </div>
+                            <div class="col-8">
+                                <div class="entry-title title-xs nott">
+                                    <h3><a href="<?php echo site_url("Pages/family"); ?>" class="text-white">Sponsor a Family Groceries </a></h3>
+                                </div>
+                                <div class="entry-meta">   </div>
+                                <div class="entry-content">We have agreed to heed the calling and support needy families by providing</div></br>
+                                <a href="<?php echo site_url("Pages/family"); ?>" type="button" class="button button-3d m-0">Know More</a>
 
-                            <div class="entry-content">It is our responsibility as the Disciples of Christ to ensure that we remain faithful to the Church</div></br>
-                            <a href="<?php echo site_url("Pages/church"); ?>" type="button" class="button button-3d m-0">Know More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="entry col-12 col-md-6">
+                        <div class="grid-inner row align-items-center gutter-20">
+                            <div class="col-4"  style="width:100% !important">
+                                <div class="entry-image">
+                                    <a href="<?php echo site_url("Pages/pastor"); ?>"><img src="<?php echo base_url(); ?>assets/images/pastor.jpeg" alt="Blog Single" style="width:100%"></a>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="entry-title title-xs nott">
+                                    <h3><a href="<?php echo site_url("Pages/pastor"); ?>" class="text-white">Sponsor a Pastor</a></h3>
+                                </div>
+                                <div class="entry-meta">  </div>
+                                <div class="entry-content">Praise the Lord, beloved. I believe you are doing well</div></br>
+                                <a href="<?php echo site_url("Pages/pastor"); ?>" type="button" class="button button-3d m-0">Know More</a>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="entry col-12 col-md-6">
+                        <div class="grid-inner row align-items-center gutter-20">
+                            <div class="col-4"  style="width:100% !important">
+                                <div class="entry-image">
+                                    <a href="<?php echo site_url("Pages/child"); ?>"><img src="<?php echo base_url(); ?>assets/images/child.jpeg" alt="Blog Single" style="width:100%"></a>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="entry-title title-xs nott">
+                                    <h3><a href="<?php echo site_url("Pages/child"); ?>" class="text-white">Sponsor a Child School Fee</a></h3>
+                                </div>
+                                <div class="entry-meta">   </div>
+                                <div class="entry-content">Nelson Mandela once said that education is</div></br>
+                                <a href="<?php echo site_url("Pages/child"); ?>" type="button" class="button button-3d m-0">Know More</a>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="entry col-12 col-md-3">
-                    <div class="grid-inner row align-items-center gutter-20">
-                        <div class="col-4"  style="width:100% !important">
-                            <div class="entry-image">
-                                <a href="<?php echo site_url("Pages/family"); ?>"><img src="<?php echo base_url(); ?>assets/images/grocery.jpeg" alt="Blog Single" style="height: 161px;"></a>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="entry-title title-xs nott">
-                                <h3><a href="<?php echo site_url("Pages/family"); ?>" class="text-white">Sponsor a Family Groceries </a></h3>
-                            </div>
-                            <div class="entry-meta">   </div>
-                            <div class="entry-content">We have agreed to heed the calling and support needy families by providing</div></br>
-                            <a href="<?php echo site_url("Pages/family"); ?>" type="button" class="button button-3d m-0">Know More</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="entry col-12 col-md-3">
-                    <div class="grid-inner row align-items-center gutter-20">
-                        <div class="col-4"  style="width:100% !important">
-                            <div class="entry-image">
-                                <a href="<?php echo site_url("Pages/pastor"); ?>"><img src="<?php echo base_url(); ?>assets/images/pastor.jpeg" alt="Blog Single" style="height: 161px;"></a>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="entry-title title-xs nott">
-                                <h3><a href="<?php echo site_url("Pages/pastor"); ?>" class="text-white">Sponsor a Pastor</a></h3>
-                            </div>
-                            <div class="entry-meta">  </div>
-                            <div class="entry-content">Praise the Lord, beloved. I believe you are doing well</div></br>
-                            <a href="<?php echo site_url("Pages/pastor"); ?>" type="button" class="button button-3d m-0">Know More</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="entry col-12 col-md-3">
-                    <div class="grid-inner row align-items-center gutter-20">
-                        <div class="col-4"  style="width:100% !important">
-                            <div class="entry-image">
-                                <a href="<?php echo site_url("Pages/child"); ?>"><img src="<?php echo base_url(); ?>assets/images/child.jpeg" alt="Blog Single" style="height: 161px;"></a>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="entry-title title-xs nott">
-                                <h3><a href="<?php echo site_url("Pages/child"); ?>" class="text-white">Sponsor a Child School Fee</a></h3>
-                            </div>
-                            <div class="entry-meta">   </div>
-                            <div class="entry-content">Nelson Mandela once said that education is</div></br>
-                            <a href="<?php echo site_url("Pages/child"); ?>" type="button" class="button button-3d m-0">Know More</a>
-
-                        </div>
+                <div class="col-md-4">
+                    <div class="ad_banner">
+                        <a href="https://www.christianappdevelopers.com/" target="_blank">
+                        <img src="<?php echo base_url(); ?>assets/ad/ad_desktop2.jpg"/>
+                        </a>
                     </div>
                 </div>
 

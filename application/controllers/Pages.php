@@ -35,18 +35,18 @@ class Pages extends CI_Controller {
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
         $this->email->from("contact@evansfrancis.org", $sendername);
-        $this->email->to("nehaevans831@gmail.com");
+//        $this->email->to("nehaevans831@gmail.com");
 //        $this->email->cc(email_bcc);
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view("Email/$tamplate", array("inputdata" => $inputdata), true);
         $this->email->message($htmlsmessage);
         $this->email->print_debugger();
-        $send = $this->email->send();
-        if ($send) {
-            
-        } else {
-            $error = $this->email->print_debugger(array('headers'));
-        }
+//        $send = $this->email->send();
+//        if ($send) {
+//            
+//        } else {
+//            $error = $this->email->print_debugger(array('headers'));
+//        }
     }
 
     public function freeBookEmailMail($inputdata, $subject) {
