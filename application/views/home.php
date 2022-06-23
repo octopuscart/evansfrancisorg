@@ -143,10 +143,11 @@ $this->load->view('layout/header');
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-md-4">
                     <div class="ad_banner">
-                        <a href="https://www.christianappdevelopers.com/" target="_blank">
-                        <img src="<?php echo base_url(); ?>assets/ad/ad_desktop2.jpg"/>
+                        <a href="https://www.youtube.com/channel/UCuAnzPc-6boJXW8mzjF0GCg" target="_blank">
+                            <img src="<?php echo base_url(); ?>assets/ad/ad_desktop2.jpg"/>
                         </a>
                     </div>
                 </div>
@@ -196,7 +197,12 @@ $this->load->view('layout/header');
         </div>
 
     </div>
+    <div class="ad_banner text-center">
+        <a href="https://www.christianappdevelopers.com/" target="_blank">
+            <img src="<?php echo base_url(); ?>assets/ad/ad_mobile2.jpg"/>
+        </a>
 
+    </div>
     <!-- Testimonials
     ============================================= -->
     <div id="section-testimonial" class="section m-0 center" style="background: url('<?php echo base_url(); ?>assets/writer/images/section/bg2.jpg') center center no-repeat; background-size: cover; padding: 100px 0;">
