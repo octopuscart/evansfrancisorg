@@ -17,6 +17,12 @@ $this->load->view('Email/header');
                     </p>    <p>
                         God helps me share the Word of God on my YouTube channel, “Evans Francis”; millions have viewed my videos. In addition, I  fearlessly share the dreams, visions and messages God gives me for the body of Christ, which are posted on my mobile app “Evans Francis”, available on Google Play and App Store for free and my social media platforms. 
                     </p>
+                    
+                    <br/>
+                    <br/>
+                    <p style="color:red;">
+                         To ensure delivery to your inbox, please add [contact@evansfrancis.org] to your address book
+                    </p>
                
 
 

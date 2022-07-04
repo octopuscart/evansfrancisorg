@@ -401,6 +401,11 @@ class Pages extends CI_Controller {
         $this->load->view('pages/error404');
     }
 
+    public function books() {
+
+        $this->load->view('pages/books');
+    }
+
     function hexrgb($hexstr) {
         $int = hexdec($hexstr);
 

@@ -329,7 +329,9 @@ $this->load->view('layout/header');
                                 <div class="col-12 form-group">
                                     <button class="button button-rounded button-large m-0" type="submit" id="template-contactform-submit" name="submitbooks" value="submit">Submit</button>
                                 </div>
-                                <p class="warning-message-ns mt-5 mb-0">Please check your spam or trash folder if you don't receive your copies in 10 minutes.</p>
+                                <p class="warning-message-ns mt-4 mb-0">
+                                    1) To ensure delivery to your inbox, please add [contact@evansfrancis.org] to your address book.<br/><br/>
+                                    2) Please check your spam or trash folder if you don't receive your copies in 10 minutes.</p>
                             </div>
 
 

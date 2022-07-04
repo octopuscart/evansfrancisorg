@@ -54,6 +54,7 @@ $route['default_controller'] = 'Pages';
 $route['404_override'] = 'Pages/error404';
 $route['contact-us'] = 'Pages/contact_us';
 $route['about-us'] = 'Pages/aboutus';
+$route['books'] = 'Pages/books';
 $route['pillar-of-fire'] = 'Pages/pillar_of_fire';
 $route['pillar-of-cloud'] = 'Pages/pillar_of_cloud';
 $route['invite'] = 'Pages/invite';

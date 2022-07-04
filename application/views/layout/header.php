@@ -104,7 +104,7 @@
                                 <ul class="menu-container">
                                     <li class="menu-item"><a class="menu-link" href="<?php echo site_url("/") ?>"><div>Home</div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="<?php echo site_url("about-us"); ?>"><div>About</div></a></li>
-                                    <li class="menu-item"><a class="menu-link" target="_blank" href="https://www.evansfrancisbooks.com/"><div>Books</div></a></li>
+                                    <li class="menu-item"><a class="menu-link" href="<?php echo site_url("books");?>"><div>Books</div></a></li>
                                     <li class="menu-item"><a class="menu-link" target="_blank" href="https://christianappdevelopers.com/"><div>Apps</div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="<?php echo site_url("invite"); ?>"><div>Invite</div></a></li>
                                     <li class="menu-item"><a class="menu-link" href="<?php echo site_url("contact-us"); ?>"><div>Contact Us</div></a></li>
