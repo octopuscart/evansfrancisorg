@@ -372,8 +372,8 @@ $this->load->view('layout/header');
                         </div>
                         <div class="col-md-12  text-center">
 
-                            <img src="<?php echo base_url(); ?>assets/images/courtshipqr.svg"  style="width:200px;">
-                            <a href="https://www.courtshiptomarriage.com/" target="_blank" >https://www.courtshiptomarriage.com</a>
+                            <img src="<?php echo base_url(); ?>assets/images/courtshipqr.svg" class="hideonmobile" style="width:200px;">
+                            <a href="https://www.courtshiptomarriage.com/" class="hideonmobile" target="_blank" >https://www.courtshiptomarriage.com</a>
 
                         </div>
 
@@ -381,11 +381,13 @@ $this->load->view('layout/header');
                     <div class="col-md-6">
                         <div class="form-widget1 mt-0 text-center">
                             <div class="row">
-                                <img src="<?php echo base_url(); ?>assets/images/courtship-to-marriage.jpg" class="hideonmobile mb-4">
+                                <img src="<?php echo base_url(); ?>assets/images/courtship-to-marriage.jpg" class="mt-3 mb-4">
                                 <hr/>
                                 <div class="col-12 form-group">
                                     <a href="https://www.courtshiptomarriage.com/" target="_blank" class="button button-rounded button-large m-0"  id="template-contactform-submit">CLICK HERE TO VISIT WEBSITE</a>
                                 </div>
+                                <hr/>
+                                <p><i class="icon icon-whatsapp"></i> <a  target="_blank"  href="https://api.whatsapp.com/send?text=https://www.courtshiptomarriage.com">Click here</a> to share with others.</p>
                             </div>
                         </div>
                     </div>
