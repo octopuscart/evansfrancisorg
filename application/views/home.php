@@ -143,7 +143,7 @@ $this->load->view('layout/header');
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="ad_banner">
                         <a href="https://www.youtube.com/channel/UCuAnzPc-6boJXW8mzjF0GCg" target="_blank">
@@ -345,6 +345,57 @@ $this->load->view('layout/header');
     </div>
 </div>
 
+<div id="marriageModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"  >
+    <div class="modal-dialog modal-lg modal-newsletter">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h4 style="margin-top:32px;font-size: 23px;">Courtship to Marriage - Pre Marriage Course <br/> Neha & Evans Francis</h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true"><span>&times;</span></button>
+            </div>
+            <div class="modal-body row">
+                <form class="row" id="template-contactform" name="template-contactform" action="#" method="post">
+
+                    <div class="col-md-6">
+
+
+
+                        <div class="col-md-12 row">
+
+                            <p>Before you tie the knot…</p>
+
+                            <p>
+                                Discover Time-Tested Principles & Strategies of a Fulfilling & Happy Marriage
+                            </p>
+                            <p>
+                                The course Courtship to Marriage is for youngsters who want more than just the fairytale wedding - they want a successful and happy marriage!
+                            </p>
+                        </div>
+                          <div class="col-md-12  text-center">
+                            
+                            <img src="<?php echo base_url(); ?>assets/images/courtshipqr.svg"  style="width:200px;">
+                            <a href="https://www.courtshiptomarriage.com/" target="_blank" >https://www.courtshiptomarriage.com</a>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-widget1 mt-0 text-center">
+                            <div class="row">
+                                <img src="<?php echo base_url(); ?>assets/images/courtship-to-marriage.jpg" class="hideonmobile mb-4">
+                                <hr/>
+                                <div class="col-12 form-group">
+                                    <a href="https://www.courtshiptomarriage.com/" target="_blank" class="button button-rounded button-large m-0"  id="template-contactform-submit">CLICK HERE TO VISIT WEBSITE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <?php
 $this->load->view('layout/footer');
 ?>
@@ -371,7 +422,7 @@ if ($message["title"]) {
     ?>
     <script>
         $(function () {
-            $("#newsletterModal").modal("show");
+            $("#marriageModal").modal("show");
         })
     </script>
     <?php
