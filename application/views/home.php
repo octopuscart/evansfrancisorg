@@ -370,8 +370,8 @@ $this->load->view('layout/header');
                                 The course Courtship to Marriage is for youngsters who want more than just the fairytale wedding - they want a successful and happy marriage!
                             </p>
                         </div>
-                          <div class="col-md-12  text-center">
-                            
+                        <div class="col-md-12  text-center">
+
                             <img src="<?php echo base_url(); ?>assets/images/courtshipqr.svg"  style="width:200px;">
                             <a href="https://www.courtshiptomarriage.com/" target="_blank" >https://www.courtshiptomarriage.com</a>
 
@@ -422,7 +422,11 @@ if ($message["title"]) {
     ?>
     <script>
         $(function () {
-            $("#marriageModal").modal("show");
+
+ $("#newsletterModal").modal("show")
+            $('#newsletterModal').on('hidden.bs.modal', function (e) {
+                $("#marriageModal").modal("show");
+            });
         })
     </script>
     <?php
