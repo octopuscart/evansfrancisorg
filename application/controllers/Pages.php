@@ -49,7 +49,7 @@ class Pages extends CI_Controller {
 //        }
     }
 
-    public function freeBookEmailMail($inputdata, $subject) {
+    public function freeBookEmailMail($inputdata, $subject = "") {
         $isprod = 1;
         if ($isprod) {
             $inputdata = array("first_name" => $inputdata["first_name"], "email" => $inputdata["email"], "booklist" => $inputdata["book_id"]);
@@ -78,6 +78,7 @@ class Pages extends CI_Controller {
                 
             } else {
                 $error = $this->email->print_debugger(array('headers'));
+                print_r($error);
             }
         } else {
             echo $htmlsmessage;
@@ -85,8 +86,8 @@ class Pages extends CI_Controller {
     }
 
     public function subscribeMailTest() {
-        $data["inputdata"] = array("first_name" => "Pankaj Pathak");
-        $this->load->view('Email/freebookemail', $data);
+        $inputdata = array("first_name" => "Pankaj", "email" => "pankaj21pathak@gmail.com", "booklist" => []);
+        $this->freeBookEmailMail($inputdata, "This is test mail");
     }
 
     public function index() {
@@ -500,5 +501,4 @@ class Pages extends CI_Controller {
         $data['select_month'] = $selectmonth;
         $this->load->view('pages/blog_report', $data);
     }
-
 }
