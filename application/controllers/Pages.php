@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/../libraries/sendgrid/sendgrid-php.php';
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pages extends CI_Controller {
@@ -59,26 +60,36 @@ class Pages extends CI_Controller {
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
-        $this->email->set_newline("\r\n");
-        $this->email->from(email_bcc, email_bcc);
-        $this->email->to($inputdata["email"]);
+        $email = new \SendGrid\Mail\Mail();
+       
+        $email->setFrom(email_bcc, email_bcc);
+        $email->addTo($inputdata["email"]);
 //        $this->email->cc(email_bcc);
-        $this->email->subject("Thank you again for signing up to receive updates");
+        $email->setSubject("Thank you again for signing up to receive updates");
         foreach ($inputdata["booklist"] as $key => $value) {
             $bookobj = $this->bookdata[$value];
-            $this->email->attach("https://www.evansfrancis.org/assets/books/" . $bookobj["bookfile"]);
+            $file_encoded = base64_encode(file_get_contents(__DIR__ . "/../../assets/books/" . $bookobj["bookfile"]));
+            $email->addAttachment(
+                    $file_encoded,
+                    "application/pdf",
+                    $bookobj["bookfile"],
+                    "attachment"
+            );
+        
         }
 
         $htmlsmessage = $this->load->view("Email/freebookemail", array("inputdata" => $inputdata), true);
 
         if ($isprod) {
-            $this->email->message($htmlsmessage);
-            $send = $this->email->send();
-            if ($send) {
-                
-            } else {
-                $error = $this->email->print_debugger(array('headers'));
-                print_r($error);
+            $email->addContent("text/html", $htmlsmessage);
+            $sendgrid = new \SendGrid(EMAIL_PASS);
+            try {
+                $response = $sendgrid->send($email);
+                print $response->statusCode() . "\n";
+                print_r($response->headers());
+                print $response->body() . "\n";
+            } catch (Exception $e) {
+                echo 'Caught exception: ' . $e->getMessage() . "\n";
             }
         } else {
             echo $htmlsmessage;
@@ -86,9 +97,8 @@ class Pages extends CI_Controller {
     }
 
     public function subscribeMailTest() {
-        $inputdata = array("first_name" => "Pankaj", "email" => "pankaj21pathak@gmail.com", "booklist" => []);
-//        $this->freeBookEmailMail($inputdata, "This is test mail");
-        $this->Services->sendmail();
+        $inputdata = array("first_name" => "Pankaj", "email" => "pankaj21pathak@gmail.com", "book_id" => ["book_wp_1"]);
+        $this->freeBookEmailMail($inputdata, "This is test mail");
     }
 
     public function index() {

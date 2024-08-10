@@ -11,13 +11,13 @@ class Services extends CI_Model {
         $this->load->database();
     }
 
-    function sendmail() {
+    function sendmail($receiver, $subject, $content, $attachment) {
 
 
         $email = new \SendGrid\Mail\Mail();
         $email->setFrom("contact@evansfrancis.org", "Evans Francis");
         $email->setSubject("Sending with Twilio SendGrid is Fun");
-        $email->addTo("pankaj21pathak@gmail.com", "Pankaj Pathak");
+        $email->addTo($receiver);
         $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
 // $email->addContent(
 //     "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
