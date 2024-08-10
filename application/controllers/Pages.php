@@ -6,7 +6,7 @@ class Pages extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Product_model');
+        $this->load->model('Services');
         $this->load->library('session');
 //        $this->user_id = $this->session->userdata('logged_in')['login_id'];
         $this->bookdata = array(
@@ -87,7 +87,8 @@ class Pages extends CI_Controller {
 
     public function subscribeMailTest() {
         $inputdata = array("first_name" => "Pankaj", "email" => "pankaj21pathak@gmail.com", "booklist" => []);
-        $this->freeBookEmailMail($inputdata, "This is test mail");
+//        $this->freeBookEmailMail($inputdata, "This is test mail");
+        $this->Services->sendmail();
     }
 
     public function index() {
