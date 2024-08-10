@@ -62,7 +62,7 @@ class Pages extends CI_Controller {
         $email_bcc = email_bcc;
         $email = new \SendGrid\Mail\Mail();
        
-        $email->setFrom(email_bcc, email_bcc);
+        $email->setFrom(email_bcc, email_sender_name);
         $email->addTo($inputdata["email"]);
 //        $this->email->cc(email_bcc);
         $email->setSubject("Thank you again for signing up to receive updates");
@@ -85,9 +85,9 @@ class Pages extends CI_Controller {
             $sendgrid = new \SendGrid(EMAIL_PASS);
             try {
                 $response = $sendgrid->send($email);
-                print $response->statusCode() . "\n";
-                print_r($response->headers());
-                print $response->body() . "\n";
+//                print $response->statusCode() . "\n";
+//                print_r($response->headers());
+//                print $response->body() . "\n";
             } catch (Exception $e) {
                 echo 'Caught exception: ' . $e->getMessage() . "\n";
             }
