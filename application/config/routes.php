@@ -63,3 +63,4 @@ $route["eyr"] = "Pages/youthretreatregistration";
 $route['blog'] = 'Pages/blog_report/$1';
 $route['eyr-pass/(:any)'] = 'Report/eyr_pass/$1';
 $route['translate_uri_dashes'] = FALSE;
+$route['download/freebook'] = 'Pages/downloadFreebook';

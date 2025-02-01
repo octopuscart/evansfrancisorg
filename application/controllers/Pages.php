@@ -1,15 +1,17 @@
 <?php
 
 require_once __DIR__ . '/../libraries/sendgrid/sendgrid-php.php';
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pages extends CI_Controller {
+class Pages extends CI_Controller
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('Services');
         $this->load->library('session');
-//        $this->user_id = $this->session->userdata('logged_in')['login_id'];
+        //        $this->user_id = $this->session->userdata('logged_in')['login_id'];
         $this->bookdata = array(
             "book_wp_1" => array(
                 "title" => "Why Pain ",
@@ -29,20 +31,21 @@ class Pages extends CI_Controller {
         );
     }
 
-    public function sendEmail($inputdata, $tamplate, $subject) {
+    public function sendEmail($inputdata, $tamplate, $subject)
+    {
 
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
         $this->email->set_newline("\r\n");
         $this->email->from("contact@evansfrancis.org", $sendername);
-//        $this->email->to("nehaevans831@gmail.com");
+        //        $this->email->to("nehaevans831@gmail.com");
 //        $this->email->cc(email_bcc);
         $this->email->subject($subject);
         $htmlsmessage = $this->load->view("Email/$tamplate", array("inputdata" => $inputdata), true);
         $this->email->message($htmlsmessage);
         $this->email->print_debugger();
-//        $send = $this->email->send();
+        //        $send = $this->email->send();
 //        if ($send) {
 //            
 //        } else {
@@ -50,34 +53,69 @@ class Pages extends CI_Controller {
 //        }
     }
 
-    public function freeBookEmailMail($inputdata, $subject = "") {
+    public function downloadFreebook()
+    {
+        $token = $this->input->get('token');
+        $bookId = $this->input->get('bookId');
+
+        // Validate the token
+        $query = $this->db->get_where('download_tokens', ['token' => $token, 'expires_at >=' => date('Y-m-d H:i:s')]);
+        if ($query->num_rows() > 0) {
+            $bookobj = $this->bookdata[$bookId];
+
+            // Token is valid, proceed with the download
+            $filePath = $file_encoded;
+            $this->load->helper('download');
+            force_download($filePath, NULL);
+        } else {
+            // Token is invalid or expired
+            show_error('Invalid or expired download link.');
+        }
+    }
+
+    public function freeBookEmailMail($inputdata, $subject = "")
+    {
         $isprod = 1;
         if ($isprod) {
             $inputdata = array("first_name" => $inputdata["first_name"], "email" => $inputdata["email"], "booklist" => $inputdata["book_id"]);
         } else {
-            $inputdata = array("first_name" => "Pankaj", "email" => "Pankaj", "booklist" => []);
-        }
+            $inputdata = array("first_name" => $inputdata["first_name"], "email" => $inputdata["email"], "booklist" => $inputdata["book_id"]);        }
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
         $email = new \SendGrid\Mail\Mail();
-       
+
         $email->setFrom(email_bcc, email_sender_name);
         $email->addTo($inputdata["email"]);
-//        $this->email->cc(email_bcc);
+        //        $this->email->cc(email_bcc);
         $email->setSubject("Thank you again for signing up to receive updates");
-        foreach ($inputdata["booklist"] as $key => $value) {
-            $bookobj = $this->bookdata[$value];
-            $file_encoded = base64_encode(file_get_contents(__DIR__ . "/../../assets/books/" . $bookobj["bookfile"]));
-            $email->addAttachment(
-                    $file_encoded,
-                    "application/pdf",
-                    $bookobj["bookfile"],
-                    "attachment"
-            );
-        
-        }
 
+        $token = bin2hex(random_bytes(16));
+        $downloadBooks = [];
+
+        if ($inputdata["booklist"]) {
+            // Create a unique download link
+
+            // Store the token in the database with an expiration time if needed
+
+            $bookList = [];
+            foreach ($inputdata["booklist"] as $key => $value) {
+                $bookobj = $this->bookdata[$value];
+                $downloadLink = site_url("download/freebook?token=" . $token . "&bookId=" . $value);
+                $bookobj["downloadlink"] = $downloadLink;
+                array_push($bookList, $value);
+                array_push($downloadBooks, $bookobj);
+                // $file_encoded = __DIR__ . "/../../assets/books/" . $bookobj["bookfile"];
+
+            }
+            $this->db->insert('download_tokens', [
+                'book_id' => implode(",", $bookList),
+                'email' => $inputdata["email"],
+                'token' => $token,
+                'expires_at' => date('Y-m-d H:i:s', strtotime('+1 day')) // Token expires in 1 day
+            ]);
+        }
+        $inputdata["downloadBooks"] = $downloadBooks;
         $htmlsmessage = $this->load->view("Email/freebookemail", array("inputdata" => $inputdata), true);
 
         if ($isprod) {
@@ -85,9 +123,7 @@ class Pages extends CI_Controller {
             $sendgrid = new \SendGrid(EMAIL_PASS);
             try {
                 $response = $sendgrid->send($email);
-//                print $response->statusCode() . "\n";
-//                print_r($response->headers());
-//                print $response->body() . "\n";
+
             } catch (Exception $e) {
                 echo 'Caught exception: ' . $e->getMessage() . "\n";
             }
@@ -96,12 +132,14 @@ class Pages extends CI_Controller {
         }
     }
 
-    public function subscribeMailTest() {
-        $inputdata = array("first_name" => "Pankaj", "email" => "pankaj21pathak@gmail.com", "book_id" => ["book_wp_1"]);
+    public function subscribeMailTest()
+    {
+        $inputdata = array("first_name" => "Pankaj", "email" => "pankaj21pathak@gmail.com", "book_id" => ["book_wp_1", "book_cw_1"]);
         $this->freeBookEmailMail($inputdata, "This is test mail");
     }
 
-    public function index() {
+    public function index()
+    {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_subscribe");
@@ -181,7 +219,8 @@ class Pages extends CI_Controller {
         $this->load->view('home', $data);
     }
 
-    function pillar_of_fire() {
+    function pillar_of_fire()
+    {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_pillar_of_fire");
@@ -203,7 +242,8 @@ class Pages extends CI_Controller {
         $this->load->view('pages/piller_of_fire', $data);
     }
 
-    public function church() {
+    public function church()
+    {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_church");
@@ -226,7 +266,8 @@ class Pages extends CI_Controller {
         $this->load->view('pages/church', $data);
     }
 
-    public function pastor() {
+    public function pastor()
+    {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_pastor");
@@ -249,7 +290,8 @@ class Pages extends CI_Controller {
         $this->load->view('pages/pastor', $data);
     }
 
-    public function family() {
+    public function family()
+    {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_family");
@@ -272,7 +314,8 @@ class Pages extends CI_Controller {
         $this->load->view('pages/family', $data);
     }
 
-    public function child() {
+    public function child()
+    {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_child");
@@ -296,7 +339,8 @@ class Pages extends CI_Controller {
         $this->load->view('pages/child', $data);
     }
 
-    function pillar_of_cloud() {
+    function pillar_of_cloud()
+    {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_pillar_of_cloud");
@@ -318,7 +362,8 @@ class Pages extends CI_Controller {
         $this->load->view('pages/piller_of_cloud', $data);
     }
 
-    function youthretreatregistration() {
+    function youthretreatregistration()
+    {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_youthretreatregistration");
@@ -352,12 +397,14 @@ class Pages extends CI_Controller {
         $this->load->view('pages/youthretreatregistration', $data);
     }
 
-    function youthretreatregistration_1() {
+    function youthretreatregistration_1()
+    {
         $data = array();
         $this->load->view('pages/youthretreatregistration_1', $data);
     }
 
-    function contact_us() {
+    function contact_us()
+    {
         $contact_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
         $captchadata = $this->session->userdata("captchacode_contact_us");
@@ -379,7 +426,8 @@ class Pages extends CI_Controller {
         $this->load->view('pages/contact_us', $data);
     }
 
-    function invite() {
+    function invite()
+    {
         $input_data = $this->input->post();
         $messagedata = array("title" => "", "message" => "", "type" => "");
 
@@ -401,32 +449,40 @@ class Pages extends CI_Controller {
         $this->load->view('pages/invite', $data);
     }
 
-    public function aboutus() {
+    public function aboutus()
+    {
         $this->load->view('pages/aboutus');
     }
 
-    public function love_offering() {
+    public function love_offering()
+    {
         $this->load->view('pages/love_offering');
     }
 
-    public function error404() {
+    public function error404()
+    {
         $this->load->view('pages/error404');
     }
 
-    public function books() {
+    public function books()
+    {
 
         $this->load->view('pages/books');
     }
 
-    function hexrgb($hexstr) {
+    function hexrgb($hexstr)
+    {
         $int = hexdec($hexstr);
 
-        return array("red" => 0xFF & ($int >> 0x10),
+        return array(
+            "red" => 0xFF & ($int >> 0x10),
             "green" => 0xFF & ($int >> 0x8),
-            "blue" => 0xFF & $int);
+            "blue" => 0xFF & $int
+        );
     }
 
-    function createCaptha($ctype) {
+    function createCaptha($ctype)
+    {
         //Settings: You can customize the captcha here
         $image_width = 120;
         $image_height = 40;
@@ -447,8 +503,12 @@ class Pages extends CI_Controller {
         $image = @imagecreate($image_width, $image_height);
         $background_color = imagecolorallocate($image, 255, 255, 255);
         $arr_text_color = $this->hexrgb($captcha_text_color);
-        $text_color = imagecolorallocate($image, $arr_text_color['red'],
-                $arr_text_color['green'], $arr_text_color['blue']);
+        $text_color = imagecolorallocate(
+            $image,
+            $arr_text_color['red'],
+            $arr_text_color['green'],
+            $arr_text_color['blue']
+        );
         $textbox = imagettfbbox($font_size, 0, $font, $code);
         $x = ($image_width - $textbox[4]) / 2;
         $y = ($image_height - $textbox[5]) / 2;
@@ -459,7 +519,8 @@ class Pages extends CI_Controller {
         imagejpeg($image); //showing the image
     }
 
-    public function blog_api() {
+    public function blog_api()
+    {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "http://dds.christianappdevelopers.com:3000/v1/blogs/archive-dates/");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -470,7 +531,8 @@ class Pages extends CI_Controller {
         return $data;
     }
 
-    function blogApi($selectmonth) {
+    function blogApi($selectmonth)
+    {
         $dat = str_replace(" ", "%20", $selectmonth);
         $link1 = "http://dds.christianappdevelopers.com:3000/v1/blogs/blogs-by-month/$dat";
 
@@ -483,7 +545,8 @@ class Pages extends CI_Controller {
         return json_decode($response, 1);
     }
 
-    function blog_report() {
+    function blog_report()
+    {
         $input_data = $this->input->get();
 
         $res = $this->blog_api();
