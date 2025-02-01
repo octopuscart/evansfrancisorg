@@ -60,7 +60,7 @@ class Pages extends CI_Controller
 
         // Validate the token
         $query = $this->db->get_where('download_tokens', ['token' => $token, 'expires_at >=' => date('Y-m-d H:i:s')]);
-        if ($query !== false && $query->num_rows() > 0) {
+        if ($query) {
             $bookobj = $this->bookdata[$bookId];
             $file_encoded = __DIR__ . "/../../assets/books/" . $bookobj["bookfile"];
             // Token is valid, proceed with the download
