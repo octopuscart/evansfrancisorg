@@ -11,6 +11,7 @@ class Pages extends CI_Controller
         parent::__construct();
         $this->load->model('Services');
         $this->load->library('session');
+        $this->load->helper('download');
         //        $this->user_id = $this->session->userdata('logged_in')['login_id'];
         $this->bookdata = array(
             "book_wp_1" => array(
@@ -65,7 +66,6 @@ class Pages extends CI_Controller
             $file_encoded = __DIR__ . "/../../assets/books/" . $bookobj["bookfile"];
             // Token is valid, proceed with the download
             $filePath = $file_encoded;
-            $this->load->helper('download');
             force_download($filePath, NULL);
         } else {
             // Token is invalid or expired
@@ -79,7 +79,8 @@ class Pages extends CI_Controller
         if ($isprod) {
             $inputdata = array("first_name" => $inputdata["first_name"], "email" => $inputdata["email"], "booklist" => $inputdata["book_id"]);
         } else {
-            $inputdata = array("first_name" => $inputdata["first_name"], "email" => $inputdata["email"], "booklist" => $inputdata["book_id"]);        }
+            $inputdata = array("first_name" => $inputdata["first_name"], "email" => $inputdata["email"], "booklist" => $inputdata["book_id"]);
+        }
         $emailsender = email_sender;
         $sendername = email_sender_name;
         $email_bcc = email_bcc;
